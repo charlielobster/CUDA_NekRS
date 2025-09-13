@@ -6,4 +6,5 @@ Support scripts and documentation for the CUDA NekRS installation.
 
 3) install ucx
 
-4) install ...
+4) install openmpi
+...
