@@ -1,3 +1,0 @@
-ack sin ack
-blablablablabla....
-touch
