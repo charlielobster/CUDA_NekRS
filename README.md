@@ -16,6 +16,8 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04
 
     https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
+    See Install_CUDA_on_Ubuntu.txt for instructions.
+
 3) Install ucx
 
 4) Install openmpi
