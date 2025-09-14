@@ -147,6 +147,11 @@ The binaries can be found in the build folder's Samples subfolder
 
 Install OCCA
 
+I made two small changes to the OCCA codebase. In configure-cmake.sh, I enabled FORTRAN by default, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably a CUDA version upgrade issue).
+
+    ./configure-cmake.sh
+    cmake --build build
+    cmake --install build --prefix install
 
 
 Finally, we are ready to install NekRS
