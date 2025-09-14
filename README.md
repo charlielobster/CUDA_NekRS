@@ -56,6 +56,8 @@ Then, add other optional utilities
       sudo snap install --classic code # Visual Studio Code
       sudo apt install timeshift # Timeshift System Recovery
 
+This is a great time for a Restore Point!
+
 Topology
 
 Once inside Ubuntu, create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
@@ -88,6 +90,9 @@ Use the script before running programs in NekRS. It performs housekeeping settin
 
 
 Install UCX
+
+      sudo apt install -y autoconf automake libtool m4 \
+           libnuma-dev hwloc libhwloc-dev
 
 Install ompi
 
