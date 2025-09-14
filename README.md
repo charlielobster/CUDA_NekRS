@@ -18,8 +18,31 @@ Then, add other optional utilities
    
       sudo snap install --classic code # Visual Studio Code
       sudo apt install timeshift # Timeshift System Recovery
+
+Topology
+
+These tools were compiled from source and configured for CUDA support
+
+Once inside Ubuntu, create a folder called repos and clone each tool in their respective folders
+
+      mkdir repos
+      cd repos
+      git clone https://github.com/charlielobster/CUDA_NekRS.git
+      git clone https://github.com/openucx/ucx.git
+      git clone https://github.com/open-mpi/ompi.git
+      git clone https://github.com/libocca/occa.git
+      git clone https://github.com/Nek5000/nekRS.git
+
+The topology looks like this:
+
+      /home/USER/
+      /home/USER/repos/CUDA_NekRS
+      /home/USER/repos/ucx
+      /home/USER/repos/ompi
+      /home/USER/repos/OCCA
+      /home/USER/repos/nekRS
    
-Once inside Ubuntu, copy the script called 
+Copy the script called 
 
       cp /home/$USER/CUDA_NekRS_vars.sh $HOME
       cd $HOME
@@ -41,31 +64,6 @@ Now, install CUDA development tools
   https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
   See Install_CUDA_on_Ubuntu.txt for instructions
-
-
-Topology
-
-These tools were compiled from source and configured for CUDA support
-
-Create a folder called repos and put each tool in their respective locations
-
-      mkdir repos
-      cd repos
-      git clone https://github.com/charlielobster/CUDA_NekRS.git
-      git clone https://github.com/openucx/ucx.git
-      git clone https://github.com/open-mpi/ompi.git
-      git clone https://github.com/libocca/occa.git
-      git clone https://github.com/Nek5000/nekRS.git
-
-The topology looks like this:
-
-      /home/USER/
-      /home/USER/repos/CUDA_NekRS
-      /home/USER/repos/ucx
-      /home/USER/repos/ompi
-      /home/USER/repos/OCCA
-      /home/USER/repos/nekRS
-
 
 Install UCX
 
