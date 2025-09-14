@@ -50,7 +50,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
         /home/USER/repos/ucx
         /home/USER/repos/ompi
         /home/USER/repos/OCCA
-        /home/USER/repos/NekRS
+        /home/USER/repos/nekRS
    
 10) Install CUDA
 
