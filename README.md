@@ -3,13 +3,14 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 0) Flash a hard drive with Ubuntu, then boot into it
 
    a) Find an erasable hard drive
+   
    b) Transfer a bootable USB drive's Ubuntu image to the drive
 
        i) On your Windows instance, download the Ubuntu 24.04.3 iso file
        ii) Use Balena Etcher to write the iso to the USB drive
        iii) From your BIOS, boot from the USB drive and install to the target drive
 
-1) Some additional software:
+2) Some additional software:
 
     a) Setup git and github connection
 
