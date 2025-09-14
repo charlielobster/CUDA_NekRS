@@ -27,9 +27,9 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
          . ./CUDA_NekRS_vars.sh
        
-   This is the script you'll use before running programs in NekRS.
-   It performs housekeeping like setting CUDA_HOME, modifying LD_LIBRARY_PATH, PATH etc.
-   Perhaps you should add this to your .profile, or similar User terminal initialization.
+This is the script you'll use before running programs in NekRS.
+It performs housekeeping like setting CUDA_HOME, modifying LD_LIBRARY_PATH, PATH etc.
+Perhaps add this to your .profile, or terminal initialization.
    
 10) Install CUDA
 
