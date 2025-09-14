@@ -25,7 +25,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
    a) In a terminal type:
 
-         i) . ./CUDA_NekRS_vars.sh
+         . ./CUDA_NekRS_vars.sh
          ii) ... 
        
     currently it just sets CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
