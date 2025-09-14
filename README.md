@@ -16,9 +16,12 @@ First, flash a hard drive with Ubuntu and boot into it
   Apparently I experienced errors replacing Ubuntu's proprietary GPU drivers so that it could sync up with the CUDA Toolkit. 
   There is fix out there for that issue, but I'd rather not add more steps to this Readme.
 
-Now, Install CUDA Toolkit, drivers, and related development tools, taken from this link:
+Now, Install CUDA Toolkit, drivers, and related development tools, taken from these links:
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
+
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+
     
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
     sudo mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -31,17 +34,9 @@ https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&D
     sudo apt-get install -y nvidia-open
     reboot
 
-This creates a folder called /usr/local/cuda-13.0
-
-https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
-
-Verify a few steps from that document, starting with Section 3. This Readme assumes a remote repository installation method. In the link above, Ubuntu instructions begin at section 4.8. Then,
+This creates a folder called /usr/local/cuda-13.0. Then,
       
     sudo apt install nvidia-gds
-
-Install required libraries for this tutorial that aren't installed by the steps:
-       
-    sudo apt install gfortran
 
 Install git and github connection
 
@@ -103,16 +98,28 @@ Install UCX
     make -j6
     sudo make install
 
-Install ompi
+Install openmpi
 
-For both steps I used:
+For both UCX and openmpi steps, I used this link:
 
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
+Before we install openmpi, we need to install gnu fortran:
+       
+    sudo apt install gfortran
 
-but before we install ompi, we need to install gnu fortran first
+    cd repos/ompi
+    sudo mkdir $OMPI_HOME
+    ./configure --prefix=$OMPI_HOME \
+        --with-cuda=$CUDA_HOME \
+        --with-ucx=$UCX_HOME \
+        --with-ucx-libdir=$UCX_LIB \
+        --with-cuda-libdir=$CUDA_LIB \
+        --enable-mpirun-prefix-by-default
+    make -j6
+    sudo make install
 
-...
+
 
 Verify everything works (so far) with successful cuda_samples build
 
