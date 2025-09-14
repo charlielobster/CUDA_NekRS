@@ -56,7 +56,7 @@ Then, add other optional utilities
       sudo snap install --classic code # Visual Studio Code
       sudo apt install timeshift # Timeshift System Recovery
 
-This would be a great time for a Restore Point!
+This is a great time for a Restore Point!
 
 Topology
 
