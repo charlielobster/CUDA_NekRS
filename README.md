@@ -16,9 +16,8 @@ First, flash a hard drive with Ubuntu and boot into it
   Apparently I experienced errors upgrading their proprietary cuda driver to match with the Toolkit. 
   There is fix out there for that issue, but I'd rather not add more steps to this Readme.
 
-Setup required libraries
+Setup required libraries for this tutorial that aren't installed by the steps:
        
-       sudo apt install gcc
        sudo apt install gfortran
 
 Next, setup git and github connection
