@@ -133,7 +133,8 @@ Verify everything links and works (so far) with a successful cuda_samples build
 To fully build all the samples for our target OS, we need a few more libraries first:
 
     sudo apt install cmake
-    sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev vulkan-sdk
+    sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev
+    sudo apt install vulkan-tools vulkan-validationlayers spirv-tools
 
 Now build the samples        
 
