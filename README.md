@@ -107,6 +107,7 @@ https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda
 Before we install openmpi, we need to install gnu fortran:
        
     sudo apt install gfortran
+    sudo apt install flex
 
     cd repos/ompi
     sudo mkdir $OMPI_HOME
@@ -121,9 +122,9 @@ Before we install openmpi, we need to install gnu fortran:
     make -j6
     sudo make install
 
+This is another good time for a Restore Point.
 
-
-Verify everything works (so far) with successful cuda_samples build
+Verify everything links and works (so far) with a successful cuda_samples build
 
   a) we need glut, vulkan, freeimage, glfw3 libraries first
 
