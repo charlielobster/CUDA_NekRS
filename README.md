@@ -13,7 +13,7 @@ First, flash a hard drive with Ubuntu and boot into it
   From your BIOS, boot from the USB drive and install to the target drive
 
   In my case, it became necessary to unclick the "Install latest Graphics and Wifi hardware drivers" during the install.
-  Apparently I experienced errors upgrading their proprietary GPU drivers to match with the Toolkit. 
+  Apparently I experienced errors replacing Ubuntu's proprietary GPU drivers so that it could sync up with the CUDA Toolkit. 
   There is fix out there for that issue, but I'd rather not add more steps to this Readme.
 
 Now, Install CUDA Toolkit, drivers, and related development tools, taken from this link:
