@@ -2,7 +2,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 I've tried to make this document self-contained, so although I will mention links I've used for reference, it isn't necessary to follow them for additional required steps.
 
-First, install Ubuntu, without Graphics drivers, to a hard drive and boot into it:
+Install Ubuntu, without Graphics drivers, to a hard drive and boot into it:
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
@@ -21,7 +21,7 @@ Follow these directions:
      
      There is fix out there for that issue, but not in this Readme.
 
-Next, install CUDA Toolkit, drivers, and related development tools, taken from these links:
+Now install CUDA Toolkit, drivers, and related development tools, taken from these links:
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
 
@@ -43,7 +43,7 @@ This creates a folder called /usr/local/cuda-13.0. Then,
       
     sudo apt install nvidia-gds
 
-Install git and github connection
+Optionally, install git and github connection
 
     sudo apt install git         
     sudo apt install gh         
@@ -51,20 +51,20 @@ Install git and github connection
     git config --global user.email <your email>
     git config --global user.name <your name>
 
-Then, add other optional utilities
+Optionally, add other optional utilities
    
     sudo snap install --classic code # Visual Studio Code
     sudo apt install timeshift # Timeshift System Recovery
 
-This is a great time for a Restore Point!
+This is a great time for a Restore Point. I include my user files.
 
-Third, Topology
+Topology
 
 Create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
 
     mkdir repos
     cd repos
-    git clone https://github.com/charlielobster/CUDA_NekRS.git # optional
+    git clone https://github.com/charlielobster/CUDA_NekRS.git # optional, only contains Readme and shell script
     git clone https://github.com/openucx/ucx.git
     git clone https://github.com/open-mpi/ompi.git
     git clone https://github.com/NVIDIA/cuda-samples.git
@@ -89,7 +89,7 @@ The topology looks like this:
       
 Use the script before running programs in NekRS. It performs housekeeping settings for CUDA_HOME, PATH, LD_LIBRARY_PATH etc. Maybe add to your .profile for terminal initialization. 
 
-Install UCX
+First, Install UCX
 
     cd repos/ucx
     sudo apt install -y autoconf automake libtool m4 \
@@ -104,7 +104,7 @@ Install UCX
     make -j6
     sudo make install
 
-Install openmpi
+Second, Install openmpi
 
 For both UCX and openmpi steps, I used this link:
 
@@ -131,7 +131,7 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
 
 This is another good time for a Restore Point.
 
-Verify everything links and works (so far) with a successful cuda_samples build
+Third, verify everything links and works (so far) with a successful cuda_samples build
 
 To fully build all the samples for our target OS, we need a few more libraries first:
 
@@ -148,7 +148,7 @@ Now build the samples
 The binaries can be found in the build folder's Samples subfolder
 
 
-Install OCCA
+Fourth, install OCCA
 
 I made two small changes to the OCCA codebase. In configure-cmake.sh, I enabled FORTRAN by default, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably a CUDA version upgrade issue).
 
@@ -157,9 +157,9 @@ I made two small changes to the OCCA codebase. In configure-cmake.sh, I enabled 
     cmake --build build
     cmake --install build --prefix install
 
-The build failed at first. I made two small changes to the OCCA codebase. I enabled FORTRAN by default, which isn't necessary but was more consistent with the code there and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably another CUDA version upgrade issue). So, we don't get debug for those events now, but the trade-off is worth it.
+The build failed at first. I made two small changes to the OCCA codebase. I enabled FORTRAN by default, which isn't necessary but was more consistent with the intent, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably another CUDA version upgrade issue). So, we don't get debug output for those two events now, but the trade-off is worth it in the short term.
 
-Finally, we are ready to install NekRS
+Fifth, we are ready to install NekRS
 
 Recall I had made two small changes to the OCCA codebase. The conversion issue upgrading to newer drivers is worse when I tried with the NekRS 3rd_Party codebase, so I replaced the 3rd_Party/occa subfolder with my working copy of the tool.
 
@@ -184,13 +184,8 @@ I received:
     CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
     CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
 
-The cmake environment variables appear to be missing in my case. I may need to reboot or any number of things.
-
-adding these lines to my source vars file and sourcing didn't help, the vars are being set
-
-export CC=mpicc CXX=mpic++ FC=mpif77
-export CMAKE_C_COMPILER=$CC CMAKE_CXX_COMPILER=$CXX CMAKE_Fortran_COMPILER=$FC
-
-Apparently this requires passing the paths to cmake in the command-line:
+Apparently this requires passing the paths to cmake in the command-line or using a set() before the call to program()
 
     cmake -DCMAKE_CXX_COMPILER=/pathto/g++ -DCMAKE_C_COMPILER=/pathto/gcc /pathto/source
+
+So these must be set the path to mpi++ etc.
