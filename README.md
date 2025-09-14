@@ -188,4 +188,4 @@ Apparently this requires passing the paths to cmake in the command-line or using
 
     cmake -DCMAKE_CXX_COMPILER=/pathto/g++ -DCMAKE_C_COMPILER=/pathto/gcc /pathto/source
 
-So these must be set the path to mpi++ etc.
+So these must be set with the path to mpi++ etc.
