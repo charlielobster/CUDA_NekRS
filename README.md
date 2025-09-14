@@ -63,6 +63,9 @@ Use the script before running programs in NekRS. It performs housekeeping settin
 
 Now, install CUDA development tools, taken from this link:
 
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
+
+
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
 First verify a few steps from that document, starting with Section 3. This Readme assumes a remote repository installation method. In the link above, Ubuntu instructions begin at section 4.8.
