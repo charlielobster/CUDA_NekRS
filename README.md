@@ -16,11 +16,11 @@ First, flash a hard drive with Ubuntu and boot into it
   Apparently I experienced errors upgrading their proprietary cuda driver to match with the Toolkit. 
   There is fix out there for that issue, but I'd rather not add more steps to this Readme.
 
-Setup required libraries for this tutorial that aren't installed by the steps:
+Install required libraries for this tutorial that aren't installed by the steps:
        
        sudo apt install gfortran
 
-Next, setup git and github connection
+Install git and github connection
 
       sudo apt install git         
       sudo apt install gh         
@@ -37,13 +37,13 @@ Topology
 
 Once inside Ubuntu, create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
 
-      mkdir repos
-      cd repos
-      git clone https://github.com/charlielobster/CUDA_NekRS.git
-      git clone https://github.com/openucx/ucx.git
-      git clone https://github.com/open-mpi/ompi.git
-      git clone https://github.com/libocca/occa.git
-      git clone https://github.com/Nek5000/nekRS.git
+    mkdir repos
+    cd repos
+    git clone https://github.com/charlielobster/CUDA_NekRS.git
+    git clone https://github.com/openucx/ucx.git
+    git clone https://github.com/open-mpi/ompi.git
+    git clone https://github.com/libocca/occa.git
+    git clone https://github.com/Nek5000/nekRS.git
       
 Copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh to your own home directory, and source it
 
