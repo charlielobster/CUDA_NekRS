@@ -36,13 +36,9 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
    These tools were compiled from source and reconfigured for CUDA support
 
    I created a folder called repos and put each in their respective locations with
-8) something
-9)    a) something
-10)      i) something
-11)        git clone https://github.com/openucx/ucx.git
 
-12) someting
-13)    a) something
+10)      i) git clone https://github.com/openucx/ucx.git
+
 14)      i) Something
             /home/USER/
             /home/USER/repos/CUDA_NekRS
