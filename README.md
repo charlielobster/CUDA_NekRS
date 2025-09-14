@@ -23,7 +23,7 @@ Topology
 
 These tools need to be configured for CUDA support and built from source
 
-Once inside Ubuntu, create a folder called repos and clone each tool in their respective folders
+Once inside Ubuntu, create a folder called repos, and clone each tool in their respective folders
 
       mkdir repos
       cd repos
@@ -33,7 +33,7 @@ Once inside Ubuntu, create a folder called repos and clone each tool in their re
       git clone https://github.com/libocca/occa.git
       git clone https://github.com/Nek5000/nekRS.git
       
-Copy the script called CUDA_NekRS_vars.sh to your home directory and source it
+Copy the script called CUDA_NekRS_vars.sh to your home directory, and source it
 
     cp /repos/CUDA_NekRS/CUDA_NekRS_vars.sh $HOME
     cd $HOME
