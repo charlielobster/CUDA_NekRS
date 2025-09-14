@@ -10,7 +10,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
        ii) Use Balena Etcher to write the iso to the USB drive
        iii) From your BIOS, boot from the USB drive and install to the target drive
 
-2) Some additional software:
+2) Once inside the Unbuntu instance, get some additional software:
 
     a) Setup git and github connection
 
