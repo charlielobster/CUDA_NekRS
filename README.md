@@ -111,7 +111,7 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
        
     sudo apt install gfortran
     sudo apt install flex
-    sudo apt-get install zlib1g-dev liblz4-dev libzstd-dev
+    sudo apt install zlib1g-dev liblz4-dev libzstd-dev
 
     cd repos/ompi
     sudo mkdir $OMPI_HOME
@@ -133,7 +133,7 @@ Verify everything links and works (so far) with a successful cuda_samples build
 To fully build all the samples for our target OS, we need a few more libraries first:
 
     sudo apt install cmake
-    sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev
+    sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev vulkan-sdk
 
 Now build the samples        
 
