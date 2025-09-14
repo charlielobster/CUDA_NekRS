@@ -57,13 +57,14 @@ This is a great time for a Restore Point!
 
 Topology
 
-Once inside Ubuntu, create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
+Create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
 
     mkdir repos
     cd repos
     git clone https://github.com/charlielobster/CUDA_NekRS.git
     git clone https://github.com/openucx/ucx.git
     git clone https://github.com/open-mpi/ompi.git
+    git clone https://github.com/NVIDIA/cuda-samples.git
     git clone https://github.com/libocca/occa.git
     git clone https://github.com/Nek5000/nekRS.git
       
@@ -79,13 +80,13 @@ The topology looks like this:
     /home/USER/repos/CUDA_NekRS
     /home/USER/repos/ucx
     /home/USER/repos/ompi
+    /home/USER/repos/cuda-samples
     /home/USER/repos/OCCA
     /home/USER/repos/nekRS
       
 Use the script before running programs in NekRS. It performs housekeeping settings for CUDA_HOME, PATH, LD_LIBRARY_PATH etc. Maybe add to your .profile for terminal initialization. 
 
 Install UCX
-
 
     cd repos/ucx
     sudo apt install -y autoconf automake libtool m4 \
@@ -106,7 +107,7 @@ For both UCX and openmpi steps, I used this link:
 
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
-Before we install openmpi, we need to install gnu fortran and Flex:
+Before we can install openmpi, we need to install gnu fortran and Flex:
        
     sudo apt install gfortran
     sudo apt install flex
@@ -128,12 +129,22 @@ This is another good time for a Restore Point.
 
 Verify everything links and works (so far) with a successful cuda_samples build
 
-  a) we need glut, vulkan, freeimage, glfw3 libraries first
+To fully build all the samples for our target OS, we need a few more libraries first:
 
-  b) build cuda samples        
-  ...
+    sudo apt install cmake
+    sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev
+
+Now build the samples        
+
+    mkdir build && cd build
+    cmake ..
+    make -j$(nproc)
+
+The binaries can be found in the build folder's Samples subfolder
+
 
 Install OCCA
+
 
 
 Finally, we are ready to install NekRS
