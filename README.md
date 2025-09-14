@@ -4,9 +4,11 @@ First, flash a hard drive with Ubuntu and boot into it
 
   a) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
-    Go to https://ubuntu.com/download/desktop and click the green button
+  Go to https://ubuntu.com/download/desktop and click the green button
 
   b) Use Balena Etcher to write the iso to the USB drive
+  
+  https://etcher.balena.io/#download-etcher
 
   c) From your BIOS, boot from the USB drive and install to the target drive
 
