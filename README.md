@@ -2,21 +2,19 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 0) Flash a hard drive with Ubuntu, then boot into it
 
-   a) Find an erasable hard drive
-   
-   b) Transfer a bootable USB drive's Ubuntu image to the drive
+   a) Transfer a bootable USB drive's Ubuntu image to the drive
 
-       i) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
-       ii) Use Balena Etcher to write the iso to the USB drive
-       iii) From your BIOS, boot from the USB drive and install to the target drive
+    i) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
+    ii) Use Balena Etcher to write the iso to the USB drive
+    iii) From your BIOS, boot from the USB drive and install to the target drive
 
-    a) Setup git and github connection
+   b) Setup git and github connection
 
        sudo apt install git         
        sudo apt install gh   
        # login to github using gh auth login and enter your credentials
 
-    b) Other optional utilities
+   c) Other optional utilities
    
        sudo snap install --classic code # Visual Studio Code
        sudo apt install timeshift # Timeshift System Recovery
