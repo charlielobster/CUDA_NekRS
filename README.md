@@ -12,11 +12,14 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 1) Some additional software:
 
-    a) Setup a github connection and maintain consistent folder management
+    a) Setup git, a github connection, and maintain consistent folder management
 
-       sudo apt install git
+       sudo apt install git         
        sudo apt install gh   
-       % login to github using gh auth login and enter your credentials   
+       # login to github using gh auth login and enter your credentials
+   
+       sudo snap install --classic code # Visual Studio Code
+       sudo apt install timeshift # Timeshift System Recovery
    
 3) Maintain /home/$USER/CUDA_NekRS_vars.sh
 
