@@ -14,6 +14,10 @@ First, flash a hard drive with Ubuntu and boot into it
 
   c) From your BIOS, boot from the USB drive and install to the target drive
 
+  In my case, it became necessary to unclick the "Install latest Graphics and Wifi hardware drivers" during the install.
+  I was constantly experiencing errors upgrading the cuda driver to match with the toolkit. 
+  There is fix out there for it, but I'd rather not add even more steps to this.
+
 Setup required libraries
        
        sudo apt install gcc
