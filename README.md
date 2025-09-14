@@ -27,9 +27,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
          . ./CUDA_NekRS_vars.sh
        
-   currently it just sets CUDA_HOME, modifies LD_LIBRARY_PATH, PATH etc
-
-   it may evolve into a family of scripts, or a script that calls many other scripts
+   It sets CUDA_HOME, modifies LD_LIBRARY_PATH, PATH etc
 
 7) Topology
 
