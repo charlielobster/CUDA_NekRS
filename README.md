@@ -78,21 +78,16 @@ https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&D
       sudo apt-get -y install cuda-toolkit-13-0
       # install open drivers
       sudo apt-get install -y nvidia-open
+      reboot
 
-
+This creates a folder containing the CUDA 13.0 contents called /usr/local/cuda-13.0
 
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
-First verify a few steps from that document, starting with Section 3. This Readme assumes a remote repository installation method. In the link above, Ubuntu instructions begin at section 4.8.
+Verify a few steps from that document, starting with Section 3. This Readme assumes a remote repository installation method. In the link above, Ubuntu instructions begin at section 4.8. Then,
       
-4.8.3. Install or update CUDA drivers via 
-
-      wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb\
-      sudo dpkg -i cuda-keyring_1.1-1_all.deb
-      sudo apt install cuda-toolkit
       sudo apt install nvidia-gds
 
-This creates a folder containing the CUDA 13.0 contents called /usr/local/cuda-13.0
 
 Install CUDA toolkit
       
