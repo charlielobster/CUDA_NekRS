@@ -19,7 +19,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
        sudo snap install --classic code # Visual Studio Code
        sudo apt install timeshift # Timeshift System Recovery
    
-5) Maintain /home/$USER/CUDA_NekRS_vars.sh
+1) Maintain /home/$USER/CUDA_NekRS_vars.sh
 
    a) In a terminal, type:
 
@@ -29,7 +29,7 @@ This is the script you'll use before running programs in NekRS.
 It performs housekeeping like setting CUDA_HOME, modifying LD_LIBRARY_PATH, PATH etc.
 Perhaps add this to your .profile, or terminal initialization.
    
-10) Install CUDA
+2) Install CUDA
 
     a) Install or update CUDA drivers
     b) Install CUDA toolkit
@@ -39,7 +39,7 @@ Perhaps add this to your .profile, or terminal initialization.
        See Install_CUDA_on_Ubuntu.txt for instructions
 
 
-7) Topology
+3) Topology
 
    These tools were compiled from source and configured for CUDA support
 
@@ -63,9 +63,9 @@ Perhaps add this to your .profile, or terminal initialization.
         /home/USER/repos/nekRS
 
 
-11) Install UCX
+4) Install UCX
 
-12) Install ompi
+5) Install ompi
 
     For both steps I used:
 
@@ -76,7 +76,7 @@ Perhaps add this to your .profile, or terminal initialization.
 
     ...
 
-13) Verify everything works (so far) with successful cuda_samples build
+6) Verify everything works (so far) with successful cuda_samples build
 
       a) we need glut, vulkan, freeimage, glfw3 libraries first
     
