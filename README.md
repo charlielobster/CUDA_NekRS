@@ -6,9 +6,7 @@ First, flash a hard drive with Ubuntu and boot into it
 
   Go to https://ubuntu.com/download/desktop and click the green button
 
-  b) Use Rufus or Balena Etcher to write the iso to the USB drive. Note that I tried Balena but it stopped working after a couple of times, so I switched to Rufus.
-  
-  https://etcher.balena.io/#download-etcher
+  b) Balena stopped working for me after a couple of times, so I switched to Rufus. Follow these directions:
   
   https://ubuntu.com/tutorials/create-a-usb-stick-on-windows
 
