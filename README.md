@@ -63,7 +63,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ...
 
-10) Verify everything works so far with successful cuda_samples build
+10) Verify everything works (so far) with successful cuda_samples build
 
     c) build cuda samples
         
