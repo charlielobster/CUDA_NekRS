@@ -10,8 +10,6 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
        ii) Use Balena Etcher to write the iso to the USB drive
        iii) From your BIOS, boot from the USB drive and install to the target drive
 
-         i) Something
-
     a) Setup git and github connection
 
        sudo apt install git         
@@ -25,10 +23,10 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
    
 5) Maintain /home/$USER/CUDA_NekRS_vars.sh
 
-   a) Source these variables into your terminal
+   a) In a terminal type:
 
-      i) . ./CUDA_NekRS_vars.sh
-      ii) ... 
+         i) . ./CUDA_NekRS_vars.sh
+         ii) ... 
        
     currently it just sets CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
     it may evolve into a family of scripts, or a script that calls many other scripts
