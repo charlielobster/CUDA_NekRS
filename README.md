@@ -26,7 +26,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ... 
     
-    currently it justs set CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
+    currently it just sets CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
     it may evolve into a family of scripts, or a script that calls many other scripts
 
 5) Install CUDA
