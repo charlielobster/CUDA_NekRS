@@ -27,19 +27,19 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
          . ./CUDA_NekRS_vars.sh
        
-    currently it just sets CUDA_HOME, modifies LD_LIBRARY_PATH, PATH etc
-    it may evolve into a family of scripts, or a script that calls many other scripts
+   currently it just sets CUDA_HOME, modifies LD_LIBRARY_PATH, PATH etc
 
-6) Topology
-7) something
-8)    a) something
-9)      i) something
-10)  
+   it may evolve into a family of scripts, or a script that calls many other scripts
+
+7) Topology
+8) something
+9)    a) something
+11)  
 
    These tools were compiled from source and reconfigured for CUDA support
 
    a)
-      i)   /home/USER/
+      i) /home/USER/
             /home/USER/repos/CUDA_NekRS
             /home/USER/repos/ucx
             /home/USER/repos/ompi
