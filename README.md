@@ -24,13 +24,17 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
    
 3) Maintain /home/$USER/CUDA_NekRS_vars.sh
 
+   Sourced into your terminal
+
+   . ./CUDA_NekRS_vars.sh
+
     ... 
     
     currently just set CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
 
     may evolve into a family of scripts, or a single script that does everything
 
-4) Install CUDA
+5) Install CUDA
 
     a) Install or update CUDA drivers
 
@@ -40,9 +44,9 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     See Install_CUDA_on_Ubuntu.txt for instructions
 
-5) Install ucx
+6) Install ucx
 
-6) Install openmpi
+7) Install openmpi
 
     For both steps I used:
 
@@ -53,7 +57,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ...
 
-7) Verify everything works so far with successful cuda_samples build
+8) Verify everything works so far with successful cuda_samples build
 
     c) build cuda samples
         
@@ -61,8 +65,8 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ...
 
-8) Install OCCA
+9) Install OCCA
 
 
-9) Finally, install NekRS
+10) Finally, install NekRS
 
