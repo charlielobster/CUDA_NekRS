@@ -49,7 +49,7 @@ The topology should look like this:
       /home/USER/repos/nekRS
       
 Use the script before running programs in NekRS.
-It performs housekeeping settings like CUDA_HOME, LD_LIBRARY_PATH, PATH etc.
+It performs housekeeping settings for CUDA_HOME, LD_LIBRARY_PATH, PATH etc.
 Maybe add to your .profile for terminal initialization.
    
 Now, install CUDA development tools
