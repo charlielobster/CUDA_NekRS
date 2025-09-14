@@ -33,7 +33,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 7) Topology
 
-   These tools were compiled from source and reconfigured for CUDA support
+   These tools were compiled from source and configured for CUDA support
 
    Create a folder called repos and put each tool in their respective locations with
 
