@@ -7,9 +7,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
    b) Create a USB drive containing an etched, bootable Ubuntu iso
 
        i) On your windows box, download the 24.04.3 iso file
-
        ii) Use Balena Etcher to write the iso to the USB drive
-
        iii) From your BIOS, boot from the USB drive and install to the target drive
 
 1) Some additional software:
@@ -17,8 +15,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
     a) Run this script
 
        sudo apt install git
-       sudo apt install gh
-   
+       sudo apt install gh   
        % login to github using gh auth login and enter your credentials   
    
 3) Maintain /home/$USER/CUDA_NekRS_vars.sh
