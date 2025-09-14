@@ -91,6 +91,9 @@ Use the script before running programs in NekRS. It performs housekeeping settin
 
 Install UCX
 
+      sudo apt install -y autoconf automake libtool m4 \
+           libnuma-dev hwloc libhwloc-dev
+
 Install ompi
 
 For both steps I used:
