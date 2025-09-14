@@ -1,12 +1,12 @@
 Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
-Flash a hard drive with Ubuntu and boot into it
+First, flash a hard drive with Ubuntu and boot into it
 
       a) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
       b) Use Balena Etcher to write the iso to the USB drive
       c) From your BIOS, boot from the USB drive and install to the target drive
 
-Setup git and github connection
+Next, setup git and github connection
 
       sudo apt install git         
       sudo apt install gh   
@@ -14,7 +14,7 @@ Setup git and github connection
       git config --global user.email <your email>
       git config --global user.name <your name>
 
-Other optional utilities
+Then, add other optional utilities
    
       sudo snap install --classic code # Visual Studio Code
       sudo apt install timeshift # Timeshift System Recovery
@@ -32,7 +32,7 @@ Use the script before running programs in NekRS.
 It performs housekeeping settings like CUDA_HOME, LD_LIBRARY_PATH, PATH etc.
 Maybe add to your .profile for terminal initialization.
    
-Install CUDA
+Now, install CUDA development tools
 
   Install or update CUDA drivers
 
