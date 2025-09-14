@@ -1,6 +1,28 @@
-Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04
+Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
-1) Maintain /home/$USER/CUDA_NekRS_vars.sh
+0) Flash a hard drive with Ubuntu, then boot into it
+
+   a) Find a hard drive you don't care about erasing
+
+   b) Start with a USB drive containing the etched iso
+
+       i) On your windows box, download the 24.04.3 iso file
+
+       ii) Use Balena Etcher to write the iso to the USB drive
+
+       iii) Boot into your BIOS and boot from the USB drive
+
+           Install to the right drive!
+
+1) Some additional software:
+
+    sudo apt install git
+
+    sudo apt install gh
+
+    % login to github using gh auth login and entering my credentials   
+   
+3) Maintain /home/$USER/CUDA_NekRS_vars.sh
 
     ... 
     
@@ -8,21 +30,21 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04
 
     may evolve into a family of scripts, or a single script that does everything
 
-2) Install CUDA
+4) Install CUDA
 
-    a) install CUDA drivers
+    a) Install or update CUDA drivers
 
-    b) install CUDA toolkit
+    b) Install CUDA toolkit
 
     https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
-    See Install_CUDA_on_Ubuntu.txt for instructions.
+    See Install_CUDA_on_Ubuntu.txt for instructions
 
-3) Install ucx
+5) Install ucx
 
-4) Install openmpi
+6) Install openmpi
 
-    For both steps use:
+    For both steps I used:
 
         https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
@@ -31,7 +53,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04
 
     ...
 
-5) Verify everything works so far with successful cuda_samples build
+7) Verify everything works so far with successful cuda_samples build
 
     c) build cuda samples
         
@@ -39,8 +61,8 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04
 
     ...
 
-6) Install OCCA
+8) Install OCCA
 
 
-7) Finally, install NekRS
+9) Finally, install NekRS
 
