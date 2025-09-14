@@ -17,7 +17,6 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
     a) Run this script
 
        sudo apt install git
-   
        sudo apt install gh
    
        % login to github using gh auth login and enter your credentials   
