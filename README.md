@@ -69,14 +69,15 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 13) Verify everything works (so far) with successful cuda_samples build
 
-    c) build cuda samples
+      a) we need glut, vulkan, freeimage, glfw3 libraries first
+    
+      b) build cuda samples
         
-        i) we need glut, vulkan, freeimage, glfw3 libraries first
 
     ...
 
-14) Install OCCA
+15) Install OCCA
 
 
-15) Finally, install NekRS
+16) Finally, install NekRS
 
