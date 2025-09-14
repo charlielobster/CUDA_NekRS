@@ -22,7 +22,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
    
 3) Maintain /home/$USER/CUDA_NekRS_vars.sh
 
-   Sourced into your terminal
+   Source these variables into your terminal
 
    . ./CUDA_NekRS_vars.sh
 
