@@ -13,14 +13,10 @@ First, flash a hard drive with Ubuntu and boot into it
   From your BIOS, boot from the USB drive and install to the target drive
 
   In my case, it became necessary to unclick the "Install latest Graphics and Wifi hardware drivers" during the install.
-  Apparently I experienced errors upgrading their proprietary cuda driver to match with the Toolkit. 
+  Apparently I experienced errors upgrading their proprietary GPU drivers to match with the Toolkit. 
   There is fix out there for that issue, but I'd rather not add more steps to this Readme.
 
-
-
-
-
-Now, Install CUDA Toolkit, Drivers, and related development tools, taken from this link:
+Now, Install CUDA Toolkit, drivers, and related development tools, taken from this link:
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
     
@@ -35,19 +31,13 @@ https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&D
       sudo apt-get install -y nvidia-open
       reboot
 
-This creates a folder called /usr/local/cuda-13.0 containing the CUDA 13.0 contents
+This creates a folder called /usr/local/cuda-13.0
 
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
 Verify a few steps from that document, starting with Section 3. This Readme assumes a remote repository installation method. In the link above, Ubuntu instructions begin at section 4.8. Then,
       
       sudo apt install nvidia-gds
-
-
-
-
-
-
 
 Install required libraries for this tutorial that aren't installed by the steps:
        
