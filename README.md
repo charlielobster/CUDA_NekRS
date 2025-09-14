@@ -38,8 +38,11 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
    These tools were compiled from source and reconfigured for CUDA support
 
-   a)
-      i) /home/USER/
+   a)SOMETHING
+      12) SOMETHING
+      a) Something
+         i) Sometihng
+            /home/USER/
             /home/USER/repos/CUDA_NekRS
             /home/USER/repos/ucx
             /home/USER/repos/ompi
