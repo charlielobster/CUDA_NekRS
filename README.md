@@ -38,7 +38,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
    Create a folder called repos and put each tool in their respective locations with
 
           git clone https://github.com/openucx/ucx.git
-           git clone https://github.com/openmpi/ompi.git
+          git clone https://github.com/openmpi/ompi.git
 
 14)      i) Something
             /home/USER/
