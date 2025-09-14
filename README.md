@@ -107,10 +107,11 @@ For both UCX and openmpi steps, I used this link:
 
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
-Before we can install openmpi, we need to install gnu fortran and Flex:
+Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
        
     sudo apt install gfortran
     sudo apt install flex
+    sudo apt-get install zlib1g-dev liblz4-dev libzstd-dev
 
     cd repos/ompi
     sudo mkdir $OMPI_HOME
@@ -150,4 +151,3 @@ Install OCCA
 Finally, we are ready to install NekRS
 
 
-sudo apt-get install zlib1g-dev liblz4-dev libzstd-dev
