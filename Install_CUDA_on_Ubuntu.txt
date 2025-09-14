@@ -3,23 +3,6 @@
 
     Perform the Pre-installation Actions.
 
-    Choose an installation method: Local Repository Installation or Network Repository Installation.
-
-4.8.2. Local Repository Installation
-
-    Install local repository on file system:
-
-    # dpkg -i cuda-repo-<distro>-X-Y-local_<version>*_<arch>.deb
-
-Enroll ephemeral public GPG key:
-
-# cp /var/cuda-repo-<distro>-X-Y-local/cuda-*-keyring.gpg /usr/share/keyrings/
-
-Add pin file to prioritize CUDA repository:
-
-$ wget https://developer.download.nvidia.com/compute/cuda/repos/<distro>/<arch>/cuda-<distro>.pin
-# mv cuda-<distro>.pin /etc/apt/preferences.d/cuda-repository-pin-600
-
 4.8.3. Network Repository Installation
 
 Install the cuda-keyring package:
