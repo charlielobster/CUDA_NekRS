@@ -27,7 +27,19 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
          . ./CUDA_NekRS_vars.sh
        
-   It sets CUDA_HOME, modifies LD_LIBRARY_PATH, PATH etc
+   This is the script you'll use before running programs in NekRS.
+   It performs housekeeping like setting CUDA_HOME, modifying LD_LIBRARY_PATH, PATH etc.
+   Perhaps you should add this to your .profile, or similar User terminal initialization.
+   
+10) Install CUDA
+
+    a) Install or update CUDA drivers
+    b) Install CUDA toolkit
+
+       https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+
+       See Install_CUDA_on_Ubuntu.txt for instructions
+
 
 7) Topology
 
@@ -51,15 +63,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
         /home/USER/repos/ompi
         /home/USER/repos/OCCA
         /home/USER/repos/nekRS
-   
-10) Install CUDA
 
-    a) Install or update CUDA drivers
-    b) Install CUDA toolkit
-
-       https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
-
-       See Install_CUDA_on_Ubuntu.txt for instructions
 
 11) Install UCX
 
