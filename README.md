@@ -155,7 +155,7 @@ I made two small changes to the OCCA codebase. In configure-cmake.sh, I enabled 
     cd repos/occa
     ./configure-cmake.sh
     cmake --build build
-    cmake --install build --prefix install
+    cmake --install build --prefix $OCCA_HOME
 
 The build failed at first. I made two small changes to the OCCA codebase. I enabled FORTRAN by default, which isn't necessary but was more consistent with the intent, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably another CUDA version upgrade issue). So, we don't get debug output for those two events now, but the trade-off is worth it in the short term.
 
