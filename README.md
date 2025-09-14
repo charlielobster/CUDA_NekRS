@@ -80,7 +80,7 @@ https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&D
       sudo apt-get install -y nvidia-open
       reboot
 
-This creates a folder containing the CUDA 13.0 contents called /usr/local/cuda-13.0
+This creates a folder called /usr/local/cuda-13.0 containing the CUDA 13.0 contents
 
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
