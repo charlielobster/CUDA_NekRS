@@ -1,5 +1,7 @@
 Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
+I've tried to make this document self-contained, so although I include links I've used for reference, you shouldn't have to follow them for finding any scripting comands or additional required steps.
+
 First, flash a hard drive with Ubuntu and boot into it
 
   Inside your Windows instance, download the Ubuntu 24.04.3 iso file
@@ -104,7 +106,7 @@ For both UCX and openmpi steps, I used this link:
 
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
-Before we install openmpi, we need to install gnu fortran:
+Before we install openmpi, we need to install gnu fortran and Flex:
        
     sudo apt install gfortran
     sudo apt install flex
