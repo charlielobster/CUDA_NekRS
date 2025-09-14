@@ -21,7 +21,7 @@ Then, add other optional utilities
 
 Topology
 
-These tools were compiled from source and configured for CUDA support
+Generally speaking, these tools need to be configured for CUDA support and built from source
 
 Once inside Ubuntu, create a folder called repos and clone each tool in their respective folders
 
