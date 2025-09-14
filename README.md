@@ -28,9 +28,9 @@ In a terminal, type:
 
     . ./CUDA_NekRS_vars.sh
        
-This is the script you'll use before running programs in NekRS.
-It performs housekeeping like setting CUDA_HOME, modifying LD_LIBRARY_PATH, PATH etc.
-Perhaps add this to your .profile, or terminal initialization.
+Use the script before running programs in NekRS.
+It performs housekeeping settings like CUDA_HOME, LD_LIBRARY_PATH, PATH etc.
+Maybe add to your .profile for terminal initialization.
    
 Install CUDA
 
