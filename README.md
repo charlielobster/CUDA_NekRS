@@ -2,15 +2,15 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 First, flash a hard drive with Ubuntu and boot into it
 
-  a) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
+  Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
   Go to https://ubuntu.com/download/desktop and click the green button
 
-  b) Balena stopped working for me after a couple of times, so I switched to Rufus. Follow these directions:
+  Balena Etcher stopped working for me after a couple of times, so I switched to Rufus. Follow these directions:
   
   https://ubuntu.com/tutorials/create-a-usb-stick-on-windows
 
-  c) From your BIOS, boot from the USB drive and install to the target drive
+  From your BIOS, boot from the USB drive and install to the target drive
 
   In my case, it became necessary to unclick the "Install latest Graphics and Wifi hardware drivers" during the install.
   Apparently I experienced errors upgrading their proprietary cuda driver to match with the Toolkit. 
@@ -18,15 +18,15 @@ First, flash a hard drive with Ubuntu and boot into it
 
 Install required libraries for this tutorial that aren't installed by the steps:
        
-       sudo apt install gfortran
+    sudo apt install gfortran
 
 Install git and github connection
 
-      sudo apt install git         
-      sudo apt install gh         
-      # login to github using gh auth login and enter your credentials
-      git config --global user.email <your email>
-      git config --global user.name <your name>
+    sudo apt install git         
+    sudo apt install gh         
+    # login to github using gh auth login and enter your credentials
+    git config --global user.email <your email>
+    git config --global user.name <your name>
 
 Then, add other optional utilities
    
@@ -62,7 +62,8 @@ The topology looks like this:
       
 Use the script before running programs in NekRS. It performs housekeeping settings for CUDA_HOME, PATH, LD_LIBRARY_PATH etc. Maybe add to your .profile for terminal initialization. 
 
-Now, install CUDA development tools, taken from this link:
+
+Now, Install CUDA Toolkit, Drivers, and related development tools, taken from this link:
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
     
@@ -86,7 +87,6 @@ Verify a few steps from that document, starting with Section 3. This Readme assu
       sudo apt install nvidia-gds
 
 
-Install CUDA toolkit
       
 See Install_CUDA_on_Ubuntu.txt for instructions
 
