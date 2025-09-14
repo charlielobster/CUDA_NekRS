@@ -20,16 +20,16 @@ Now, Install CUDA Toolkit, drivers, and related development tools, taken from th
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
     
-      wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
-      sudo mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
-      wget https://developer.download.nvidia.com/compute/cuda/13.0.1/local_installers/cuda-repo-ubuntu2404-13-0-local_13.0.1-580.82.07-1_amd64.deb
-      sudo dpkg -i cuda-repo-ubuntu2404-13-0-local_13.0.1-580.82.07-1_amd64.deb
-      sudo cp /var/cuda-repo-ubuntu2404-13-0-local/cuda-*-keyring.gpg /usr/share/keyrings/
-      sudo apt-get update
-      sudo apt-get -y install cuda-toolkit-13-0
-      # install open drivers
-      sudo apt-get install -y nvidia-open
-      reboot
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
+    sudo mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
+    wget https://developer.download.nvidia.com/compute/cuda/13.0.1/local_installers/cuda-repo-ubuntu2404-13-0-local_13.0.1-580.82.07-1_amd64.deb
+    sudo dpkg -i cuda-repo-ubuntu2404-13-0-local_13.0.1-580.82.07-1_amd64.deb
+    sudo cp /var/cuda-repo-ubuntu2404-13-0-local/cuda-*-keyring.gpg /usr/share/yrings/
+    sudo apt-get update
+    sudo apt-get -y install cuda-toolkit-13-0
+    # install open drivers
+    sudo apt-get install -y nvidia-open
+    reboot
 
 This creates a folder called /usr/local/cuda-13.0
 
@@ -37,7 +37,7 @@ https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
 Verify a few steps from that document, starting with Section 3. This Readme assumes a remote repository installation method. In the link above, Ubuntu instructions begin at section 4.8. Then,
       
-      sudo apt install nvidia-gds
+    sudo apt install nvidia-gds
 
 Install required libraries for this tutorial that aren't installed by the steps:
        
@@ -53,8 +53,8 @@ Install git and github connection
 
 Then, add other optional utilities
    
-      sudo snap install --classic code # Visual Studio Code
-      sudo apt install timeshift # Timeshift System Recovery
+    sudo snap install --classic code # Visual Studio Code
+    sudo apt install timeshift # Timeshift System Recovery
 
 This is a great time for a Restore Point!
 
@@ -78,21 +78,30 @@ Copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh to your own home direct
 
 The topology looks like this:
 
-      /home/USER/CUDA_NekRS_vars.sh
-      /home/USER/repos/CUDA_NekRS
-      /home/USER/repos/ucx
-      /home/USER/repos/ompi
-      /home/USER/repos/OCCA
-      /home/USER/repos/nekRS
+    /home/USER/CUDA_NekRS_vars.sh
+    /home/USER/repos/CUDA_NekRS
+    /home/USER/repos/ucx
+    /home/USER/repos/ompi
+    /home/USER/repos/OCCA
+    /home/USER/repos/nekRS
       
 Use the script before running programs in NekRS. It performs housekeeping settings for CUDA_HOME, PATH, LD_LIBRARY_PATH etc. Maybe add to your .profile for terminal initialization. 
 
-
-
 Install UCX
 
-      sudo apt install -y autoconf automake libtool m4 \
+
+    cd repos/ucx
+    sudo apt install -y autoconf automake libtool m4 \
            libnuma-dev hwloc libhwloc-dev
+    ./autogen.sh
+    ./configure --prefix=$UCX_HOME \
+            --with-cuda=$CUDA_HOME \
+            --enable-mt              \
+            --disable-assertions     \
+            --disable-debug \
+            --disable-params-check
+    make -j6
+    sudo make install
 
 Install ompi
 

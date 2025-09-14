@@ -7,7 +7,7 @@ export UCX_LIB=$UCX_HOME/lib
 export UCX_TLS="cuda"
 export UCX_NET_DEVICES="wlp5s0"
 
-export OMPI_HOME=/opt/ompi-5.0.08
+export OMPI_HOME=/opt/ompi-5.0.8
 export OMPI_LIB=$OMPI_HOME/lib
 
 export PATH=$CUDA_HOME/bin:$UCX_HOME/bin:$OMPI_HOME/bin:$PATH
