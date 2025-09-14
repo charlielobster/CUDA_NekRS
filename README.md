@@ -71,9 +71,6 @@ First verify a few steps from that document, starting with Section 3. This Readm
 
       wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb\
       sudo dpkg -i cuda-keyring_1.1-1_all.deb
-      sudo apt update
-      sudo apt upgrade # threw some errors
-      sudo apt autoremove
       sudo apt install cuda-toolkit
       sudo apt install nvidia-gds
 
