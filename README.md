@@ -2,7 +2,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 0) Flash a hard drive with Ubuntu, then boot into it
 
-   a) Find a hard drive you don't care about erasing
+   a) Find a hard drive
 
    b) Start with a USB drive containing the etched iso
 
