@@ -2,9 +2,13 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 First, flash a hard drive with Ubuntu and boot into it
 
-      a) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
-      b) Use Balena Etcher to write the iso to the USB drive
-      c) From your BIOS, boot from the USB drive and install to the target drive
+  a) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
+
+    Go to https://ubuntu.com/download/desktop and click the green button
+
+  b) Use Balena Etcher to write the iso to the USB drive
+
+  c) From your BIOS, boot from the USB drive and install to the target drive
 
 Setup required libraries
        
@@ -26,8 +30,7 @@ Then, add other optional utilities
 
 Topology
 
-Once inside Ubuntu, create a folder called repos, and clone each tool in their respective folders. These tools need to be configured for CUDA support and built from source.
-
+Once inside Ubuntu, create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
 
       mkdir repos
       cd repos
