@@ -72,6 +72,8 @@ https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&D
       sudo cp /var/cuda-repo-ubuntu2404-13-0-local/cuda-*-keyring.gpg /usr/share/keyrings/
       sudo apt-get update
       sudo apt-get -y install cuda-toolkit-13-0
+      # install open drivers
+      sudo apt-get install -y nvidia-open
 
 
 
