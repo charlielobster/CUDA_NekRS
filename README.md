@@ -149,3 +149,5 @@ Install OCCA
 
 Finally, we are ready to install NekRS
 
+
+sudo apt-get install zlib1g-dev liblz4-dev libzstd-dev
