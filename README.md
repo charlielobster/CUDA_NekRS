@@ -12,7 +12,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 1) Some additional software:
 
-    a) Run this script
+    a) Setup a github connection and maintain consistent folder management
 
        sudo apt install git
        sudo apt install gh   
@@ -26,19 +26,17 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ... 
     
-    currently just set CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
-
-    may evolve into a family of scripts, or a single script that does everything
+    currently it justs set CUDA_HOME, modify LD_LIBRARY_PATH, PATH etc
+    it may evolve into a family of scripts, or a script that calls many other scripts
 
 5) Install CUDA
 
     a) Install or update CUDA drivers
-
     b) Install CUDA toolkit
 
-    https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+       https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
-    See Install_CUDA_on_Ubuntu.txt for instructions
+       See Install_CUDA_on_Ubuntu.txt for instructions
 
 6) Install ucx
 
