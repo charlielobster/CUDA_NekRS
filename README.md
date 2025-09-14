@@ -110,6 +110,8 @@ Before we install openmpi, we need to install gnu fortran:
 
     cd repos/ompi
     sudo mkdir $OMPI_HOME
+    git submodule update --init --recursive
+    ./autogen.pl
     ./configure --prefix=$OMPI_HOME \
         --with-cuda=$CUDA_HOME \
         --with-ucx=$UCX_HOME \
