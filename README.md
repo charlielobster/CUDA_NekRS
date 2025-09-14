@@ -134,7 +134,7 @@ To fully build all the samples for our target OS, we need a few more libraries f
 
     sudo apt install cmake
     sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev
-    sudo apt install vulkan-tools vulkan-validationlayers spirv-tools
+    sudo apt install vulkan-tools
 
 Now build the samples        
 
