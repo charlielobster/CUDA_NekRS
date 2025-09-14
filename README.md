@@ -60,7 +60,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     For both steps I used:
 
-        https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
+    https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
 
     a) We need to install gnu fortran first
