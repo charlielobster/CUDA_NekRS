@@ -149,6 +149,7 @@ Install OCCA
 
 I made two small changes to the OCCA codebase. In configure-cmake.sh, I enabled FORTRAN by default, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably a CUDA version upgrade issue).
 
+    cd repos/occa
     ./configure-cmake.sh
     cmake --build build
     cmake --install build --prefix install
