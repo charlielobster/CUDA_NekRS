@@ -1,22 +1,22 @@
 Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
-I've tried to make this document self-contained, so although I include links I've used for reference, you shouldn't have to follow them for finding any scripting comands or additional required steps.
+I've tried to make this document self-contained, so although I will mention links I've used for reference, it isn't necessary to follow them for additional required steps.
 
-First, flash a hard drive with Ubuntu and boot into it
+First, flash a hard drive with Ubuntu and boot into it:
 
   Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
   Go to https://ubuntu.com/download/desktop and click the green button
 
-  Balena Etcher stopped working for me after a couple of times, so I switched to Rufus. Follow these directions:
+  Note that Balena Etcher stopped working for me after a couple of times, so I switched to Rufus. Follow these directions:
   
   https://ubuntu.com/tutorials/create-a-usb-stick-on-windows
 
   From your BIOS, boot from the USB drive and install to the target drive
 
-  In my case, it became necessary to unclick the "Install latest Graphics and Wifi hardware drivers" during the install.
-  Apparently I experienced errors replacing Ubuntu's proprietary GPU drivers so that it could sync up with the CUDA Toolkit. 
-  There is fix out there for that issue, but I'd rather not add more steps to this Readme.
+  Leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
+  I experienced errors replacing Ubuntu's proprietary GPU drivers so that it would sync up with the CUDA Toolkit libraries. 
+  There is fix out there for that issue, but not in this Readme.
 
 Now, Install CUDA Toolkit, drivers, and related development tools, taken from these links:
 
