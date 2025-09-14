@@ -4,7 +4,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
    a) Find a hard drive
 
-   b) Start with a USB drive containing the etched iso
+   b) Create a USB drive containing an etched, bootable Ubuntu iso
 
        i) On your windows box, download the 24.04.3 iso file
 
