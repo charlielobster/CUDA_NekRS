@@ -42,9 +42,9 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
        See Install_CUDA_on_Ubuntu.txt for instructions
 
-6) Install ucx
+6) Install UCX
 
-7) Install openmpi
+7) Install ompi
 
     For both steps I used:
 
