@@ -56,6 +56,8 @@ Then, add other optional utilities
       sudo snap install --classic code # Visual Studio Code
       sudo apt install timeshift # Timeshift System Recovery
 
+This would be a great time for a Restore Point!
+
 Topology
 
 Once inside Ubuntu, create a folder called repos, and clone each tool into their respective subfolders. These tools need to be configured for CUDA support and built from source.
