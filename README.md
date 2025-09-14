@@ -32,38 +32,35 @@ Once inside Ubuntu, create a folder called repos and clone each tool in their re
       git clone https://github.com/open-mpi/ompi.git
       git clone https://github.com/libocca/occa.git
       git clone https://github.com/Nek5000/nekRS.git
+      
+Copy the script called CUDA_NekRS_vars.sh to your home directory and source it
 
-The topology looks like this:
+    cp /repos/CUDA_NekRS/CUDA_NekRS_vars.sh $HOME
+    cd $HOME
+    . ./CUDA_NekRS_vars.sh       
 
-      /home/USER/
+The topology should look like this:
+
+      /home/USER/CUDA_NekRS_vars.sh
       /home/USER/repos/CUDA_NekRS
       /home/USER/repos/ucx
       /home/USER/repos/ompi
       /home/USER/repos/OCCA
       /home/USER/repos/nekRS
-   
-Copy the script called 
-
-      cp /home/$USER/CUDA_NekRS_vars.sh $HOME
-      cd $HOME
-
-In a terminal, type:
-
-    . ./CUDA_NekRS_vars.sh
-       
+      
 Use the script before running programs in NekRS.
 It performs housekeeping settings like CUDA_HOME, LD_LIBRARY_PATH, PATH etc.
 Maybe add to your .profile for terminal initialization.
    
 Now, install CUDA development tools
-
-  Install or update CUDA drivers
-
-  Install CUDA toolkit
-
-  https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
-
-  See Install_CUDA_on_Ubuntu.txt for instructions
+      
+      Install or update CUDA drivers
+      
+      Install CUDA toolkit
+      
+      https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+      
+      See Install_CUDA_on_Ubuntu.txt for instructions
 
 Install UCX
 
