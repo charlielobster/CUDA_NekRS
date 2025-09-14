@@ -16,9 +16,8 @@ First, flash a hard drive with Ubuntu without Graphics drivers and boot into it:
 
   3) From your BIOS, boot from the USB drive and install to the target drive
 
-     Leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
-  
-       I experienced errors replacing Ubuntu's proprietary GPU drivers so that it would sync up with the CUDA Toolkit libraries. 
+  Leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
+  I experienced errors replacing Ubuntu's proprietary GPU drivers so that it would sync up with the CUDA Toolkit libraries. 
   There is fix out there for that issue, but not in this Readme.
 
 Next, install CUDA Toolkit, drivers, and related development tools, taken from these links:
