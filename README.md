@@ -1,92 +1,94 @@
 Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
-0) Flash a hard drive with Ubuntu, then boot into it
+Flash a hard drive with Ubuntu and boot into it
 
-   a) Transfer a bootable USB drive's Ubuntu image to the drive
+      a) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
+      b) Use Balena Etcher to write the iso to the USB drive
+      c) From your BIOS, boot from the USB drive and install to the target drive
 
-    i) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
-    ii) Use Balena Etcher to write the iso to the USB drive
-    iii) From your BIOS, boot from the USB drive and install to the target drive
+Setup git and github connection
 
-   b) Setup git and github connection
+      sudo apt install git         
+      sudo apt install gh   
+      # login to github using gh auth login and enter your credentials
+      git config --global user.email <your email>
+      git config --global user.name <your name>
 
-       sudo apt install git         
-       sudo apt install gh   
-       # login to github using gh auth login and enter your credentials
-
-   c) Other optional utilities
+Other optional utilities
    
-       sudo snap install --classic code # Visual Studio Code
-       sudo apt install timeshift # Timeshift System Recovery
+      sudo snap install --classic code # Visual Studio Code
+      sudo apt install timeshift # Timeshift System Recovery
    
-1) Maintain /home/$USER/CUDA_NekRS_vars.sh
+Once inside Ubuntu, copy the script called 
 
-   a) In a terminal, type:
+      cp /home/$USER/CUDA_NekRS_vars.sh $HOME
+      cd $HOME
 
-         . ./CUDA_NekRS_vars.sh
+In a terminal, type:
+
+    . ./CUDA_NekRS_vars.sh
        
 This is the script you'll use before running programs in NekRS.
 It performs housekeeping like setting CUDA_HOME, modifying LD_LIBRARY_PATH, PATH etc.
 Perhaps add this to your .profile, or terminal initialization.
    
-2) Install CUDA
+Install CUDA
 
-    a) Install or update CUDA drivers
-    b) Install CUDA toolkit
+  Install or update CUDA drivers
 
-       https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+  Install CUDA toolkit
 
-       See Install_CUDA_on_Ubuntu.txt for instructions
+  https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
-
-3) Topology
-
-   These tools were compiled from source and configured for CUDA support
-
-   Create a folder called repos and put each tool in their respective locations
-
-        mkdir repos
-        cd repos
-        git clone https://github.com/charlielobster/CUDA_NekRS.git
-        git clone https://github.com/openucx/ucx.git
-        git clone https://github.com/open-mpi/ompi.git
-        git clone https://github.com/libocca/occa.git
-        git clone https://github.com/Nek5000/nekRS.git
-
-   Your topology should now look like this:
-
-        /home/USER/
-        /home/USER/repos/CUDA_NekRS
-        /home/USER/repos/ucx
-        /home/USER/repos/ompi
-        /home/USER/repos/OCCA
-        /home/USER/repos/nekRS
+  See Install_CUDA_on_Ubuntu.txt for instructions
 
 
-4) Install UCX
+Topology
 
-5) Install ompi
+These tools were compiled from source and configured for CUDA support
 
-    For both steps I used:
+Create a folder called repos and put each tool in their respective locations
 
-    https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
+      mkdir repos
+      cd repos
+      git clone https://github.com/charlielobster/CUDA_NekRS.git
+      git clone https://github.com/openucx/ucx.git
+      git clone https://github.com/open-mpi/ompi.git
+      git clone https://github.com/libocca/occa.git
+      git clone https://github.com/Nek5000/nekRS.git
+
+The topology looks like this:
+
+      /home/USER/
+      /home/USER/repos/CUDA_NekRS
+      /home/USER/repos/ucx
+      /home/USER/repos/ompi
+      /home/USER/repos/OCCA
+      /home/USER/repos/nekRS
 
 
-    but before we install ompi, we need to install gnu fortran first
+Install UCX
 
-    ...
+Install ompi
 
-6) Verify everything works (so far) with successful cuda_samples build
+For both steps I used:
 
-      a) we need glut, vulkan, freeimage, glfw3 libraries first
-    
-      b) build cuda samples
-        
-
-    ...
-
-15) Install OCCA
+https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
 
-16) Finally, install NekRS
+but before we install ompi, we need to install gnu fortran first
+
+...
+
+Verify everything works (so far) with successful cuda_samples build
+
+  a) we need glut, vulkan, freeimage, glfw3 libraries first
+
+  b) build cuda samples        
+  ...
+
+Install OCCA
+
+
+Finally, we are ready to install NekRS
 
