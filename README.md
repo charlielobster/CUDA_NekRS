@@ -35,8 +35,16 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 4) Topology
 
+   These tools were compiled from source and reconfigured for CUDA support
 
-5) Install CUDA
+   /home/USER/
+   /home/USER/repos/CUDA_NekRS
+   /home/USER/repos/ucx
+   /home/USER/repos/ompi
+   /home/USER/repos/OCCA
+   /home/USER/repos/NekRS
+   
+6) Install CUDA
 
     a) Install or update CUDA drivers
     b) Install CUDA toolkit
@@ -45,9 +53,9 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
        See Install_CUDA_on_Ubuntu.txt for instructions
 
-6) Install UCX
+7) Install UCX
 
-7) Install ompi
+8) Install ompi
 
     For both steps I used:
 
@@ -58,7 +66,7 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ...
 
-8) Verify everything works so far with successful cuda_samples build
+9) Verify everything works so far with successful cuda_samples build
 
     c) build cuda samples
         
@@ -66,8 +74,8 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
     ...
 
-9) Install OCCA
+10) Install OCCA
 
 
-10) Finally, install NekRS
+11) Finally, install NekRS
 
