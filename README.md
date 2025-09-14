@@ -40,13 +40,12 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
           git clone https://github.com/openucx/ucx.git
           git clone https://github.com/openmpi/ompi.git
 
-14)      i) Something
-            /home/USER/
-            /home/USER/repos/CUDA_NekRS
-            /home/USER/repos/ucx
-            /home/USER/repos/ompi
-            /home/USER/repos/OCCA
-            /home/USER/repos/NekRS
+          /home/USER/
+          /home/USER/repos/CUDA_NekRS
+          /home/USER/repos/ucx
+          /home/USER/repos/ompi
+          /home/USER/repos/OCCA
+          /home/USER/repos/NekRS
    
 10) Install CUDA
 
