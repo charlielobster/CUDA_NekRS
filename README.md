@@ -161,7 +161,7 @@ Fifth, we are ready to install NekRS
 
 Recall I had made two small changes to the OCCA codebase. The conversion issue upgrading to newer drivers appears worse when I try the NekRS 3rd_Party codebase. I replaced the 3rd_Party/occa subfolder with my working copy of the tool, and got a successful build that way. In general, clone my forked copy of any repo to use my changes.
 
-This shell command fails for me:
+The first time I ran this shell command:
 
     CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig [-DCMAKE_INSTALL_PREFIX=$HOME/.local/nekrs]
 
