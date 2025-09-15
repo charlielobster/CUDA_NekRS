@@ -71,7 +71,7 @@ Create a folder called repos, and clone each tool into their respective subfolde
     git clone https://github.com/libocca/occa.git
     git clone https://github.com/Nek5000/nekRS.git
       
-Copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh to your own home directory, and source it
+Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh to your own home directory, and source it
 
     cd $HOME
     cp /repos/CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh $HOME
