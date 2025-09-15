@@ -1,6 +1,6 @@
 Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
-This Readme is still in progress. While I am able to compile NekRS without issue, I'm still unable to run any NekRS samples without fatally crashing. Currently the error has to do with a call to OpenMPI (MPI_WaitAll), so I am trying to recompile ompi with better error handling, and suspect my OMPI build flags are throwing it off.
+This Readme is still in progress. While I am able to compile NekRS without issue now, I'm unable to run any NekRS samples without fatally crashing. Currently the error has to do with a call to OpenMPI (MPI_WaitAll), so I am trying to recompile ompi with better error handling, and suspect my OMPI build flags are throwing it off.
 
 I've tried to make this document self-contained, so although I will mention links I've used for reference, it isn't necessary to follow them for additional required steps unless explicitly stated.
 
