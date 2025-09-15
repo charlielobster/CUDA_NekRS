@@ -1,4 +1,4 @@
-Support scripts and documentation for CUDA NekRS installation on Ubuntu (v24.04.3 LTS, but subject to change)
+Support scripts and documentation for CUDA NekRS installation on Ubuntu (24.04.3 LTS, but subject to change)
 
 UPDATE 9/15 - This Readme is still in progress. I suspect I shouldn't be using the latest Nvidia Toolkit because one of the tools in NekRS's 3rd_party folder is configuring for compute_70, which is no longer in 13, so I need to look at 11 to be on the safe side. While I am able to compile NekRS without issue now, I'm unable to run any NekRS samples without fatally crashing. The most recent error is a call to OpenMPI (MPI_WaitAll) inside 3rd_party/gslib/ogs/oogs.cpp, so I am trying to recompile ompi with better error handling and will include a section on installing documentation and hopefully better error output for it with Sphinx and Python, and recheck my OMPI build flags. 
 
