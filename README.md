@@ -157,15 +157,16 @@ Fourth, install OCCA
 
 The build failed at first. I made two small changes to the OCCA codebase. I enabled FORTRAN by default which isn't necessary, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion errors there during the build (probably a CUDA version upgrade issue). So, we don't get debug output for those two events now, but the trade-off (repair the build) is worth it, in the short term.
 
-Fifth, we are ready to install NekRS
+Fifth, install NekRS
 
 Recall I had made two small changes to the OCCA codebase. The conversion issue upgrading to newer drivers appears worse when I try the NekRS 3rd_Party codebase. I replaced the 3rd_Party/occa subfolder with my working copy of the tool, and got a successful build that way. In general, clone my forked copy of any repo to use my changes.
 
-The first time I ran this shell command:
+From the nekRS Readme,
 
+    cd repos/nekRS
     CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig [-DCMAKE_INSTALL_PREFIX=$HOME/.local/nekrs]
 
-I received:
+The first time I ran it, I received:
 
     CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
     CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
@@ -180,4 +181,3 @@ This requires passing the paths to cmake in the command-line or using a set() be
 I am able then to compile the NekRS tool to 100% completion, but the samples are still broken. In line 193 of 3rd_Party/gslib/oogs.cpp, the following line throws a segmentation fault:
    
     MPI_CHECK(MPI_Waitall(pwd->comm[send].n + pwd->comm[recv].n, pwd->req, MPI_STATUSES_IGNORE));
-
