@@ -149,18 +149,16 @@ The binaries can be found in the build folder's Samples subfolder
 
 Fourth, install OCCA
 
-I made two small changes to the OCCA codebase. In configure-cmake.sh, I enabled FORTRAN by default, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably a CUDA version upgrade issue).
-
     cd repos/occa
     ./configure-cmake.sh
     cmake --build build
     sudo cmake --install build --prefix $OCCA_HOME
 
-The build failed at first. I made two small changes to the OCCA codebase. I enabled FORTRAN by default, which isn't necessary but was more consistent with the intent, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion error at those locations during the build (probably another CUDA version upgrade issue). So, we don't get debug output for those two events now, but the trade-off is worth it in the short term.
+The build failed at first. I made two small changes to the OCCA codebase. I enabled FORTRAN by default which isn't necessary, and in internal/modes/cuda/utils.cpp, I commented out two OCCA_CUDA_ERROR statements on lines 188 and 218, because I got a conversion errors there during the build (probably a CUDA version upgrade issue). So, we don't get debug output for those two events now, but the trade-off (repair the build) is worth it, in the short term.
 
 Fifth, we are ready to install NekRS
 
-Recall I had made two small changes to the OCCA codebase. The conversion issue upgrading to newer drivers is worse when I tried with the NekRS 3rd_Party codebase, so I replaced the 3rd_Party/occa subfolder with my working copy of the tool.
+Recall I had made two small changes to the OCCA codebase. The conversion issue upgrading to newer drivers appears worse when I try the NekRS 3rd_Party codebase. I replaced the 3rd_Party/occa subfolder with my working copy of the tool, and got a successful build that way. In general, clone my forked copy of any repo to use my changes.
 
 This shell command fails for me:
 
@@ -168,22 +166,11 @@ This shell command fails for me:
 
 I received:
 
-    ~/repos/NekRS$ CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig
-
-    cmake -S . -B build -Wfatal-errors
-    CMake Error at /usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:49 (message):
-    Could not find compiler set in environment variable CC:
-
-    mpicc.
-    Call Stack (most recent call first):
-    CMakeLists.txt:2 (project)
-
-
     CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
     CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
     CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
 
-Apparently this requires passing the paths to cmake in the command-line or using a set() before the call to project()
+This requires passing the paths to cmake in the command-line or using a set() before the call to project(). In 
 
     cmake -DCMAKE_CXX_COMPILER=/pathto/g++ -DCMAKE_C_COMPILER=/pathto/gcc /pathto/source
 
