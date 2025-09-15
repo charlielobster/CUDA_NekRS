@@ -176,6 +176,11 @@ This requires passing the paths to cmake in the command-line or using a set() be
 
 So these must be set with the path to mpicc etc.
 
+    set(CMAKE_CXX_COMPILER,"$ENV{OMPI_HOME}/bin")
+    set(CMAKE_C_COMPILER, "$ENV{OMPI_HOME}/bin") 
+    set(CMAKE_Fortran_COMPILER, "$ENV{OMPI_HOME}/bin") 
+
 I am able then to compile the NekRS tool to 100% completion, but the samples are all broken. In line 193 of 3rd_Party/gslib/oogs.cpp, the following line throws a segmentation fault:
    
-       MPI_CHECK(MPI_Waitall(pwd->comm[send].n + pwd->comm[recv].n, pwd->req, MPI_STATUSES_IGNORE));
+    MPI_CHECK(MPI_Waitall(pwd->comm[send].n + pwd->comm[recv].n, pwd->req, MPI_STATUSES_IGNORE));
+
