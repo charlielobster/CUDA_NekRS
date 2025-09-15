@@ -2,6 +2,8 @@ Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 
 
 This Readme is still in progress. While I am able to compile NekRS without issue now, I'm unable to run any NekRS samples without fatally crashing. The most recent error is a call to OpenMPI (MPI_WaitAll) inside 3rd_party/gslib/ogs/oogs.cpp, so I am trying to recompile ompi with better error handling, and suspect my OMPI build flags. 
 
+NekRS is a large project with many moving parts written for a different computing topology than a traditional laptop or pc. This Readme documents the process and progress of installing these tools. The tools appear to require build configuration for CUDA support so I am focusing on building them from source when possible. I don't know if that is necessary in every case. Overall, it seems the best way to get up to speed with any troubleshooting efforts.
+
 I've tried to make this document self-contained, so although I will mention links I've used for reference, it isn't necessary to follow them for additional required steps unless explicitly stated.
 
 First, install Ubuntu, without Graphics drivers, to a hard drive and boot into it:
@@ -61,8 +63,6 @@ This is a great time for a Restore Point. I include my user files.
 Topology
 
 Create a folder called repos, and clone each tool into their respective subfolders. 
-
-These tools appear to require build configuration for CUDA support so I build them from source. I don't know if that is necessary in every case. Overall, it seems the best way to get up to speed with any troubleshooting efforts. NekRS is a large project with many moving parts written for a different computing topology than a traditional laptop or pc. 
 
     mkdir repos
     cd repos
