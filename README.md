@@ -141,6 +141,7 @@ To fully build all the samples for our target OS, we need a few more libraries f
 
 Now build the samples        
 
+    cd repos/cuda-samples
     mkdir build && cd build
     cmake ..
     make -j$(nproc)
