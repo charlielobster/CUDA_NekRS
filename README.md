@@ -175,3 +175,7 @@ This requires passing the paths to cmake in the command-line or using a set() be
     cmake -DCMAKE_CXX_COMPILER=/pathto/g++ -DCMAKE_C_COMPILER=/pathto/gcc /pathto/source
 
 So these must be set with the path to mpicc etc.
+
+I am able then to compile the NekRS tool to 100% completion, but the samples are all broken. In line 193 of 3rd_Party/gslib/oogs.cpp, the following line throws a segmentation fault:
+   
+       MPI_CHECK(MPI_Waitall(pwd->comm[send].n + pwd->comm[recv].n, pwd->req, MPI_STATUSES_IGNORE));
