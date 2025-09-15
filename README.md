@@ -1,8 +1,10 @@
 Support scripts and documentation for CUDA NekRS installation on Ubuntu 24.04.3 LTS
 
-I've tried to make this document self-contained, so although I will mention links I've used for reference, it isn't necessary to follow them for additional required steps.
+This Readme is still in progress. While I am able to compile NekRS without issue, I'm still unable to run any NekRS samples without fatally crashing. Currently the error has to do with a call to OpenMPI (MPI_WaitAll) so I am trying to recompile ompi with better error handling, and suspect my OMPI build flags are throwing it off.
 
-Install Ubuntu, without Graphics drivers, to a hard drive and boot into it:
+I've tried to make this document self-contained, so although I will mention links I've used for reference, it isn't necessary to follow them for additional required steps unless explicitly stated.
+
+First, install Ubuntu, without Graphics drivers, to a hard drive and boot into it:
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
@@ -13,15 +15,13 @@ Follow these directions:
   
     https://ubuntu.com/tutorials/create-a-usb-stick-on-windows
 
-  3) From your BIOS, boot from the USB drive and install to the target drive
+3) From your BIOS, boot from the USB drive and install to the target drive
 
      Leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
 
-     I experienced errors replacing Ubuntu's proprietary GPU drivers so that it would sync up with the CUDA Toolkit libraries. 
-     
-     There is fix out there for that issue, but not in this Readme.
+     I experienced errors replacing Ubuntu's proprietary GPU drivers. This is required to sync up with the latest CUDA Toolkit libraries. There is a shell fix out there for that issue, but not in this Readme.
 
-Now install CUDA Toolkit, drivers, and related development tools, taken from these links:
+Second, install CUDA Toolkit, drivers, and related development tools, taken from these links:
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local
 
@@ -89,7 +89,7 @@ The topology looks like this:
       
 Use the script before running programs in NekRS. It performs housekeeping settings for CUDA_HOME, PATH, LD_LIBRARY_PATH etc. Maybe add to your .profile for terminal initialization. 
 
-First, Install UCX
+Third, install UCX
 
     cd repos/ucx
     sudo apt install -y autoconf automake libtool m4 \
@@ -104,7 +104,7 @@ First, Install UCX
     make -j6
     sudo make install
 
-Second, Install openmpi
+Fourth, install openmpi
 
 For both UCX and openmpi steps, I used this link:
 
@@ -131,7 +131,7 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
 
 This is another good time for a Restore Point.
 
-Third, verify everything links and works (so far) with a successful cuda_samples build
+Fourth, verify everything links and works (so far) with a successful cuda_samples build
 
 To fully build all the samples for our target OS, we need a few more libraries first:
 
@@ -146,7 +146,6 @@ Now build the samples
     make -j$(nproc)
 
 The binaries can be found in the build folder's Samples subfolder
-
 
 Fourth, install OCCA
 
@@ -184,8 +183,8 @@ I received:
     CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
     CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
 
-Apparently this requires passing the paths to cmake in the command-line or using a set() before the call to program()
+Apparently this requires passing the paths to cmake in the command-line or using a set() before the call to project()
 
     cmake -DCMAKE_CXX_COMPILER=/pathto/g++ -DCMAKE_C_COMPILER=/pathto/gcc /pathto/source
 
-So these must be set with the path to mpi++ etc.
+So these must be set with the path to mpicc etc.
