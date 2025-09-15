@@ -170,11 +170,7 @@ I received:
     CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
     CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
 
-This requires passing the paths to cmake in the command-line or using a set() before the call to project(). In 
-
-    cmake -DCMAKE_CXX_COMPILER=/pathto/g++ -DCMAKE_C_COMPILER=/pathto/gcc /pathto/source
-
-So these must be set with the path to mpicc etc, starting on line 3 in NekRS's top-level CMakeLists.txt:
+This requires passing the paths to cmake in the command-line or using a set() before the call to project(). So these must be set with the path to mpicc etc, starting on line 3 in NekRS's top-level CMakeLists.txt:
 
     set(CMAKE_CXX_COMPILER,"$ENV{OMPI_HOME}/bin")
     set(CMAKE_C_COMPILER, "$ENV{OMPI_HOME}/bin") 
