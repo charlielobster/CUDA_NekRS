@@ -7,6 +7,16 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 
 I am not sure if I needed to do this, but I created yet another ubuntu instance. As I understand it, the v12.8 is only available on Ubuntu 22.04. 
 
+UPDATE 9/16 - Attempting to downgrade my CUDA Toolkit to something closer to compute-70 for backward compatibility. 
+Sucessfully created an Ubuntu 22.04 image with a CUDA Toolkit v12.4 and Driver v550.163.01. This involved using apt-mark hold on all the nvidia and cuda packages.
+
+         sudo apt-mark hold $(sudo apt list --installed '*nvidia*' | cut -d'/' -f1)
+         sudo apt-mark hold $(sudo apt list --installed '*cuda*' | cut -d'/' -f1)
+
+Hopefully this is going to work better than the last run using 13.0.
+
+
+
 While I am able to compile NekRS without issue now, I'm unable to run any NekRS samples without fatally crashing. The most recent error is a call to OpenMPI (MPI_WaitAll) inside 3rd_party/gslib/ogs/oogs.cpp, so I am trying to recompile ompi with better error handling and will include a section on installing documentation and hopefully better error output for it with Sphinx and Python, and recheck my OMPI build flags. 
 
 NekRS is a large project with many moving parts written for a different computing topology than a traditional laptop or pc. This Readme documents the process and progress of installing its required tools for this target OS and topology, a typical gaming pc with an Nividia GPU. The tools appear to require build configuration for CUDA support so I am focusing on building them from source when possible. I don't know if that is necessary in every case. Overall, it seems the best way to get up to speed with any troubleshooting efforts.
