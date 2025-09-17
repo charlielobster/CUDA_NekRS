@@ -44,7 +44,7 @@ If you have a Driver Version < v13.0, just type:
     sudo apt install cuda-toolkit
 
 
-The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. 
+The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. However, if you have a Driver Version 13, apt install will automatically think you want the Version 13.0 Toolkit as well, which is incorrect in our case.
 
 So, all that means is that if your CUDA Version >= v13.0, do this instead:
 
