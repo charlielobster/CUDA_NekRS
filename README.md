@@ -1,6 +1,6 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu
 
-### Install Ubuntu 24.04.3 to a hard drive and boot into it.
+### 1. Install Ubuntu 24.04.3 to a hard drive and boot into it.
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
@@ -14,7 +14,7 @@
 
      If you are running a newer GPU, leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
 
-### Install CUDA Drivers (if not Present) and CUDA Toolkit (Under Version 13.0)
+### 2. Install CUDA Drivers (if not Present) and CUDA Toolkit (Under Version 13.0)
 
 If you are unsure if or what Driver and CUDA Version you have, open a terminal and type:
 
@@ -46,3 +46,95 @@ So if your Driver Version >= v13.0, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
+### Topology
+
+Create a folder called repos, and clone each tool into their respective subfolders. 
+
+    mkdir repos
+    cd repos
+    git clone https://github.com/openucx/ucx.git
+    git clone https://github.com/open-mpi/ompi.git
+    git clone https://github.com/libocca/occa.git
+    git clone https://github.com/Nek5000/nekRS.git
+      
+Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this repo to your own home directory, Check the CUDA Toolkit path first, and also find your wifi nic with a call to "ip a". Then, source it. 
+
+    cd $HOME
+    cp /repos/CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh $HOME
+    . ./CUDA_NekRS_vars.sh       
+
+The topology looks like this:
+
+    /home/USER/repos/ucx
+    /home/USER/repos/ompi
+    /home/USER/repos/OCCA
+    /home/USER/repos/nekRS
+      
+The following printenv command:
+
+    printenv | grep -e CUDA -e OCCA -e OMPI -e UCX -e PATH -e LD_LIBRARY_PATH
+
+Should return these variables:
+
+    OMPI_HOME=/opt/openmpi-5.0.8
+    OCCA_LIB=/opt/occa/lib
+    UCX_NET_DEVICES=<your nic>
+    UCX_LIB=/opt/ucx-1.20.0/lib
+    ...
+    UCX_HOME=/opt/ucx-1.20.0
+    OMPI_LIB=/opt/openmpi-5.0.8/lib
+    CUDA_LIB=/usr/local/cuda-12.8/lib64
+    LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:/opt/ucx-1.20.0/lib:/opt/openmpi-5.0.8/lib:/opt/occa/lib:
+    UCX_TLS=cuda
+    CUDA_HOME=/usr/local/cuda-12.8
+    PATH=/usr/local/cuda-12.8/bin:/opt/ucx-1.20.0/bin:/opt/openmpi-5.0.8/bin:/opt/occa/:...
+
+Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
+
+### 3. Install UCX
+
+    cd repos/ucx
+    sudo apt install -y autoconf automake libtool m4 \
+           libnuma-dev hwloc libhwloc-dev
+    ./autogen.sh
+    ./configure --prefix=$UCX_HOME \
+            --with-cuda=$CUDA_HOME \
+            --enable-mt              
+    make -j6
+    sudo make install
+
+
+### 4. Install Open MPI
+
+Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
+       
+    sudo apt install gfortran
+    sudo apt install flex
+    sudo apt install zlib1g-dev liblz4-dev libzstd-dev
+
+    cd repos/ompi
+    sudo mkdir $OMPI_HOME
+    git submodule update --init --recursive
+    ./autogen.pl
+    ./configure --prefix=$OMPI_HOME \
+        --with-cuda=$CUDA_HOME \
+        --with-ucx=$UCX_HOME \
+        --with-ucx-libdir=$UCX_LIB \
+        --with-cuda-libdir=$CUDA_LIB \
+        --enable-mpirun-prefix-by-default
+    make -j6
+    sudo make install
+
+### 5. Install OCCA
+
+    cd repos/occa
+    ./configure-cmake.sh
+    cmake --build build
+    sudo cmake --install build --prefix $OCCA_HOME
+
+### 6. Install NekRS
+
+From the nekRS Readme,
+
+    cd repos/nekRS
+    CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig [-DCMAKE_INSTALL_PREFIX=$HOME/.local/nekrs]
