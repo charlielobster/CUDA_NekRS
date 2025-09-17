@@ -13,3 +13,15 @@
 3) From your BIOS, boot from the USB drive and install to the target drive
 
      If you are running a newer GPU, leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
+
+### Install CUDA Drivers (if not Present) and Toolkit
+
+If you are unsure if you need a CUDA Driver or you just want to know what Driver and CUDA Version you have, type:
+
+    nvidia-smi
+
+In a terminal, type:
+
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
+    sudo dpkg -i cuda-keyring_1.1-1_all.deb
+    sudo apt update
