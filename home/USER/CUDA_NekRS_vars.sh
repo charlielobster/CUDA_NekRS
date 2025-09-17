@@ -1,4 +1,4 @@
-export CUDA_HOME=/usr/local/cuda-13.0
+export CUDA_HOME=/usr/local/cuda-12.4
 export CUDA_LIB=$CUDA_HOME/lib64
 
 export UCX_HOME=/opt/ucx-1.20.0

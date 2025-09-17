@@ -114,20 +114,17 @@ Third, install UCX
     ./autogen.sh
     ./configure --prefix=$UCX_HOME \
             --with-cuda=$CUDA_HOME \
-            --enable-mt              \
-            --disable-assertions     \
-            --disable-debug \
-            --disable-params-check
+            --enable-mt              
     make -j6
     sudo make install
 
-Fourth, install openmpi
+Fourth, install Open MPI
 
 For both UCX and openmpi steps, I used this link:
 
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
-Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
+Before we can install openmpi, we need to install gnu fortran, Flex, Sphinx, and zlib:
        
     sudo apt install gfortran
     sudo apt install flex
@@ -154,7 +151,7 @@ To fully build all the samples for our target OS, we need a few more libraries f
 
     sudo apt install cmake
     sudo apt install freeglut3-dev libfreeimage-dev libglfw3-dev
-    sudo apt install vulkan-tools glslc spriv-tools glslang-tools
+    sudo apt install vulkan-tools glslang-tools
 
 Now build the samples        
 
