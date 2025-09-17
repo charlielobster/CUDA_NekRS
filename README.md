@@ -10,7 +10,9 @@ Attempting to downgrade my CUDA Toolkit to something closer to compute-70 for ba
     sudo apt-mark hold $(sudo apt list --installed '*nvidia*' | cut -d'/' -f1)
     sudo apt-mark hold $(sudo apt list --installed '*cuda*' | cut -d'/' -f1)
 
-Doing this does break the Nsight and Ncompute QT frontends, but hopefully this is going to work for NekRS better than the last run using CUDA Version 13.0.
+Doing this does break the Nsight and Ncompute QT frontends, but hopefully this is going to work for NekRS better than the last run using CUDA Version 13.0. This fixed it for me:
+
+    sudo apt install libxcb-cursor0
 
 ### UPDATE 9/15 
 This Readme is still in progress. I suspect I shouldn't be using the latest Nvidia Toolkit v13 because one of the tools in NekRS's 3rd_party folder is configuring for compute_70, which is no longer in v13. v13 only has support for minimum compute of 7.5. 
