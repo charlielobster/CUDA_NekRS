@@ -1,6 +1,6 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu
 
-First, install Ubuntu, without Graphics drivers, to a hard drive and boot into it:
+First, install Ubuntu 24.04.3 to a hard drive and boot into it:
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
