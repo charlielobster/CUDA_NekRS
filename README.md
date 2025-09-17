@@ -31,7 +31,7 @@ If you have a one, you'll get back something like:
 
 In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything under v13.0 is not a problem. 
 
-To help clarify a very murky subject, there is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device, and the Toolkit Version determines what hardware architectures your codebase can target. 
+To help clarify a very murky subject, there is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device, and the Toolkit Version determines what hardware architectures your codebase can target. The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. 
 
 In a terminal, type:
 
@@ -44,7 +44,7 @@ If you have a Driver Version < v13.0, just type:
     sudo apt install cuda-toolkit
 
 
-The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. However, if you have a Driver Version 13, apt install will automatically think you want the Version 13.0 Toolkit as well, which is incorrect in our case.
+However, if you have a Driver Version 13, apt install will automatically think you want the Version 13.0 Toolkit as well, which is incorrect in our case.
 
 So, all that means is that if your CUDA Version >= v13.0, do this instead:
 
