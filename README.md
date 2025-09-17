@@ -1,4 +1,4 @@
-# Support scripts and documentation for CUDA NekRS installation on Ubuntu (24.04.3 LTS, but subject to change)
+# Support Documentation for CUDA NekRS Installation on Ubuntu
 
 ### UPDATE 9/17 
 I finally got NekRS building without errors and ran the example with output. My build without CUDA must have worked after all (but ran much much slower). Some .par file settings are missing from the examples in order to generate output. It's not clear exactly but it seems I should be able to build on CUDA Version 12.8 on Ubuntu 24.02 for a best-of-both-worlds type of situation. I believe that is Driver v570. Also, Nek5000's copy of NekRS didn't work for me. I used Jezsw's fork, which has more recent changes.
