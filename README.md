@@ -15,7 +15,7 @@ Sucessfully created an Ubuntu 22.04 image with a CUDA Toolkit v12.4 and Driver v
 
 It does break the Nsight and Ncompute QT frontends, but hopefully this is going to work for NekRS better than the last run using v13.0 drivers.
 
-9/17 I finally got NekRS building without errors and ran example with output. There are some .par file settings missing from the examples. It's not clear exactly but it seems I should be able to build on v12.8 on Ubuntu 24.02 for a best-of-both-worlds situation. I believe that is the compute version 570. Also, Nek5000's copy of NekRS didn't work for me. I had to use Jezsw's fork which has more recent changes.
+UPDATE 9/17 I finally got NekRS building without errors and ran example with output. There are some .par file settings missing from the examples. It's not clear exactly but it seems I should be able to build on v12.8 on Ubuntu 24.02 for a best-of-both-worlds situation. I believe that is the compute version 570. Also, Nek5000's copy of NekRS didn't work for me. I had to use Jezsw's fork which has more recent changes.
 
 While I am able to compile NekRS without issue now, I'm unable to run any NekRS samples without fatally crashing. The most recent error is a call to OpenMPI (MPI_WaitAll) inside 3rd_party/gslib/ogs/oogs.cpp, so I am trying to recompile ompi with better error handling and will include a section on installing documentation and hopefully better error output for it with Sphinx and Python, and recheck my OMPI build flags. 
 
