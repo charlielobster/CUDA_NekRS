@@ -29,7 +29,7 @@ If you have a one, you'll get back something like:
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
 
-In the example Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything <v13.0 is less of a problem.
+In the example Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything under v13.0 is less of a problem. 
 
 In a terminal, type:
 
@@ -45,4 +45,4 @@ But if your Driver Version >= v13.0, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
-This is because NekRS is targeted to compute-70 (CUDA Version 7.0) architectures.
+This is because the NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections.
