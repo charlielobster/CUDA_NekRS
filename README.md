@@ -14,7 +14,7 @@
 
      If you are running a newer GPU, leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
 
-### Install CUDA Drivers (if not Present) and CUDA Toolkit
+### Install CUDA Drivers (if not Present) and CUDA Toolkit (Under Version 13.0)
 
 If you are unsure if or what Driver and CUDA Version you have, open a terminal and type:
 
@@ -45,4 +45,4 @@ But if your Driver Version >= v13.0, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
-This is because the NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections.
+This is because the NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. The main takeaway is that we need a CUDA Toolkit under Version 13.0 to successfully build it with minimal changes.
