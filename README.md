@@ -88,6 +88,7 @@ Should return these variables:
     UCX_TLS=cuda
     CUDA_HOME=/usr/local/cuda-12.8
     PATH=/usr/local/cuda-12.8/bin:/opt/ucx-1.20.0/bin:/opt/openmpi-5.0.8/bin:/opt/occa/:...
+    OCCA_HOME=/opt/occa
 
 Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
 
