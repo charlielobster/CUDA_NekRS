@@ -16,7 +16,7 @@
 
 ### Install CUDA Drivers (if not Present) and CUDA Toolkit
 
-If you are unsure if you need a CUDA Driver or you just want to know what Driver and CUDA Version you have, type:
+If you are unsure if you need a CUDA Driver or you just want to know what Driver and CUDA Version you have, type this in a terminal:
 
     nvidia-smi
 
@@ -29,7 +29,7 @@ If you have a driver, you'll get back something like this:
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
 
-Here you can see my Driver Version is 570.172.08 and my CUDA Version is 12.8. Driver Version maps also to Device Version
+Here you can see in the example Driver Version is 570.172.08 and CUDA Version is 12.8.
 
 In a terminal, type:
 
