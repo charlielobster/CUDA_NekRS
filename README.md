@@ -16,11 +16,11 @@
 
 ### Install CUDA Drivers (if not Present) and CUDA Toolkit
 
-If you are unsure if you need a CUDA Driver or you just want to know what Driver and CUDA Version you have, type this in a terminal:
+If you are unsure if or what Driver and CUDA Version you have, open a terminal and type:
 
     nvidia-smi
 
-If you have a driver, you'll get back something like this:
+If you have a one, you'll get back something like:
 
     +-----------------------------------------------------------------------------------------+
     | NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
@@ -29,10 +29,20 @@ If you have a driver, you'll get back something like this:
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
 
-Here you can see in the example Driver Version is 570.172.08 and CUDA Version is 12.8.
+In the example Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything <v13.0 is less of a problem.
 
 In a terminal, type:
 
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
     sudo dpkg -i cuda-keyring_1.1-1_all.deb
     sudo apt update
+
+Next, if you have a Driver Version < v13.0, just type:
+    
+    sudo apt install cuda-toolkit
+
+But if your Driver Version >= v13.0, do this instead:
+
+    sudo apt install cuda-toolkit-12-8
+
+This is because NekRS is targeted to compute-70 (CUDA Version 7.0) architectures.
