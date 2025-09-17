@@ -29,7 +29,9 @@ If you have a one, you'll get back something like:
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
 
-In the example Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything under v13.0 is less of a problem. 
+In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything under v13.0 is not a problem. 
+
+To help clarify a very murky subject, there is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device, and the Toolkit Version determines what hardware architectures your codebase can target. 
 
 In a terminal, type:
 
@@ -37,12 +39,14 @@ In a terminal, type:
     sudo dpkg -i cuda-keyring_1.1-1_all.deb
     sudo apt update
 
-Next, if you have a Driver Version < v13.0, just type:
+If you have a Driver Version < v13.0, just type:
     
     sudo apt install cuda-toolkit
 
-The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. We need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes. 
-So if your Driver Version >= v13.0, do this instead:
+
+The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. 
+
+So, all that means is that if your CUDA Version >= v13.0, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
