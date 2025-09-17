@@ -8,14 +8,17 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 I am not sure if I needed to do this, but I created yet another ubuntu instance. As I understand it, the v12.8 is only available on Ubuntu 22.04. 
 
 UPDATE 9/16 - Attempting to downgrade my CUDA Toolkit to something closer to compute-70 for backward compatibility. 
-Sucessfully created an Ubuntu 22.04 image with a CUDA Toolkit v12.4 and Driver v550.163.01. This involved using apt-mark hold on all the nvidia and cuda packages so I could invoke sudo apt upgrade without upgrading the Nvidia libraries.
+Sucessfully created an Ubuntu 22.04 image with a CUDA Toolkit and Version 12.4 and Driver Version 550.163.01. This involved checking my driver version with nvidia-smi, installing the 12.4 Toolkit, then using apt-mark hold on all the nvidia and cuda packages so I could invoke sudo apt upgrade everything else without upgrading the Nvidia libraries.
 
     sudo apt-mark hold $(sudo apt list --installed '*nvidia*' | cut -d'/' -f1)
     sudo apt-mark hold $(sudo apt list --installed '*cuda*' | cut -d'/' -f1)
 
-It does break the Nsight and Ncompute QT frontends, but hopefully this is going to work for NekRS better than the last run using v13.0 drivers.
+Doing this does break the Nsight and Ncompute QT frontends, but hopefully this is going to work for NekRS better than the last run using CUDA Version 13.0.
 
-UPDATE 9/17 I finally got NekRS building without errors and ran example with output. There are some .par file settings missing from the examples. It's not clear exactly but it seems I should be able to build on v12.8 on Ubuntu 24.02 for a best-of-both-worlds situation. I believe that is the compute version 570. Also, Nek5000's copy of NekRS didn't work for me. I had to use Jezsw's fork which has more recent changes.
+UPDATE 9/17 I finally got NekRS building without errors and ran the example with output. My build without CUDA must have worked after all (but ran much much slower). Some .par file settings are missing from the examples in order to generate output. It's not clear exactly but it seems I should be able to build on CUDA Version 12.8 on Ubuntu 24.02 for a best-of-both-worlds type of situation. I believe that is Driver v570. Also, Nek5000's copy of NekRS didn't work for me. I used Jezsw's fork, which has more recent changes.
+
+
+LAST NOTES FROM PREVIOUS ATTEMPTS - DISREGARD THESE INSTRUCTIONS
 
 While I am able to compile NekRS without issue now, I'm unable to run any NekRS samples without fatally crashing. The most recent error is a call to OpenMPI (MPI_WaitAll) inside 3rd_party/gslib/ogs/oogs.cpp, so I am trying to recompile ompi with better error handling and will include a section on installing documentation and hopefully better error output for it with Sphinx and Python, and recheck my OMPI build flags. 
 
