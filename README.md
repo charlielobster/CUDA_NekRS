@@ -211,7 +211,7 @@ Then,
     
     mpirun -np 2 nekrs --setup turbPipe.par
 
- (i did see some new occa errors i should investigate, but seems to be working)
+ (Note to self, new occa errors, but seems to be working)
 
 ### 10. Install Paraview
 
