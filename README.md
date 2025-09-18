@@ -180,7 +180,7 @@ Then
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/nek5000/nekrs
        cmake --build ./build --target install -j$(nproc)
 
-    I got these build errors! 
+    I got these build errors:
 
     <img src="images/nek5000_build_errors.png" />
 
