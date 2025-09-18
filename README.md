@@ -29,9 +29,9 @@ If you have a one, you'll get back something like:
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
     ...
-In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good. Anything under v13.0 is not a problem. 
+In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good. Anything under Version 13.0 is not a problem. 
 
-Let me attempt to clarify a very murky subject here. There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device on your machine. Meanwhile, your CUDA Toolkit's Version determines what hardware architectures your codebase can target. The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. 
+Let me attempt to clarify a murky subject. There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device on your machine. Meanwhile, your CUDA Toolkit's Version determines what hardware architectures your codebase is able to target. The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. 
 
 In a terminal, type:
 
@@ -44,9 +44,9 @@ If you have a Driver Version < v13.0, just type:
     sudo apt install cuda-toolkit
 
 
-However, if you have a Driver Version 13, apt install will automatically think you want the Version 13.0 CUDA Toolkit as well (which is incorrect!)
+However, if you have a Driver Version 13, apt install will automatically install the Version 13.0 CUDA Toolkit as well (which is incorrect!)
 
-So if your driver's CUDA Version is 13 or higher, do this instead:
+Long story short, if your driver's CUDA Version is 13 or higher, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
@@ -190,7 +190,7 @@ Then
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/JezSw/nekrs
        cmake --build ./build --target install -j$(nproc)
 
-    This one worked!
+    This worked!
 
 3) Since JezSw's version worked, export the JezSw path.
 
