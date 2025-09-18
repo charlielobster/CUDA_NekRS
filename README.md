@@ -57,7 +57,7 @@ Create a folder called repos, and clone each tool into their respective subfolde
     mkdir repos
     cd repos
     git clone https://github.com/openucx/ucx.git
-    git clone https://github.com/open-mpi/ompi.git
+    git clone --resursive https://github.com/open-mpi/ompi.git
     git clone https://github.com/libocca/occa.git
     git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
 
