@@ -117,6 +117,9 @@ should return these variables:
 
 Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
 
+### 5.0 Install gdrcopy (optional?) 
+    I tried to do this first to enable gdrcopy for UCX, seems like a feature. I was trying to enable CUDA acceleration in OpenMPI and thought that might help but it didn't seem to do anything.
+
 ### 5. Install UCX
 
     cd repos/ucx
