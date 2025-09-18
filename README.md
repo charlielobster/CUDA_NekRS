@@ -147,6 +147,12 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
     make -j$(nproc)
     sudo make install
 
+### UPDATE 8/18 
+
+I'm definitely not configuring openmpi correctly and Ubuntu also came with an earlier version of mpirun (v4) that is conflicting during my build. I need to use
+
+    ./configure --with-cuda=/usr/local/cuda \
+        --enable-mca-dso=btl-smcuda,rcache-rgpusm,rcache-gpusm,accelerator-cuda <other configure params>
 
 ### 6. Install Open MPI
 
@@ -264,6 +270,8 @@ https://developer.nvidia.com/cuda-gpus
 https://en.wikipedia.org/wiki/CUDA
 
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
+
+https://docs.open-mpi.org/en/v5.0.x/tuning-apps/networking/cuda.html
 
 https://stackoverflow.com/questions/28932864/which-compute-capability-is-supported-by-which-cuda-versions/28933055#28933055
 
