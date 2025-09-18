@@ -67,13 +67,7 @@ Create a separate top-level folder for multiple copies of nekRS:
     mkdir nek5000 && cd nek5000
     git clone https://github.com/Nek5000/nekRS.git
     cd .. && mkdir JezSw && cd JezSw
-    git clone https://github.com/JezSw/nekRS.git
-      
-Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this repo to your own home directory, Check the CUDA Toolkit path first, and also find your wifi nic with a call to "ip a". Then, source it. 
-
-    cd $HOME
-    cp /repos/CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh $HOME
-    . ./CUDA_NekRS_vars.sh       
+    git clone https://github.com/JezSw/nekRS.git  
 
 The topology changes:
 
@@ -91,6 +85,15 @@ Once everything is installed:
     /opt/UCX-1.20.0
     /opt/occa
       
+
+### 4. Environment Variables
+      
+Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this repo to your own home directory, Check the CUDA Toolkit path first, and also find your wifi nic with a call to "ip a". Then, source it. 
+
+    cd $HOME
+    cp /repos/CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh $HOME
+    . ./CUDA_NekRS_vars.sh     
+
 And the following printenv command:
 
     printenv | grep -E "CUDA|OCCA|UCX|OMPI|PATH"
@@ -113,7 +116,7 @@ should return these variables:
 
 Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
 
-### 4. Install UCX
+### 5. Install UCX
 
     cd repos/ucx
     sudo apt install -y autoconf automake libtool m4 \
@@ -127,7 +130,7 @@ Use the script before running programs in NekRS, or add its contents to your .pr
     sudo make install
 
 
-### 5. Install Open MPI
+### 6. Install Open MPI
 
 Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
        
@@ -148,7 +151,7 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
     make --j$(nprocs)
     sudo make install
 
-### 6. Install OCCA (possibly optional)
+### 7. Install OCCA (possibly optional)
 
 Install cmake
 
@@ -161,7 +164,7 @@ Then
     cmake --build build
     sudo cmake --install build --prefix $OCCA_HOME
 
-### 6. Install NekRS (in progress)
+### 8. Install NekRS (in progress)
 
 From the nekRS Readme,
 
@@ -174,7 +177,7 @@ Add these lines, starting at line xx to the turbPipePeriodic.par file:
     writeCondition = tt
     writeInterval = xx
 
-### 7. Install Paraview
+### 9. Install Paraview
 
     mkdir paraview_build
     cd paraview_build
