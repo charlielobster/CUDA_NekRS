@@ -172,7 +172,7 @@ Then
     cmake --build build
     sudo cmake --install build --prefix $OCCA_HOME
 
-### 8. Install NekRS (in progress)
+### 8. Install NekRS
 
 1) Try Nek5000's version:
 
@@ -198,7 +198,7 @@ Then
        export PATH=$NEKRS_HOME/bin:$PATH
 
 
-### 9. Get NekRS Output
+### 9. Get NekRS Output (in progress)
 
     cd $NEKRS_HOME/examples/turbPipePeriodic
 
