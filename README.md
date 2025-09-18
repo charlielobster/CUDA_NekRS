@@ -164,7 +164,7 @@ Install cmake
 
     sudo apt install cmake
 
-Then
+Then,
 
     cd repos/occa
     ./configure-cmake.sh
