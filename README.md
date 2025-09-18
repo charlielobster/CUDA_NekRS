@@ -201,10 +201,10 @@ Then
     cd $NEKRS_HOME/examples/turbPipePeriodic
 
 The nekRS example .par files are not set up to save any output. 
-Add these lines, starting at line xx to the turbPipePeriodic.par file:
+Add these lines, starting at line 8 to the turbPipe.par file:
 
-    writeCondition = tt
-    writeInterval = xx
+    writeControl = steps
+    writeInterval = 20
 
 Then,
     
