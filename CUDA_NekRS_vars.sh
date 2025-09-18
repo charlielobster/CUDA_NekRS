@@ -19,3 +19,6 @@ export LD_LIBRARY_PATH=$CUDA_LIB:$UCX_LIB:$OMPI_LIB:$OCCA_LIB:$LD_LIBRARY_PATH
 export CC=mpicc
 export CXX=mpic++
 export FC=mpif77
+
+export NEKRS_HOME=$HOME/builds/nekRS/JezSw/nekrs
+export PATH=$NEKRS_HOME/bin:$PATH
