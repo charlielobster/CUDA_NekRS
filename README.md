@@ -228,7 +228,7 @@ And install:
     ninja -j $(nproc)
 
 
-<iframe width="560" height="315" src="./images/output_clip_1.mp4" frameborder="0" allowfullscreen></iframe>
+<image width="560" height="315" src="./images/output_clip_1.mp4" frameborder="0" allowfullscreen />
 
 # REFERENCES
 
