@@ -122,7 +122,7 @@ Use the script before running programs in NekRS, or add its contents to your .pr
 
 ### 5.0 Install gdrcopy (optional?) 
     
-I tried to do this first to enable gdrcopy for UCX, seems like a feature. I was trying to enable CUDA acceleration in OpenMPI and thought that might help with that, but it didn't seem to do anything.
+I did this first to enable gdrcopy for UCX, as it seems like a feature. I was trying to enable CUDA acceleration in OpenMPI and thought that might help with that, but it didn't seem to do anything.
 
 ### 5. Install UCX
 
