@@ -191,8 +191,8 @@ Add these lines, starting at line xx to the turbPipePeriodic.par file:
 
 ### 10. Install Paraview
 
-    mkdir paraview_build
-    cd paraview_build
-    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../paraview
+    mkdir $HOME/builds/paraview
+    cd $HOME/builds/paraview
+    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../../repos/paraview
     ninja
 
