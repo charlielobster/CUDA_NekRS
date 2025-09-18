@@ -1,6 +1,6 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu
 
-### 1. Install Ubuntu 24.04.3 to a hard drive and boot into it.
+### 1. Install Ubuntu 24.04.3
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
 
@@ -14,7 +14,7 @@
 
      You may choose "Install latest Graphics and Wifi hardware drivers" during the install.
 
-### 2. Install CUDA Drivers (if not Present) and CUDA Toolkit (Under Version 13.0)
+### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13.0)
 
 If you are unsure if or what Driver and CUDA Version you have, open a terminal and type:
 
