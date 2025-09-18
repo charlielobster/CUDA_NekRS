@@ -46,7 +46,7 @@ If you have a Driver Version < v13.0, just type:
 
 However, if you have a Driver Version 13, apt install will automatically think you want the Version 13.0 CUDA Toolkit as well (which is incorrect!)
 
-So if your CUDA Version >= v13.0, do this instead:
+So if your driver's CUDA Version is 13 or higher, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
