@@ -166,10 +166,21 @@ Then
 
 ### 8. Install NekRS (in progress)
 
-From the nekRS Readme,
+1) Try Nek5000's version:
 
-    cd repos/nekRS
-    cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
+    From the nekRS Readme,
+
+       cd repos/nekRS/nek5000/nekRS
+       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
+
+2) Try JezSw's version:
+
+       cd repos/nekRS/JezSw/nekRS
+       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
+
+    This one worked for me!
+
+### 9. Get NekRS Output!
 
 The nekRS example .par files are not set up to save any output. 
 Add these lines, starting at line xx to the turbPipePeriodic.par file:
@@ -177,7 +188,7 @@ Add these lines, starting at line xx to the turbPipePeriodic.par file:
     writeCondition = tt
     writeInterval = xx
 
-### 9. Install Paraview
+### 10. Install Paraview
 
     mkdir paraview_build
     cd paraview_build
