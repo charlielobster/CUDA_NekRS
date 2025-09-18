@@ -140,7 +140,7 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
 
 ### 6. Install Open MPI
 
-Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
+First we need to install gnu fortran, Flex, and zlib:
        
     sudo apt install gfortran
     sudo apt install flex
