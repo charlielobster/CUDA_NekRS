@@ -91,8 +91,8 @@ Once everything is installed:
       
 Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this repo to your own home directory, Check the CUDA Toolkit path first, and also find your wifi nic with a call to "ip a". Then, source it. 
 
+    cp CUDA_NekRS_vars.sh $HOME
     cd $HOME
-    cp /repos/CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh $HOME
     . ./CUDA_NekRS_vars.sh     
 
 And the following printenv command:
