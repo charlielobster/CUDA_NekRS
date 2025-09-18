@@ -198,7 +198,7 @@ Then
 
 ### 9. Get NekRS Output
 
-    cd nekRS/examples/turbPipePeriodic
+    cd $NEKRS_HOME/examples/turbPipePeriodic
 
 The nekRS example .par files are not set up to save any output. 
 Add these lines, starting at line xx to the turbPipePeriodic.par file:
