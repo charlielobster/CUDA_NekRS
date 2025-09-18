@@ -74,6 +74,7 @@ The topology changes:
     /home/USER/repos/ucx
     /home/USER/repos/ompi
     /home/USER/repos/OCCA
+    /home/USER/repos/paraview
     /home/USER/repos/nekRS/nek5000/nekRS
     /home/USER/repos/nekRS/JezSw/nekRS
 
