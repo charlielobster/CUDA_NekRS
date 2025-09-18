@@ -81,6 +81,7 @@ Once everything is installed:
 
     /home/USER/builds/nekRS/nek5000/nekRS
     /home/USER/builds/nekRS/JezSw/nekRS
+    /home/USER/builds/paraview
     /opt/openmpi-5.0.8
     /opt/UCX-1.20.0
     /opt/occa
