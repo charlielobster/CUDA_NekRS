@@ -122,7 +122,7 @@ Use the script before running programs in NekRS, or add its contents to your .pr
 
 ### 4.9 Install gdrcopy (optional) 
     
-I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought the UCX compiler flag --with-gdrcopy=/path might help with that, but it didn't seem to do anything.
+I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought the UCX compiler flag "--with-gdrcopy=/path" might help with that, but it didn't seem to do anything.
 
 ### 5. Install UCX
 
