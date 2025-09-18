@@ -207,3 +207,5 @@ This requires passing the paths to cmake in the command-line or using a set() be
 I am able then to compile the NekRS tool to 100% completion, but the samples are still broken. In line 193 of 3rd_Party/gslib/oogs.cpp, the following line throws a segmentation fault in regards to permissions to a memory location.
    
     MPI_CHECK(MPI_Waitall(pwd->comm[send].n + pwd->comm[recv].n, pwd->req, MPI_STATUSES_IGNORE));
+
+

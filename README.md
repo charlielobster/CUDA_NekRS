@@ -104,6 +104,7 @@ Use the script before running programs in NekRS, or add its contents to your .pr
     ./autogen.sh
     ./configure --prefix=$UCX_HOME \
             --with-cuda=$CUDA_HOME \
+            --with-gdrcopy=/usr/local/ \
             --enable-mt              
     make -j6
     sudo make install
@@ -131,6 +132,10 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
     sudo make install
 
 ### 5. Install OCCA
+
+First, install cmake
+
+    sudo apt install cmake
 
     cd repos/occa
     ./configure-cmake.sh
