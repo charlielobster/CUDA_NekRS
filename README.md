@@ -227,15 +227,11 @@ And install:
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
     ninja -j $(nproc)
 
-[clique aqui.](https://www.youtube.com/watch?v=zfMgg_ozHO4)
 
-https://github.com/JanahAleixo/lab-natty-or-not/assets/107958723/fd0db285-1201-40e3-a70c-6d7420f4f158
 
 https://github.com/charlielobster/CUDA_NekRS/blob/main/images/output_clip_1.mp4
 
-<iframe src="images/output_clip_1.mp4" frameborder="0" allowfullscreen="true"></iframe>
 
-<video src="images/output_clip_1.mp4" controls></video>
 
 # REFERENCES
 
