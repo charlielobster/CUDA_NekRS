@@ -5,7 +5,7 @@ export UCX_HOME=/opt/ucx-1.20.0
 export UCX_LIB=$UCX_HOME/lib
 
 export UCX_TLS="cuda"
-export UCX_NET_DEVICES="wlp5s0"
+export UCX_NET_DEVICES=<your nic>
 
 export OMPI_HOME=/opt/openmpi-5.0.8
 export OMPI_LIB=$OMPI_HOME/lib
