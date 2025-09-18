@@ -94,7 +94,8 @@ Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home d
 
     cp CUDA_NekRS_vars.sh $HOME
     cd $HOME
-    ip a # collect <your nic> and add to script and check CUDA Toolkit path
+    ip a 
+    # collect <your nic> and add to script and check CUDA Toolkit path
     . ./CUDA_NekRS_vars.sh     
 
 This printenv command:
