@@ -74,9 +74,9 @@ The topology looks like this:
     /home/USER/repos/OCCA
     /home/USER/repos/nekRS
       
-The following printenv command:
+And the following printenv command:
 
-    printenv | grep -e CUDA -e OCCA -e OMPI -e UCX -e PATH -e LD_LIBRARY_PATH
+    printenv | grep -E "CUDA|OCCA|UCX|OMPI|PATH"
 
 Should return these variables:
 
@@ -137,9 +137,27 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
     cmake --build build
     sudo cmake --install build --prefix $OCCA_HOME
 
+#  IN PROGRESS
+
 ### 6. Install NekRS
 
 From the nekRS Readme,
 
     cd repos/nekRS
     CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig [-DCMAKE_INSTALL_PREFIX=$HOME/.local/nekrs]
+
+
+The nekRS example .par files are not set up to save any output. Add some lines to the turbPipePeriodic.par file:
+
+    writeCondition = timeStep
+    writeInterval = 100
+
+
+### 7. Install Paraview
+
+    git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
+    mkdir paraview_build
+    cd paraview_build
+    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../paraview
+    ninja
+
