@@ -71,18 +71,18 @@ Create a separate top-level folder for multiple copies of nekRS:
 
 The topology changes:
 
-    /home/USER/repos/ucx
-    /home/USER/repos/ompi
-    /home/USER/repos/OCCA
-    /home/USER/repos/paraview
-    /home/USER/repos/nekRS/nek5000/nekRS
-    /home/USER/repos/nekRS/JezSw/nekRS
+    ~/repos/ucx
+    ~/repos/ompi
+    ~/repos/OCCA
+    ~/repos/paraview
+    ~/repos/nekRS/nek5000/nekRS
+    ~/repos/nekRS/JezSw/nekRS
 
 Once everything is installed:
 
-    /home/USER/builds/nekRS/nek5000/nekRS
-    /home/USER/builds/nekRS/JezSw/nekRS
-    /home/USER/builds/paraview
+    ~/builds/nekRS/nek5000/nekRS
+    ~/builds/nekRS/JezSw/nekRS
+    ~/builds/paraview
     /opt/openmpi-5.0.8
     /opt/UCX-1.20.0
     /opt/occa
@@ -118,7 +118,9 @@ should return these variables:
     PATH=/usr/local/cuda-12.8/bin:/opt/ucx-1.20.0/bin:/opt/openmpi-5.0.8/bin:/opt/occa/:...
     OCCA_HOME=/opt/occa
 
-Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
+Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. If you cloned this repo, type this:
+
+    echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.profile
 
 ### 4.9 Install gdrcopy (optional) 
     
@@ -159,6 +161,8 @@ First we need to install gnu fortran, Flex, and zlib:
     sudo make install
 
 ### 7. Install OCCA (optional)
+
+I should attempt a run without doing this and see if it helps with JezSw occa errors during caching
 
 Install cmake
 
