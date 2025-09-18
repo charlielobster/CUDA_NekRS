@@ -120,7 +120,7 @@ should return these variables:
 
 Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
 
-### 5.0 Install gdrcopy (optional) 
+### 4.9 Install gdrcopy (optional) 
     
 I did this first to enable gdrcopy for UCX, as it seems like a feature. I was trying to enable CUDA acceleration in OpenMPI and thought that might help with that, but it didn't seem to do anything.
 
