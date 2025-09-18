@@ -228,7 +228,7 @@ And install:
     ninja -j $(nproc)
 
 
-<image width="560" height="315" src="./images/output_clip_1.mp4" frameborder="0" allowfullscreen />
+<video width="560" height="315" src="./images/output_clip_1.mp4" controls />
 
 # REFERENCES
 
