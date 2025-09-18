@@ -216,15 +216,16 @@ Then,
 
 ### 10. Install Paraview
 
-Required libraries
+Required libraries:
 
     sudo apt-get install git cmake build-essential libgl1-mesa-dev libxt-dev libqt5x11extras5-dev libqt5help5 qttools5-dev qtxmlpatterns5-dev-tools libqt5svg5-dev python3-dev python3-numpy libopenmpi-dev libtbb-dev ninja-build qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
 
+And install:
 
     mkdir $HOME/builds/paraview
     cd $HOME/builds/paraview
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
-    ninja
+    ninja -j $(nproc)
 
 # REFERENCES
 
