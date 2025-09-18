@@ -78,7 +78,7 @@ And the following printenv command:
 
     printenv | grep -E "CUDA|OCCA|UCX|OMPI|PATH"
 
-Should return these variables:
+should return these variables:
 
     OMPI_HOME=/opt/openmpi-5.0.8
     OCCA_LIB=/opt/occa/lib
