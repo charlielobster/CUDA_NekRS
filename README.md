@@ -182,7 +182,7 @@ Then
 
     I got these build errors! 
 
-    <img src="images/nek5000_build_errors.png">
+    <img src="images/nek5000_build_errors.png" />
 
 2) Try JezSw's version:
 
@@ -221,3 +221,8 @@ Then,
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
     ninja
 
+# NOTES
+
+Nivida Visual Profiler is currently busted.
+
+<img src="images/Profiler_Error.png" />
