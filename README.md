@@ -223,6 +223,8 @@ Then,
 
 # REFERENCES
 
+https://github.com/Nek5000
+
 https://developer.nvidia.com/cuda-toolkit-archive
 
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
