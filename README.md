@@ -171,6 +171,8 @@ Then
     cmake --build build
     sudo cmake --install build --prefix $OCCA_HOME
 
+Note This may not be optional given the recent runtime errors.
+
 ### 8. Install NekRS
 
 1) Try Nek5000's version:
