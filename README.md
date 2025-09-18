@@ -12,7 +12,7 @@
 
 3) From your BIOS, boot from the USB drive and install to the target drive
 
-     You may choose "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
+     You may choose "Install latest Graphics and Wifi hardware drivers" during the install.
 
 ### 2. Install CUDA Drivers (if not Present) and CUDA Toolkit (Under Version 13.0)
 
