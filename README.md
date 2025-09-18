@@ -227,10 +227,7 @@ And install:
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
     ninja -j $(nproc)
 
-<figure class="video_container">
-  <iframe src="images/output_clip_1.mp4" frameborder="0" allowfullscreen="true"> 
-</iframe>
-</figure>
+<iframe src="images/output_clip_1.mp4" frameborder="0" allowfullscreen="true"></iframe>
 
 <video src="images/output_clip_1.mp4" controls></video>
 
