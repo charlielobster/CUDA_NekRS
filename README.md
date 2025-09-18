@@ -227,6 +227,10 @@ https://developer.nvidia.com/cuda-toolkit-archive
 
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
 
+https://developer.nvidia.com/cuda-gpus
+
+https://en.wikipedia.org/wiki/CUDA
+
 https://forums.developer.nvidia.com/t/how-to-build-ucx-openmpi-pytorch-with-cuda-distributed-on-agx-orin/341027
 
 https://stackoverflow.com/questions/28932864/which-compute-capability-is-supported-by-which-cuda-versions/28933055#28933055
