@@ -229,6 +229,8 @@ And install:
 
 [clique aqui.](https://www.youtube.com/watch?v=zfMgg_ozHO4)
 
+https://github.com/JanahAleixo/lab-natty-or-not/assets/107958723/fd0db285-1201-40e3-a70c-6d7420f4f158
+
 https://github.com/charlielobster/CUDA_NekRS/blob/main/images/output_clip_1.mp4
 
 <iframe src="images/output_clip_1.mp4" frameborder="0" allowfullscreen="true"></iframe>
