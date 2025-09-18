@@ -188,7 +188,13 @@ Then
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/JezSw/nekrs
        cmake --build ./build --target install -j$(nproc)
 
-    This one worked for me!
+    This one worked!
+
+3) Since JezSw's version worked, export the JezSw path.
+
+       export NEKRS_HOME=$HOME/builds/nekRS/JezSw/nekrs
+       export PATH=$NEKRS_HOME/bin:$PATH
+
 
 ### 9. Get NekRS Output
 
