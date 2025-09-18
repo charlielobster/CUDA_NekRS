@@ -12,7 +12,7 @@
 
 3) From your BIOS, boot from the USB drive and install to the target drive
 
-     If you are running a newer GPU, leave the "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
+     You may choose "Install latest Graphics and Wifi hardware drivers" unclicked during the install.
 
 ### 2. Install CUDA Drivers (if not Present) and CUDA Toolkit (Under Version 13.0)
 
@@ -216,6 +216,6 @@ Then,
 
     mkdir $HOME/builds/paraview
     cd $HOME/builds/paraview
-    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../../repos/paraview
+    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
     ninja
 
