@@ -186,6 +186,7 @@ Then
 
        cd repos/nekRS/JezSw/nekRS
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/JezSw/nekrs
+       cmake --build ./build --target install -j$(nproc)
 
     This one worked for me!
 
