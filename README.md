@@ -1,5 +1,7 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu
 
+Test specs are RTX 3090 Ti GPUs, i9-12900KS chipset on ASUS Z690 motherboard. These steps should work with most gaming and laptop PCs with an Nvidia GPU.
+
 ### 1. Install Ubuntu 24.04.3
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
@@ -29,9 +31,9 @@ If you have a one, you'll get back something like:
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
     ...
-In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good. Anything under Version 13.0 is not a problem. 
+In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good. Anything under CUDA Version 13.0 is not a problem. 
 
-Let me attempt to clarify a murky subject. There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device on your machine. Meanwhile, your CUDA Toolkit's Version determines what hardware architectures a codebase on your machine is able to target. The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build NekRS with minimal changes to the code. 
+There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device on your machine. Meanwhile, your CUDA Toolkit's Version determines what hardware architectures a codebase on your machine is able to target. The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build NekRS with minimal changes to the code. 
 
 In a terminal, type:
 
@@ -44,9 +46,7 @@ If you have a Driver Version < v13.0, just type:
     sudo apt install cuda-toolkit
 
 
-However, if you have a Driver Version 13, apt install will automatically install the Version 13.0 CUDA Toolkit as well (which won't work for NekRS!)
-
-Long story short, if your driver's CUDA Version is 13 or higher, do this instead:
+However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
@@ -175,7 +175,7 @@ Note This may not be optional given the recent runtime errors.
 
 ### 8. Install NekRS
 
-1) Try Nek5000's version:
+1) I don't suggest you do this, but I tried Nek5000's version:
 
        cd repos/nekRS/nek5000/nekRS
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/nek5000/nekrs
@@ -185,7 +185,7 @@ Note This may not be optional given the recent runtime errors.
 
     <img src="images/nek5000_build_errors.png" />
 
-2) Try JezSw's version:
+2) Use JezSw's version:
 
        cd repos/nekRS/JezSw/nekRS
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/JezSw/nekrs
@@ -193,7 +193,7 @@ Note This may not be optional given the recent runtime errors.
 
     This worked!
 
-3) Since JezSw's version worked, export the JezSw path.
+3) Since JezSw's version worked, export the JezSw path to CUDA_NekRS_vars.sh:
 
        export NEKRS_HOME=$HOME/builds/nekRS/JezSw/nekrs
        export PATH=$NEKRS_HOME/bin:$PATH
@@ -212,7 +212,7 @@ Then,
     
     mpirun -np 2 nekrs --setup turbPipe.par
 
- (Note to self, new occa errors, but seems to be working)
+ (Note to self, new occa errors, a lot of them with building occa's cache, but seems to recover)
 
 ### 10. Install Paraview
 
