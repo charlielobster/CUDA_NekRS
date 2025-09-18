@@ -96,7 +96,7 @@ Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home d
     ip a # collect <your nic> and add to script and check CUDA Toolkit path
     . ./CUDA_NekRS_vars.sh     
 
-And the following printenv command:
+This printenv command:
 
     printenv | grep -E "CUDA|OCCA|UCX|OMPI|PATH"
 
