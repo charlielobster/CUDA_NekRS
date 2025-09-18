@@ -132,7 +132,7 @@ I tried to do this first to enable gdrcopy for UCX, seems like a feature. I was 
             --with-cuda=$CUDA_HOME \
             --with-gdrcopy=/usr/local/ \
             --enable-mt              
-    make -j$(nprocs)
+    make -j$(nproc)
     sudo make install
 
 
@@ -154,7 +154,7 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
         --with-ucx-libdir=$UCX_LIB \
         --with-cuda-libdir=$CUDA_LIB \
         --enable-mpirun-prefix-by-default
-    make --j$(nprocs)
+    make --j$(nproc)
     sudo make install
 
 ### 7. Install OCCA (possibly optional)
@@ -177,25 +177,29 @@ Then
     From the nekRS Readme,
 
        cd repos/nekRS/nek5000/nekRS
-       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
+       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/nek5000/nekrs
 
 2) Try JezSw's version:
 
        cd repos/nekRS/JezSw/nekRS
-       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/JezSw/nekrs
+       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/JezSw/nekrs
 
     This one worked for me!
 
 ### 9. Get NekRS Output
 
     cd nekRS/examples/turbPipePeriodic
-    mpirun -np 2 nekRS 
 
 The nekRS example .par files are not set up to save any output. 
 Add these lines, starting at line xx to the turbPipePeriodic.par file:
 
     writeCondition = tt
     writeInterval = xx
+
+Then,
+    
+    mpirun -np $(nproc) nekRS 
+
 
 ### 10. Install Paraview
 
