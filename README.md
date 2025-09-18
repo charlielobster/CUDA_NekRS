@@ -199,7 +199,7 @@ Note This may not be optional given the recent runtime errors.
        export PATH=$NEKRS_HOME/bin:$PATH
 
 
-### 9. Get NekRS Output (in progress)
+### 9. Get NekRS Output
 
     cd $NEKRS_HOME/examples/turbPipePeriodic
 
@@ -226,6 +226,9 @@ And install:
     cd $HOME/builds/paraview
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
     ninja -j $(nproc)
+
+
+<iframe width="560" height="315" src="./images/output_clip_1.mp4" frameborder="0" allowfullscreen></iframe>
 
 # REFERENCES
 
