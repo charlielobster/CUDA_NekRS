@@ -28,7 +28,7 @@ If you have a one, you'll get back something like:
     | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
     | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
     |                                         |                        |               MIG M. |
-
+    ...
 In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good, anything under v13.0 is not a problem. 
 
 Let me attempt to clarify a very murky subject here. There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running a particular GPU device on your machine. Meanwhile, your CUDA Toolkit's Version determines what hardware architectures your codebase can target. The NekRS codebase targets the compute-70 (CUDA Version 7.0) architecture in some sections. So, we need a CUDA Toolkit under Version 13.0 to successfully build to that target with minimal changes to the code. 
@@ -50,7 +50,7 @@ So, all that means is that if your CUDA Version >= v13.0, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
-### Topology
+### 3. Folder Topology
 
 Create a folder called repos, and clone each tool into their respective subfolders. 
 
@@ -60,6 +60,7 @@ Create a folder called repos, and clone each tool into their respective subfolde
     git clone https://github.com/open-mpi/ompi.git
     git clone https://github.com/libocca/occa.git
     git clone https://github.com/Nek5000/nekRS.git
+    git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
       
 Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this repo to your own home directory, Check the CUDA Toolkit path first, and also find your wifi nic with a call to "ip a". Then, source it. 
 
@@ -96,7 +97,7 @@ should return these variables:
 
 Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. 
 
-### 3. Install UCX
+### 4. Install UCX
 
     cd repos/ucx
     sudo apt install -y autoconf automake libtool m4 \
@@ -110,7 +111,7 @@ Use the script before running programs in NekRS, or add its contents to your .pr
     sudo make install
 
 
-### 4. Install Open MPI
+### 5. Install Open MPI
 
 Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
        
@@ -131,36 +132,34 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
     make -j6
     sudo make install
 
-### 5. Install OCCA
+### 6. Install OCCA (possibly optional)
 
-First, install cmake
+Install cmake
 
     sudo apt install cmake
+
+Then
 
     cd repos/occa
     ./configure-cmake.sh
     cmake --build build
     sudo cmake --install build --prefix $OCCA_HOME
 
-#  IN PROGRESS
-
-### 6. Install NekRS
+### 6. Install NekRS (in progress)
 
 From the nekRS Readme,
 
     cd repos/nekRS
-    CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig [-DCMAKE_INSTALL_PREFIX=$HOME/.local/nekrs]
+    CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
 
+The nekRS example .par files are not set up to save any output. 
+Add these lines, starting at line xx to the turbPipePeriodic.par file:
 
-The nekRS example .par files are not set up to save any output. Add some lines to the turbPipePeriodic.par file:
-
-    writeCondition = timeStep
-    writeInterval = 100
-
+    writeCondition = tt
+    writeInterval = xx
 
 ### 7. Install Paraview
 
-    git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
     mkdir paraview_build
     cd paraview_build
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../paraview
