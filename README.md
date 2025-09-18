@@ -237,9 +237,8 @@ And install:
 
 https://github.com/user-attachments/assets/fbdb9a18-5268-4801-aea3-33f470e5ad2a
 
-The full clip:
-
-https://youtu.be/z4Mz6F0Gi8w
+A sped-up clip in 720p: https://youtu.be/z4Mz6F0Gi8w
+The full clip in mp4 1080p: https://www.youtube.com/watch?v=dBudWYEWA74
 
 # REFERENCES
 
