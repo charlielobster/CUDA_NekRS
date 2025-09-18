@@ -228,7 +228,7 @@ And install:
     ninja -j $(nproc)
 
 
-<video width="560" height="315" src="./images/output_clip_1.mp4" controls />
+<video width="560" height="315" src="./images/output_clip_1.mp4" controls></video>
 
 # REFERENCES
 
