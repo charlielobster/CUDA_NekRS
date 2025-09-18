@@ -59,8 +59,15 @@ Create a folder called repos, and clone each tool into their respective subfolde
     git clone https://github.com/openucx/ucx.git
     git clone https://github.com/open-mpi/ompi.git
     git clone https://github.com/libocca/occa.git
-    git clone https://github.com/Nek5000/nekRS.git
     git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
+
+Create a separate top-level folder for multiple copies of nekRS:
+    
+    mkdir nekRS && cd nekRS
+    mkdir nek5000 && cd nek5000
+    git clone https://github.com/Nek5000/nekRS.git
+    cd .. && mkdir JezSw && cd JezSw
+    git clone https://github.com/JezSw/nekRS.git
       
 Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this repo to your own home directory, Check the CUDA Toolkit path first, and also find your wifi nic with a call to "ip a". Then, source it. 
 
@@ -68,12 +75,21 @@ Optionally, copy the script /CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh from this r
     cp /repos/CUDA_NekRS/home/USER/CUDA_NekRS_vars.sh $HOME
     . ./CUDA_NekRS_vars.sh       
 
-The topology looks like this:
+The topology changes:
 
     /home/USER/repos/ucx
     /home/USER/repos/ompi
     /home/USER/repos/OCCA
-    /home/USER/repos/nekRS
+    /home/USER/repos/nekRS/nek5000/nekRS
+    /home/USER/repos/nekRS/JezSw/nekRS
+
+Once everything is installed:
+
+    /home/USER/builds/nekRS/nek5000/nekRS
+    /home/USER/builds/nekRS/JezSw/nekRS
+    /opt/openmpi-5.0.8
+    /opt/UCX-1.20.0
+    /opt/occa
       
 And the following printenv command:
 
@@ -107,7 +123,7 @@ Use the script before running programs in NekRS, or add its contents to your .pr
             --with-cuda=$CUDA_HOME \
             --with-gdrcopy=/usr/local/ \
             --enable-mt              
-    make -j6
+    make -j$(nprocs)
     sudo make install
 
 
@@ -129,7 +145,7 @@ Before we can install openmpi, we need to install gnu fortran, Flex, and zlib:
         --with-ucx-libdir=$UCX_LIB \
         --with-cuda-libdir=$CUDA_LIB \
         --enable-mpirun-prefix-by-default
-    make -j6
+    make --j$(nprocs)
     sudo make install
 
 ### 6. Install OCCA (possibly optional)
@@ -150,7 +166,7 @@ Then
 From the nekRS Readme,
 
     cd repos/nekRS
-    CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
+    cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nek5000/nekrs
 
 The nekRS example .par files are not set up to save any output. 
 Add these lines, starting at line xx to the turbPipePeriodic.par file:

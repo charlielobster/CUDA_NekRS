@@ -15,3 +15,7 @@ export OCCA_LIB=$OCCA_HOME/lib
 
 export PATH=$CUDA_HOME/bin:$UCX_HOME/bin:$OMPI_HOME/bin:$OCCA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_LIB:$UCX_LIB:$OMPI_LIB:$OCCA_LIB:$LD_LIBRARY_PATH
+
+export CC=mpicc
+export CXX=mpic++
+export FC=mpif77
