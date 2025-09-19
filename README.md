@@ -71,7 +71,7 @@ Create a folder called repos, and clone each tool into their respective subfolde
     git clone https://github.com/openucx/UCX.git
     git clone --resursive https://github.com/open-mpi/ompi.git
     git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
-    git clone https://github.com/JezSw/NekRS.git  
+    git clone https://github.com/JezSw/NekRS.git  # using JezSw's recent version
 
 
 The topology changes:
@@ -176,7 +176,7 @@ Then,
        export NEKRS_HOME=~/builds/NekRS
        export PATH=$NEKRS_HOME/bin:$PATH
 
-2) Using JezSw's version:
+2) Install,
 
        cd repos/NekRS
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$NEKRS_HOME
