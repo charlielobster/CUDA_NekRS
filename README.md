@@ -232,7 +232,7 @@ And install:
     cmake -GNinja \
         -DPARAVIEW_USE_MPI=ON \
         -DVTK_SMP_IMPLEMENTATION_TYPE=TBB \
-        -DCMAKE_BUILD_TYPE=Release ~/repos/paraview
+        -DCMAKE_BUILD_TYPE=Release $PARAVIEW_HOME
     ninja -j $(nproc)
 
 ## Examples Video Results
