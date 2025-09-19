@@ -1,6 +1,6 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu
 
-Test specs are RTX 3090 Ti GPUs, i9-12900KS chipset on ASUS Z690 motherboard. These steps should work with most gaming and laptop PCs with an Nvidia GPU.
+Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS chipset on an ASUS Z690 motherboard. These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
 ### 1. Install Ubuntu 24.04.3
 
@@ -46,7 +46,6 @@ In a terminal, type:
 If you have a Driver Version < 13, just type:
     
     sudo apt install cuda-toolkit
-
 
 However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
 
@@ -169,6 +168,7 @@ Then,
         --with-ucx=$UCX_HOME \
         --with-ucx-libdir=$UCX_LIB \
         --with-cuda-libdir=$CUDA_LIB \
+        --enable-mca-dso=btl-smcuda,rcache-rgpusm,rcache-gpusm,accelerator-cuda \
         --enable-mpirun-prefix-by-default
     make --j$(nproc)
     sudo make install
@@ -233,15 +233,24 @@ Then,
 
 ### 10. Install Paraview
 
-Required libraries:
+A few required libraries we haven't installed yet:
 
-    sudo apt-get install git cmake build-essential libgl1-mesa-dev libxt-dev libqt5x11extras5-dev libqt5help5 qttools5-dev qtxmlpatterns5-dev-tools libqt5svg5-dev python3-dev python3-numpy libopenmpi-dev libtbb-dev ninja-build qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+    sudo apt-get install git libgl1-mesa-dev \
+                libxt-dev libqt5x11extras5-dev \
+                libqt5help5 qttools5-dev \
+                qtxmlpatterns5-dev-tools libqt5svg5-dev \
+                python3-numpy libtbb-dev \
+                ninja-build qtbase5-dev \
+                qtchooser qt5-qmake qtbase5-dev-tools
 
 And install:
 
-    mkdir $HOME/builds/paraview
+    mkdir ~/builds/paraview
     cd $HOME/builds/paraview
-    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release $HOME/repos/paraview
+    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON \
+        -DPARAVIEW_USE_MPI=ON \
+        -DVTK_SMP_IMPLEMENTATION_TYPE=TBB \
+        -DCMAKE_BUILD_TYPE=Release ~/repos/paraview
     ninja -j $(nproc)
 
 ## Examples Video Results
