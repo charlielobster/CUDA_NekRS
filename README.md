@@ -57,7 +57,7 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
         sudo apt install cuda-toolkit-12-8 # 12.9 probably works too
    
-   If you have a Driver Version < 13, you should just get an older version of the Toolkit targeting your device. Just type:
+   If you have a Driver Version < 13, you should just get an older version of the Toolkit cabable of targeting your device. Just type:
     
         sudo apt install cuda-toolkit 
 
