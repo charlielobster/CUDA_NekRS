@@ -227,12 +227,12 @@ A few required libraries we haven't installed yet:
 
 And install:
 
-    mkdir ~/builds/paraview
-    cd ~/builds/paraview
+    mkdir $PARAVIEW_HOME
+    cd $PARAVIEW_HOME
     cmake -GNinja \
         -DPARAVIEW_USE_MPI=ON \
         -DVTK_SMP_IMPLEMENTATION_TYPE=TBB \
-        -DCMAKE_BUILD_TYPE=Release $PARAVIEW_HOME
+        -DCMAKE_BUILD_TYPE=Release ~/repos/paraview
     ninja -j $(nproc)
 
 ## Examples Video Results
