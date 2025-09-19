@@ -53,13 +53,13 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
         sudo apt-get install -y cuda-drivers
 
-3. If you have a Driver Version < 13, just type:
+3. If you have one type of GPU device, and it is running CUDA Version 13 or higher, the command to "apt install cuda-toolkit" will automatically install the Version 13 CUDA Toolkit as well. Nvidia ended targeting devices below CUDA Versions 7.5 for this, their latest Toolkit. So if your driver's CUDA Version is 13, do this:
+
+        sudo apt install cuda-toolkit-12-8 # 12.9 probably works too
+   
+   If you have a Driver Version < 13, you should just get an older version of the Toolkit targeting your device. Just type:
     
-        sudo apt install cuda-toolkit
-
-    However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which, as I mentioned, won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
-
-        sudo apt install cuda-toolkit-12-8
+        sudo apt install cuda-toolkit 
 
 ### 3. Folder Topology
 
