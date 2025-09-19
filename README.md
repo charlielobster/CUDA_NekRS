@@ -96,8 +96,8 @@ Let's set up all our environment variables first to use them in build statements
       
 1. Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home directory. 
 
-    cp CUDA_NekRS_vars.sh ~
-    cd ~
+        cp CUDA_NekRS_vars.sh ~
+        cd ~
 
 2. Verify the CUDA Toolkit path and find your wifi nic with a call to "ip a". 
 
