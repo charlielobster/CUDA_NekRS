@@ -159,6 +159,8 @@ First we need to install gnu fortran, Flex, and zlib:
     sudo apt install flex
     sudo apt install zlib1g-dev liblz4-dev libzstd-dev
 
+Then,
+
     cd repos/ompi
     sudo mkdir $OMPI_HOME
     ./autogen.pl
