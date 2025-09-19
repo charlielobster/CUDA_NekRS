@@ -178,16 +178,11 @@ Then,
 
 ### 8. Install NekRS
 
-1) If not using CUDA_NekRS_vars.sh, export the NekRS path to CUDA_NekRS_vars.sh:
+Install,
 
-       export NEKRS_HOME=~/builds/NekRS
-       export PATH=$NEKRS_HOME/bin:$PATH
-
-2) Install,
-
-       cd repos/NekRS
-       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$NEKRS_HOME
-       cmake --build ./build --target install -j$(nproc)
+    cd repos/NekRS
+    cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$NEKRS_HOME
+    cmake --build ./build --target install -j$(nproc)
 
 ### 9. Get NekRS Output
 
