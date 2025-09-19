@@ -171,16 +171,16 @@ Then,
 
 ### 8. Install NekRS
 
-1) Using JezSw's version:
+1) If not using CUDA_NekRS_vars.sh, export the NekRS path to CUDA_NekRS_vars.sh:
+
+       export NEKRS_HOME=~/builds/NekRS
+       export PATH=$NEKRS_HOME/bin:$PATH
+
+2) Using JezSw's version:
 
        cd repos/NekRS
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$NEKRS_HOME
        cmake --build ./build --target install -j$(nproc)
-
-2) If not using CUDA_NekRS_vars.sh, export the NekRS path to CUDA_NekRS_vars.sh:
-
-       export NEKRS_HOME=$HOME/builds/NekRS
-       export PATH=$NEKRS_HOME/bin:$PATH
 
 ### 9. Get NekRS Output
 
