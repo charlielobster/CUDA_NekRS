@@ -256,7 +256,7 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 
 # NOTES
 
-If your instance of Nvida Visual Profiler is currently busted,
+If your instance of Nvidia Visual Profiler is currently busted,
 
 <img src="images/Profiler_Error.png" />
 
