@@ -105,29 +105,29 @@ Let's set up all our environment variables first to use them in build statements
         # double-check Toolkit Version and paths, then source the changes
         . ./CUDA_NekRS_vars.sh     
 
-This printenv command:
+3. This printenv command:
 
     printenv | grep -E "CUDA|UCX|OMPI|PATH"
 
-should return these variables:
+   should return these variables:
 
-    GDRCOPY_HOME=~/builds/grdcopy
-    OMPI_HOME=~/builds/openmpi-5.0.8
-    UCX_NET_DEVICES=<your nic>
-    UCX_LIB=~/builds/UCX-1.20.0/lib
-    UCX_HOME=~/builds/UCX-1.20.0
-    OMPI_LIB=~/builds/openmpi-5.0.8/lib
-    CUDA_LIB=/usr/local/cuda-12.8/lib64
-    LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:~/builds/UCX-1.20.0/lib:~/builds/openmpi-5.0.8/lib:
-    UCX_TLS=cuda
-    CUDA_HOME=/usr/local/cuda-12.8
-    NEKRS_HOME=~/builds/NekRS
-    PATH=/usr/local/cuda-12.8/bin:~/builds/UCX-1.20.0/bin:~/builds/openmpi-5.0.8/bin:...
-    ...
+        GDRCOPY_HOME=~/builds/grdcopy
+        OMPI_HOME=~/builds/openmpi-5.0.8
+        UCX_NET_DEVICES=<your nic>
+        UCX_LIB=~/builds/UCX-1.20.0/lib
+        UCX_HOME=~/builds/UCX-1.20.0
+        OMPI_LIB=~/builds/openmpi-5.0.8/lib
+        CUDA_LIB=/usr/local/cuda-12.8/lib64
+        LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:~/builds/UCX-1.20.0/lib:~/builds/openmpi-5.0.8/lib:
+        UCX_TLS=cuda
+        CUDA_HOME=/usr/local/cuda-12.8
+        NEKRS_HOME=~/builds/NekRS
+        PATH=/usr/local/cuda-12.8/bin:~/builds/UCX-1.20.0/bin:~/builds/openmpi-5.0.8/bin:...
+        ...
 
-Use the script before running programs in NekRS, or add its contents to your .bashrc for terminal initialization. If you cloned this repo, type this:
+   Use the script before running programs in NekRS, or add its contents to your .bashrc for terminal initialization. If you cloned this repo, type this:
 
-    echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
+        echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
 
 
 ### 5. (Optional) Install gdrcopy
