@@ -1,4 +1,5 @@
-export CUDA_HOME=/usr/local/cuda-12.8 # check CUDA Toolkit version and paths
+# CUDA
+export CUDA_HOME=/usr/local/cuda-12.8 # check CUDA Toolkit version and path preference
 export CUDA_LIB=$CUDA_HOME/lib64
 
 export PATH=$CUDA_HOME/bin:$PATH
@@ -34,3 +35,6 @@ export FC=mpif77
 
 export NEKRS_HOME=~/builds/NekRS
 export PATH=$NEKRS_HOME/bin:$PATH
+
+export PARAVIEW_HOME=~/builds/paraview
+export PATH=$PARAVIEW_HOME/bin:$PATH
