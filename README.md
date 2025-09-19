@@ -101,15 +101,15 @@ Let's set up all our environment variables first to use them in build statements
 
 2. Verify the CUDA Toolkit path and find your wifi nic with a call to "ip a". 
 
-    ip a 
-    # open CUDA_NekRS_vars.sh in Text Editor
-    # collect your nic add it to the script 
+        ip a 
+        # open CUDA_NekRS_vars.sh in Text Editor
+        # collect your nic add it to the script 
 
 3. Then, source the script.
 
-    # and double-check CUDA Toolkit Version and path
-    # then source the changes
-    . ./CUDA_NekRS_vars.sh     
+        # and double-check CUDA Toolkit Version and path
+        # then source the changes
+        . ./CUDA_NekRS_vars.sh     
 
 This printenv command:
 
