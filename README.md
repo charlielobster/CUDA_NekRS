@@ -131,6 +131,7 @@ Use the script before running programs in NekRS, or add its contents to your .ba
 
 This tool facilitates shared memory between applications and CUDA at the UCX layer
 
+    cd repos/gdrcopy
     make prefix=~/builds/gdrcopy all install
     sudo ./insmod.sh
 
