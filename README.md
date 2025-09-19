@@ -63,7 +63,7 @@ Welcome to some CUDA NekRS support! These steps should work with most gaming and
 
 ### 3. Folder Topology
 
-Create a folder called repos, and clone each tool into their respective subfolders. 
+Create folders called repos and builds, and clone each tool into their respective subfolders under repos. 
 
     mkdir repos && builds
     cd repos
