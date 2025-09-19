@@ -57,7 +57,7 @@ If you have a Driver Version < 13, just type:
     
     sudo apt install cuda-toolkit
 
-However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
+However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which as I mentioned, won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
 
     sudo apt install cuda-toolkit-12-8
 
@@ -71,7 +71,7 @@ Create a folder called repos, and clone each tool into their respective subfolde
     git clone https://github.com/openucx/UCX.git
     git clone --resursive https://github.com/open-mpi/ompi.git
     git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
-    git clone https://github.com/JezSw/nekRS.git  
+    git clone https://github.com/JezSw/NekRS.git  
 
 
 The topology changes:
@@ -92,7 +92,7 @@ Once everything is installed:
 
 ### 4. Environment Variables
       
-Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home directory. Verify the CUDA Toolkit path and find your wifi nic with a call to ip a. Then, source it. 
+Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home directory. Verify the CUDA Toolkit path and find your wifi nic with a call to "ip a". Then, source it. 
 
     cp CUDA_NekRS_vars.sh ~
     cd ~
@@ -100,11 +100,12 @@ Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home d
     # open CUDA_NekRS_vars.sh in Text Editor
     # collect your nic add it to the script 
     # and double-check CUDA Toolkit Version and path
+    # then source the changes
     . ./CUDA_NekRS_vars.sh     
 
 This printenv command:
 
-    printenv | grep -E "CUDA|OCCA|UCX|OMPI|PATH"
+    printenv | grep -E "CUDA|UCX|OMPI|PATH"
 
 should eventually return these variables:
 
