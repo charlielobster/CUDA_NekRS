@@ -94,7 +94,7 @@ Once everything is installed:
 
 Let's define all the environment variables first in a script. 
 
-Source the script to make use of them in our build statements and before running programs in NekRS. 
+Source the script to make use of them in our build statements, and before running programs in NekRS. 
       
 1. Review the CUDA_NekRS_vars.sh script in this repo. Verify the CUDA Toolkit path. Find your wifi nic with a call to "ip a". 
 
