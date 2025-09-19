@@ -193,14 +193,14 @@ Then,
 
 2) The nekRS example .par files are not set up to save any output. 
 
-    In turbPipe.par, change the endTime from 200 to .5 for a more reasonable test time. 
+    In turbPipe.par, change the endTime from 200 to .5 for a shorter test time. 
 
        endTime = .5 
 
 3) Then, starting at line 8, add these lines to the turbPipe.par file:
 
         writeControl = steps
-        writeInterval = 20
+        writeInterval = 6 
 
 4) Then,
     
