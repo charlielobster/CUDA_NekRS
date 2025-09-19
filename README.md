@@ -65,7 +65,7 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
 Create a folder called repos, and clone each tool into their respective subfolders. 
 
-    mkdir repos
+    mkdir repos && builds
     cd repos
     git clone https://github.com/NVIDIA/gdrcopy.git
     git clone https://github.com/openucx/UCX.git
