@@ -38,3 +38,4 @@ export PATH=$NEKRS_HOME/bin:$PATH
 
 export PARAVIEW_HOME=~/builds/paraview
 export PATH=$PARAVIEW_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$PARAVIEW/lib:$LD_LIBRARY_PATH
