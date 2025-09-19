@@ -102,8 +102,9 @@ Let's define all the environment variables first in a script and source that scr
 
 2. Double-check CUDA Toolkit Version and path preferences. Then, source the script.
 
-        # double-check Toolkit Version and paths, then source the changes
+        # double-check Toolkit Version and paths
         # cd to the folder containing CUDA_NekRS_var.sh
+        # then, source the changes
         . ./CUDA_NekRS_vars.sh     
 
 4. This printenv command:
