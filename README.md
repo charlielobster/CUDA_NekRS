@@ -136,7 +136,7 @@ Let's define all the environment variables first in a script and source that scr
 
 ### 5. (Optional) Install gdrcopy
 
-This tool facilitates shared memory between the GPU and the CPU. If installed, OMPI and UCX should be aware of it.
+This tool facilitates shared memory between the GPU and the CPU. If installed, OMPI and UCX should be made aware of it.
 
     cd repos/gdrcopy
     make prefix=$GDRCOPY_HOME all install
