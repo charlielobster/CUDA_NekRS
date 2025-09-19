@@ -79,7 +79,6 @@ The topology changes:
     ~/repos/gdrcopy
     ~/repos/UCX
     ~/repos/ompi
-    ~/repos/OCCA
     ~/repos/paraview
     ~/repos/NekRS
 
