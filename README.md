@@ -127,7 +127,7 @@ Let's define all the environment variables first in a script and source that scr
         PATH=/usr/local/cuda-12.8/bin:~/builds/UCX-1.20.0/bin:~/builds/openmpi-5.0.8/bin:...
         ...
 
-5. Add its contents to your .bashrc for terminal initialization. For example, if your edit is contained in ~/repo/CUDA_NekRS, type this:
+5. Source the script's contents in .bashrc for terminal initialization. For example, if your edit is contained in ~/repo/CUDA_NekRS, type this:
 
         echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
 
