@@ -156,13 +156,6 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
     make -j$(nproc)
     sudo make install
 
-### UPDATE 9/18 
-
-I'm definitely not configuring openmpi correctly and I accidentially installed another version of mpirun (v4) that is having conflicts during my build now. I need to remove the old version and use
-
-    ./configure --with-cuda=/usr/local/cuda \
-        --enable-mca-dso=btl-smcuda,rcache-rgpusm,rcache-gpusm,accelerator-cuda <other configure params>
-
 ### 6. Install Open MPI
 
 First we need to install gnu fortran, Flex, and zlib:
@@ -180,9 +173,7 @@ Then,
         --with-cuda=$CUDA_HOME \
         --with-ucx=$UCX_HOME \
         --with-ucx-libdir=$UCX_LIB \
-        --with-cuda-libdir=$CUDA_LIB/stubs \
-        --enable-mca-dso=accelerator-cuda \
-        --enable-mpirun-prefix-by-default
+        --with-cuda-libdir=$CUDA_LIB/stubs 
     make --j$(nproc)
     sudo make install
 
@@ -300,6 +291,11 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 
 # NOTES
 
-Nivida Visual Profiler is currently busted.
+If your instance of Nivida Visual Profiler is currently busted,
 
 <img src="images/Profiler_Error.png" />
+
+Type this:
+
+    sudo apt install openjdk-8-jdk
+    nvvp -vm /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
