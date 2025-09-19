@@ -298,4 +298,7 @@ If your instance of Nivida Visual Profiler is currently busted,
 Type this:
 
     sudo apt install openjdk-8-jdk
-    nvvp -vm /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+Go to your CUDA_HOME/bin folder and edit the nvvp file. Add the following before '$@' at the end of the file:
+
+    -vm /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
