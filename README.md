@@ -140,7 +140,7 @@ Use the script before running programs in NekRS, or add its contents to your .ba
     
 I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought the UCX compiler flag "--with-gdrcopy=/path" might help with that, but it didn't seem to do anything.
 
-    make prefix=~/builds/gdrcopy CUDA=$CUDA_HOME all install
+    make prefix=~/builds/gdrcopy all install
     sudo ./insmod.sh
 
 ### 5. Install UCX
@@ -151,7 +151,7 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
     ./autogen.sh
     ./configure --prefix=$UCX_HOME \
             --with-cuda=$CUDA_HOME \
-            --with-gdrcopy=/usr/local/ \
+            --with-gdrcopy=$GDRCOPY_HOME \
             --enable-mt              
     make -j$(nproc)
     sudo make install
