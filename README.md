@@ -46,7 +46,7 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
     a. If you chose to install your drivers separately, then type
 
-        sudo apt-get install -y nvidia-driver-580-open
+        sudo apt-get install -y nvidia-driver-580-open # this version is just the latest for 9/18/25
         sudo apt-get install -y cuda-drivers-580
 
     b. or just,
