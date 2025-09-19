@@ -171,13 +171,11 @@ Then,
 
 ### 8. Install NekRS
 
-1) Use JezSw's version:
+1) Using JezSw's version:
 
        cd repos/NekRS
        cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$NEKRS_HOME
        cmake --build ./build --target install -j$(nproc)
-
-    This worked!
 
 2) If not using CUDA_NekRS_vars.sh, export the NekRS path to CUDA_NekRS_vars.sh:
 
