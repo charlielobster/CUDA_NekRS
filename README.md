@@ -250,9 +250,9 @@ Camera in the -z direction:
 
 https://github.com/user-attachments/assets/fbdb9a18-5268-4801-aea3-33f470e5ad2a
 
-A sped-up clip in 720p: https://youtu.be/z4Mz6F0Gi8w
+Speed 5x in 720p: https://youtu.be/z4Mz6F0Gi8w
 
-Full clip mp4 1080p: https://youtu.be/dBudWYEWA74
+Full clip (100/200 secs) mp4 1080p: https://youtu.be/dBudWYEWA74
 
 Full clip HD 2560x1440 mp4: https://youtu.be/qd1MwvKyTZA
 
