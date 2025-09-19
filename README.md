@@ -233,13 +233,7 @@ Camera in the -z direction:
     
 https://github.com/user-attachments/assets/fbdb9a18-5268-4801-aea3-33f470e5ad2a
 
-Speed 5x in 720p: https://youtu.be/z4Mz6F0Gi8w
-
-Full (100/200 secs) clip HD 2560x1440 mp4: https://youtu.be/qd1MwvKyTZA
-
-1 Step per Frame 0-5 Simulation Secs: https://youtu.be/znXEs5FT0Tw
-
-1 Step per Frame 0-5 Secs Pressure Surface map: https://youtu.be/66GIpMd6n3I
+NekRS Examples Playlist: https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r
 
 # REFERENCES
 
