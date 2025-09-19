@@ -105,10 +105,9 @@ Let's set up all our environment variables first to use them in build statements
         # open CUDA_NekRS_vars.sh in Text Editor
         # collect your nic add it to the script 
 
-3. Then, source the script.
+3. Double-check CUDA Toolkit Version and path preferences. Then, source the script.
 
-        # and double-check CUDA Toolkit Version and path
-        # then source the changes
+        # double-check Toolkit Version and paths, then source the changes
         . ./CUDA_NekRS_vars.sh     
 
 This printenv command:
