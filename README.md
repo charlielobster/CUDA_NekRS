@@ -14,7 +14,7 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
 3) From your BIOS, boot from the USB drive and install to the target drive
 
-     You may choose "Install latest Graphics and Wifi hardware drivers" during the install.
+    You may choose "Install latest Graphics and Wifi hardware drivers" during the install, but it may be safer not to. There is a separate set of instructions later if you don't. 
 
 ### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13.0)
 
@@ -42,6 +42,16 @@ In a terminal, type:
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
     sudo dpkg -i cuda-keyring_1.1-1_all.deb
     sudo apt update
+
+
+If you chose to install your drivers separately, then type
+
+    sudo apt-get install -y nvidia-driver-580-open
+    sudo apt-get install -y cuda-drivers-580
+
+or just,
+
+    sudo apt-get install -y cuda-drivers
 
 If you have a Driver Version < 13, just type:
     
