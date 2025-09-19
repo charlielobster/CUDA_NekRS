@@ -146,7 +146,7 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
 
 ### UPDATE 9/18 
 
-I'm definitely not configuring openmpi correctly and Ubuntu also came with an earlier version of mpirun (v4) that is conflicting during my build. I need to use
+I'm definitely not configuring openmpi correctly and Ubuntu also came with an earlier version of mpirun (v4) that is conflicting during my build. I need to remove the old version and use
 
     ./configure --with-cuda=/usr/local/cuda \
         --enable-mca-dso=btl-smcuda,rcache-rgpusm,rcache-gpusm,accelerator-cuda <other configure params>
