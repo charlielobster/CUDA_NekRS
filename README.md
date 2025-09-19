@@ -67,44 +67,36 @@ Create a folder called repos, and clone each tool into their respective subfolde
 
     mkdir repos
     cd repos
-    git clone https://github.com/openucx/ucx.git
+    git clone https://github.com/NVIDIA/gdrcopy.git
+    git clone https://github.com/openucx/UCX.git
     git clone --resursive https://github.com/open-mpi/ompi.git
-    git clone https://github.com/libocca/occa.git
     git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
-
-Create a separate top-level folder for multiple copies of nekRS:
-    
-    mkdir nekRS && cd nekRS
-    mkdir nek5000 && cd nek5000
-    git clone https://github.com/Nek5000/nekRS.git
-    cd .. && mkdir JezSw && cd JezSw
     git clone https://github.com/JezSw/nekRS.git  
+
 
 The topology changes:
 
-    ~/repos/ucx
+    ~/repos/gdrcopy
+    ~/repos/UCX
     ~/repos/ompi
     ~/repos/OCCA
     ~/repos/paraview
-    ~/repos/nekRS/nek5000/nekRS
-    ~/repos/nekRS/JezSw/nekRS
+    ~/repos/NekRS
 
 Once everything is installed:
 
-    ~/builds/nekRS/nek5000/nekRS
-    ~/builds/nekRS/JezSw/nekRS
+    ~/builds/gdrcopy
+    ~/builds/NekRS
     ~/builds/paraview
-    /opt/openmpi-5.0.8
-    /opt/UCX-1.20.0
-    /opt/occa
-      
+    ~/builds/openmpi-5.0.8
+    ~/builds/UCX-1.20.0      
 
 ### 4. Environment Variables
       
 Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home directory. Verify the CUDA Toolkit path and find your wifi nic with a call to ip a. Then, source it. 
 
-    cp CUDA_NekRS_vars.sh $HOME
-    cd $HOME
+    cp CUDA_NekRS_vars.sh ~
+    cd ~
     ip a 
     # open CUDA_NekRS_vars.sh in Text Editor
     # collect your nic add it to the script 
@@ -115,35 +107,34 @@ This printenv command:
 
     printenv | grep -E "CUDA|OCCA|UCX|OMPI|PATH"
 
-should return these variables:
+should eventually return these variables:
 
-    OMPI_HOME=/opt/openmpi-5.0.8
-    OCCA_LIB=/opt/occa/lib
+    OMPI_HOME=~/builds/openmpi-5.0.8
     UCX_NET_DEVICES=<your nic>
-    UCX_LIB=/opt/ucx-1.20.0/lib
-    ...
-    UCX_HOME=/opt/ucx-1.20.0
-    OMPI_LIB=/opt/openmpi-5.0.8/lib
+    UCX_LIB=~/builds/UCX-1.20.0/lib
+    UCX_HOME=~/builds/UCX-1.20.0
+    OMPI_LIB=~/builds/openmpi-5.0.8/lib
     CUDA_LIB=/usr/local/cuda-12.8/lib64
-    LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:/opt/ucx-1.20.0/lib:/opt/openmpi-5.0.8/lib:/opt/occa/lib:
+    LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:~/builds/UCX-1.20.0/lib:~/builds/openmpi-5.0.8/lib:
     UCX_TLS=cuda
     CUDA_HOME=/usr/local/cuda-12.8
-    PATH=/usr/local/cuda-12.8/bin:/opt/ucx-1.20.0/bin:/opt/openmpi-5.0.8/bin:/opt/occa/:...
-    OCCA_HOME=/opt/occa
+    NEKRS_HOME=~/builds/NekRS
+    PATH=/usr/local/cuda-12.8/bin:~/builds/UCX-1.20.0/bin:~/builds/openmpi-5.0.8/bin:...
+    ...
 
 Use the script before running programs in NekRS, or add its contents to your .bashrc for terminal initialization. If you cloned this repo, type this:
 
     echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
 
 
-### 4.9 Install gdrcopy (optional) 
-    
-I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought the UCX compiler flag "--with-gdrcopy=/path" might help with that, but it didn't seem to do anything.
+### 5. (Optional) Install gdrcopy
+
+This tool facilitates shared memory between applications and CUDA at the UCX layer
 
     make prefix=~/builds/gdrcopy all install
     sudo ./insmod.sh
 
-### 5. Install UCX
+### 6. Install UCX
 
     cd repos/ucx
     sudo apt install -y autoconf automake libtool m4 \
@@ -151,12 +142,12 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
     ./autogen.sh
     ./configure --prefix=$UCX_HOME \
             --with-cuda=$CUDA_HOME \
-            --with-gdrcopy=$GDRCOPY_HOME \
+            --with-gdrcopy=$GDRCOPY_HOME \ # remove this line if gdrcopy is not installed
             --enable-mt              
     make -j$(nproc)
     sudo make install
 
-### 6. Install Open MPI
+### 7. Install Open MPI
 
 First we need to install gnu fortran, Flex, and zlib:
        
@@ -177,48 +168,20 @@ Then,
     make --j$(nproc)
     sudo make install
 
-### 7. Install OCCA (optional)
-
-I should attempt a run without doing this and see if it helps with JezSw occa errors during caching
-
-Install cmake
-
-    sudo apt install cmake
-
-Then,
-
-    cd repos/occa
-    ./configure-cmake.sh
-    cmake --build build
-    sudo cmake --install build --prefix $OCCA_HOME
-
-Note This may not be optional given the recent runtime errors.
-
 ### 8. Install NekRS
 
-1) I don't suggest you do this, but I tried Nek5000's version:
+1) Use JezSw's version:
 
-       cd repos/nekRS/nek5000/nekRS
-       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/nek5000/nekrs
-       cmake --build ./build --target install -j$(nproc)
-
-    I got these build errors:
-
-    <img src="images/nek5000_build_errors.png" />
-
-2) Use JezSw's version:
-
-       cd repos/nekRS/JezSw/nekRS
-       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$HOME/builds/nekRS/JezSw/nekrs
+       cd repos/NekRS
+       cmake -S . -B build -Wfatal-errors -DCMAKE_INSTALL_PREFIX=$NEKRS_HOME
        cmake --build ./build --target install -j$(nproc)
 
     This worked!
 
-3) Since JezSw's version worked, export the JezSw path to CUDA_NekRS_vars.sh:
+2) If not using CUDA_NekRS_vars.sh, export the NekRS path to CUDA_NekRS_vars.sh:
 
-       export NEKRS_HOME=$HOME/builds/nekRS/JezSw/nekrs
+       export NEKRS_HOME=$HOME/builds/NekRS
        export PATH=$NEKRS_HOME/bin:$PATH
-
 
 ### 9. Get NekRS Output
 
@@ -232,8 +195,6 @@ The nekRS example .par files are not set up to save any output. Starting at line
 Then,
     
     mpirun -np 2 nekrs --setup turbPipe.par
-
- (Note to self, new occa errors, a lot of them with building occa's cache, but seems to recover)
 
 ### 10. Install Paraview
 
@@ -267,9 +228,7 @@ https://github.com/user-attachments/assets/fbdb9a18-5268-4801-aea3-33f470e5ad2a
 
 Speed 5x in 720p: https://youtu.be/z4Mz6F0Gi8w
 
-Full clip (100/200 secs) mp4 1080p: https://youtu.be/dBudWYEWA74
-
-Full clip HD 2560x1440 mp4: https://youtu.be/qd1MwvKyTZA
+Full (100/200 secs) clip HD 2560x1440 mp4: https://youtu.be/qd1MwvKyTZA
 
 # REFERENCES
 
