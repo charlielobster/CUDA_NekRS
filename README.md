@@ -138,7 +138,7 @@ Source the script to make use of them in our build statements, and before runnin
 
 ### 5. (Optional) Install gdrcopy
 
-This tool facilitates shared memory between the GPU and the CPU. If installed, OMPI and UCX should be made aware of it.
+This tool facilitates shared memory access between the GPU and the CPU. If installed, OMPI and UCX should be made aware of it.
 
     cd repos/gdrcopy
     make prefix=$GDRCOPY_HOME all install
