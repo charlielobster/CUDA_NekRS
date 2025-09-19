@@ -261,6 +261,14 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 
 # NOTES
 
+### 9/19/25
+
+Getting the following errors during the cache build: 
+
+    2 more processes have sent help message help-accelerator-cuda.txt / cuMemHostRegister failed
+    1 more process has sent help message help-accelerator-cuda.txt / cuMemHostRegister failed
+
+
 If your instance of Nvidia Visual Profiler is currently busted,
 
 <img src="images/Profiler_Error.png" />
@@ -272,3 +280,4 @@ Type this:
 Go to your CUDA_HOME/bin folder and edit the nvvp file. Add the following before '$@' at the end of the file:
 
     -vm /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
