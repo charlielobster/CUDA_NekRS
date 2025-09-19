@@ -14,7 +14,7 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
 3) From your BIOS, boot from the USB drive and install to the target drive
 
-    You may choose "Install latest Graphics and Wifi hardware drivers" during the install, but it may be safer not to. There is a separate set of instructions later if you don't. 
+    You may choose "Install latest Graphics and Wifi hardware drivers" during the install, but it may be safer not to. There is a separate set of instructions later if you don't (I chose a manual install). 
 
 ### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13.0)
 
