@@ -144,7 +144,7 @@ I noticed CUDA acceleration was not enabled in the OpenMPI build, and thought th
     make -j$(nproc)
     sudo make install
 
-### UPDATE 8/18 
+### UPDATE 9/18 
 
 I'm definitely not configuring openmpi correctly and Ubuntu also came with an earlier version of mpirun (v4) that is conflicting during my build. I need to use
 
