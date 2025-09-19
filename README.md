@@ -221,7 +221,7 @@ And install:
 
     mkdir ~/builds/paraview
     cd ~/builds/paraview
-    cmake -GNinja -DPARAVIEW_USE_PYTHON=ON \
+    cmake -GNinja \
         -DPARAVIEW_USE_MPI=ON \
         -DVTK_SMP_IMPLEMENTATION_TYPE=TBB \
         -DCMAKE_BUILD_TYPE=Release ~/repos/paraview
