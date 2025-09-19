@@ -136,7 +136,7 @@ Let's define all the environment variables first in a script and source that scr
 
 ### 5. (Optional) Install gdrcopy
 
-This tool facilitates shared memory between applications and CUDA at the UCX layer
+This tool facilitates shared memory between the GPU and the CPU. If installed, OMPI and UCX should be aware of it.
 
     cd repos/gdrcopy
     make prefix=$GDRCOPY_HOME all install
@@ -144,7 +144,9 @@ This tool facilitates shared memory between applications and CUDA at the UCX lay
 
 ### 6. Install UCX
 
-    cd repos/ucx
+UCX tools provide a network protocols layer that faciliates shared memory operations across devices. OMPI requires this tool.
+
+    cd repos/UCX
     sudo apt install -y autoconf automake libtool m4 \
            libnuma-dev hwloc libhwloc-dev
     ./autogen.sh
