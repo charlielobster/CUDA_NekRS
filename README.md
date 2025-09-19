@@ -144,7 +144,7 @@ This tool facilitates shared memory between the GPU and the CPU. If installed, O
 
 ### 6. Install UCX
 
-UCX tools provide a network protocols layer that faciliates shared memory operations across devices.
+UCX tools provide a network protocol layer that facilitates shared memory operations across devices.
 
     cd repos/UCX
     sudo apt install -y autoconf automake libtool m4 \
