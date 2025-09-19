@@ -122,7 +122,7 @@ should return these variables:
     PATH=/usr/local/cuda-12.8/bin:/opt/ucx-1.20.0/bin:/opt/openmpi-5.0.8/bin:/opt/occa/:...
     OCCA_HOME=/opt/occa
 
-Use the script before running programs in NekRS, or add its contents to your .profile for terminal initialization. If you cloned this repo, type this:
+Use the script before running programs in NekRS, or add its contents to your .bashrc for terminal initialization. If you cloned this repo, type this:
 
     echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
 
