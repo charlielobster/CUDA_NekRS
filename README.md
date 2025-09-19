@@ -103,9 +103,10 @@ Let's define all the environment variables first in a script and source that scr
 2. Double-check CUDA Toolkit Version and path preferences. Then, source the script.
 
         # double-check Toolkit Version and paths, then source the changes
+        # cd to the folder containing CUDA_NekRS_var.sh
         . ./CUDA_NekRS_vars.sh     
 
-3. This printenv command:
+4. This printenv command:
 
         printenv | grep -E "CUDA|UCX|OMPI|PATH"
 
