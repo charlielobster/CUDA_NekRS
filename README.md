@@ -91,8 +91,11 @@ Once everything is installed:
     ~/builds/UCX-1.20.0      
 
 ### 4. Environment Variables
+
+Let's set up all our environment variables first to use them in build statements.     
       
-Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home directory. Verify the CUDA Toolkit path and find your wifi nic with a call to "ip a". Then, source it. 
+Optionally, copy the script CUDA_NekRS_vars.sh from this repo to your own home directory. 
+Verify the CUDA Toolkit path and find your wifi nic with a call to "ip a". Then, source the script (call '.', or source)
 
     cp CUDA_NekRS_vars.sh ~
     cd ~
@@ -107,7 +110,7 @@ This printenv command:
 
     printenv | grep -E "CUDA|UCX|OMPI|PATH"
 
-should eventually return these variables:
+should return these variables:
 
     OMPI_HOME=~/builds/openmpi-5.0.8
     UCX_NET_DEVICES=<your nic>
