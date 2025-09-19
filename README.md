@@ -207,7 +207,7 @@ Install,
         writeControl = steps
         writeInterval = 6 
 
-4) Then,
+4) Then type,
     
         mpirun -np 2 nekrs --setup turbPipe.par
 
