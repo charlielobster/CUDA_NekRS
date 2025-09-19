@@ -161,17 +161,15 @@ UCX tools provide a network protocol layer that facilitates shared memory operat
 
 ### 7. Install Open MPI
 
-MPI is the program space NekRS is configured to run within. 
+MPI is the program space NekRS is configured to run within. In step 9, we run NekRS with a call to "mpirun", a tool generated during this step. 
 
-In step 9, we run NekRS with a call to "mpirun", a tool generated during this step. 
-
-To install, first we need to install gnu fortran, Flex, and zlib:
+First, we need to install gnu fortran, Flex, and zlib:
        
     sudo apt install gfortran
     sudo apt install flex
     sudo apt install zlib1g-dev liblz4-dev libzstd-dev
 
-Then,
+Then install,
 
     cd repos/ompi
     sudo mkdir $OMPI_HOME
