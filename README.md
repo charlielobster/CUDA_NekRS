@@ -129,7 +129,7 @@ Let's define all the environment variables first in a script and source that scr
 
 5. Source the script's contents in .bashrc for terminal initialization.
 
-   For example, if your edit is contained in ~/repo/CUDA_NekRS, type this:
+   For example, if your edit is contained in ~/repos/CUDA_NekRS, type this:
 
         echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
 
