@@ -107,7 +107,7 @@ Let's define all our environment variables in a script first to use them in buil
 
 3. This printenv command:
 
-    printenv | grep -E "CUDA|UCX|OMPI|PATH"
+        printenv | grep -E "CUDA|UCX|OMPI|PATH"
 
    should return these variables:
 
