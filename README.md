@@ -180,8 +180,8 @@ Then,
         --with-cuda=$CUDA_HOME \
         --with-ucx=$UCX_HOME \
         --with-ucx-libdir=$UCX_LIB \
-        --with-cuda-libdir=$CUDA_LIB \
-        --enable-mca-dso=btl-smcuda,rcache-rgpusm,rcache-gpusm,accelerator-cuda \
+        --with-cuda-libdir=$CUDA_LIB/stubs \
+        --enable-mca-dso=accelerator-cuda \
         --enable-mpirun-prefix-by-default
     make --j$(nproc)
     sudo make install
