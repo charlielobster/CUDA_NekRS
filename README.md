@@ -18,48 +18,48 @@ Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS 
 
 ### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13.0)
 
-If you are unsure if or what Driver and CUDA Version you have, open a terminal and type:
+1. If you are unsure if or what Driver and CUDA Version you have, open a terminal and type:
 
-    nvidia-smi
+        nvidia-smi
 
-If you have a one, you'll get back something like:
+    If you have a one, you'll get back something like:
 
-    +-----------------------------------------------------------------------------------------+
-    | NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
-    |-----------------------------------------+------------------------+----------------------+
-    | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-    | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-    |                                         |                        |               MIG M. |
-    ...
-In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good. Anything under CUDA Version 13 is not a problem. 
+       +-----------------------------------------------------------------------------------------+
+       | NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+       |-----------------------------------------+------------------------+----------------------+
+       | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+       | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+       |                                         |                        |               MIG M. |
+       ...
 
-There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a codebase on your machine may target. 
+    In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is good. Anything under CUDA Version 13 is not a problem. 
 
-Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. However, the lowest the Version 13 Toolkit will go down to is CUDA Version 7.5. So, we need a CUDA Toolkit Version below 13 to successfully build NekRS with minimal changes to the code.
+    There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a codebase on your machine may target. 
 
-In a terminal, type:
+    Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. However, the lowest the Version 13 Toolkit will go down to is CUDA Version 7.5. So, we need a CUDA Toolkit Version below 13 to successfully build NekRS with minimal changes to the code.
 
-    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
-    sudo dpkg -i cuda-keyring_1.1-1_all.deb
-    sudo apt update
+2. In a terminal, type:
 
+       wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
+       sudo dpkg -i cuda-keyring_1.1-1_all.deb
+       sudo apt update
 
-If you chose to install your drivers separately, then type
+    a. If you chose to install your drivers separately, then type
 
-    sudo apt-get install -y nvidia-driver-580-open
-    sudo apt-get install -y cuda-drivers-580
+        sudo apt-get install -y nvidia-driver-580-open
+        sudo apt-get install -y cuda-drivers-580
 
-or just,
+    b. or just,
 
-    sudo apt-get install -y cuda-drivers
+        sudo apt-get install -y cuda-drivers
 
-If you have a Driver Version < 13, just type:
+3. If you have a Driver Version < 13, just type:
     
-    sudo apt install cuda-toolkit
+        sudo apt install cuda-toolkit
 
-However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which as I mentioned, won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
+    However, if you have a Driver Version 13 or later, apt install will automatically install the Version 13 CUDA Toolkit as well (which, as I mentioned, won't work for NekRS) So if your driver's CUDA Version is 13 or higher, do this instead:
 
-    sudo apt install cuda-toolkit-12-8
+        sudo apt install cuda-toolkit-12-8
 
 ### 3. Folder Topology
 
