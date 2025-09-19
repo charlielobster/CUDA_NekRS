@@ -35,7 +35,7 @@ In the example, Driver Version is 570.172.08 and CUDA Version is 12.8. This is g
 
 There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers. The CUDA Version relates to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a codebase on your machine may target. 
 
-Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. However, the lowest the Version 13 Toolkit will go is down to CUDA Version 7.5. So, we need a CUDA Toolkit Version below 13 to successfully build NekRS with minimal changes to the code.
+Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. However, the lowest the Version 13 Toolkit will go down to is CUDA Version 7.5. So, we need a CUDA Toolkit Version below 13 to successfully build NekRS with minimal changes to the code.
 
 In a terminal, type:
 
