@@ -188,7 +188,9 @@ Then,
 
        cd $NEKRS_HOME/examples/turbPipePeriodic
 
-2) The nekRS example .par files are not set up to save any output. In turbPipe.par, change the endTime from 200 to .5 for a more reasonable test time. 
+2) The nekRS example .par files are not set up to save any output. 
+
+    In turbPipe.par, change the endTime from 200 to .5 for a more reasonable test time. 
 
        endTime = .5 
 
