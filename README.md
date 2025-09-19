@@ -1,6 +1,6 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu
 
-Welcome to some CUDA NekRS support! Test specs are RTX 3090 Ti GPUs, i9-12900KS chipset on an ASUS Z690 motherboard. These steps should work with most gaming and laptop PCs with an Nvidia GPU.
+Welcome to some CUDA NekRS support! These steps should work with most gaming and laptop PCs with an Nvidia GPU. Test specs are RTX 3090 Ti GPUs, i9-12900KS chipset on an ASUS Z690 motherboard. 
 
 ### 1. Install Ubuntu 24.04.3
 
