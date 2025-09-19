@@ -220,7 +220,7 @@ A few required libraries we haven't installed yet:
 And install:
 
     mkdir ~/builds/paraview
-    cd $HOME/builds/paraview
+    cd ~/builds/paraview
     cmake -GNinja -DPARAVIEW_USE_PYTHON=ON \
         -DPARAVIEW_USE_MPI=ON \
         -DVTK_SMP_IMPLEMENTATION_TYPE=TBB \
