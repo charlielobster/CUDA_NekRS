@@ -112,6 +112,7 @@ This printenv command:
 
 should return these variables:
 
+    GDRCOPY_HOME=~/builds/grdcopy
     OMPI_HOME=~/builds/openmpi-5.0.8
     UCX_NET_DEVICES=<your nic>
     UCX_LIB=~/builds/UCX-1.20.0/lib
