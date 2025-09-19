@@ -263,10 +263,13 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 
 ### 9/19/25
 
-Getting the following errors during the cache build: 
+Getting the following messages during the cache build: 
 
     2 more processes have sent help message help-accelerator-cuda.txt / cuMemHostRegister failed
     1 more process has sent help message help-accelerator-cuda.txt / cuMemHostRegister failed
+
+Not sure if these are errors or not.
+
 
 
 If your instance of Nvidia Visual Profiler is currently busted,
