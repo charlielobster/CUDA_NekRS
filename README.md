@@ -257,6 +257,13 @@ https://stackoverflow.com/questions/28932864/which-compute-capability-is-support
 
 # NOTES
 
+### 9/20/25
+
+I'm getting the following fatal errors in paraview:
+
+    Gtk-WARNING **: 14:39:23.616: GTK+ module /snap/firefox/6782/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+    GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.
+
 ### 9/19/25
 
 Getting the following messages during the cache build: 
