@@ -233,13 +233,9 @@ And install:
         -DCMAKE_BUILD_TYPE=Release ~/repos/paraview
     ninja -j $(nproc)
 
-## Examples Video Results
+### NekRS Examples Video Playlist
 
-### TurbPipePeriodic
-
-https://github.com/user-attachments/assets/fbdb9a18-5268-4801-aea3-33f470e5ad2a
-
-NekRS Examples Playlist: https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r
+https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r
 
 # REFERENCES
 
