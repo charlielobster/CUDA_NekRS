@@ -235,9 +235,9 @@ And install:
 
 ### NekRS Examples Video Playlist
 
-<img src="images/channel_videos.png" />
-
 https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r
+
+<img src="images/channel_videos.png" />
 
 # REFERENCES
 
