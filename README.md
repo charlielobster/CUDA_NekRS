@@ -79,7 +79,7 @@ The topology changes:
     ~/repos/gdrcopy
     ~/repos/UCX
     ~/repos/ompi
-    ~/repos/paraview # optional, see 9/27 Update
+    ~/repos/paraview # optional, see Step 10 - 9/27 Update
     ~/repos/NekRS
 
 Once everything is installed:
@@ -213,7 +213,7 @@ Install,
 
 ### 10. Install Paraview
 
-9/27 Update: A simpler way that avoids compilation is to just use:
+9/27 Update: It isn't necessary to build this tool. A simpler way is to just use:
 
     sudo apt install -y paraview
 
