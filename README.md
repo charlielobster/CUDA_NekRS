@@ -79,7 +79,7 @@ The topology changes:
     ~/repos/gdrcopy
     ~/repos/UCX
     ~/repos/ompi
-    ~/repos/paraview
+    ~/repos/paraview # optional, see 9/27 Update
     ~/repos/NekRS
 
 Once everything is installed:
@@ -212,6 +212,11 @@ Install,
         mpirun -np 2 nekrs --setup turbPipe.par
 
 ### 10. Install Paraview
+
+9/27 Update: A simpler way that avoids compilation is to just use:
+
+    sudo apt install -y paraview
+
 
 A few required libraries we haven't installed yet:
 
