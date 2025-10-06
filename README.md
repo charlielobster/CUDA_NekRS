@@ -63,6 +63,10 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU. Test
 
 ### 3. Folder Topology
 
+Install git
+
+    sudo apt install git
+
 Create folders called repos and builds, and clone each tool into their respective subfolders under repos. 
 
     mkdir repos && builds
