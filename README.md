@@ -69,7 +69,7 @@ Install git
 
 Create folders called repos and builds, and clone each tool into their respective subfolders under repos. 
 
-    mkdir repos && builds
+    mkdir repos builds
     cd repos
     git clone https://github.com/NVIDIA/gdrcopy.git
     git clone https://github.com/openucx/UCX.git
