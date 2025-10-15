@@ -71,8 +71,6 @@ Create folders called repos and builds, and clone each tool into their respectiv
 
     mkdir repos builds
     cd repos
-    git clone https://github.com/NVIDIA/gdrcopy.git
-    git clone https://github.com/openucx/UCX.git
     git clone --resursive https://github.com/open-mpi/ompi.git
     git clone --recursive https://gitlab.kitware.com/paraview/paraview.git
     git clone https://github.com/JezSw/NekRS.git  # using JezSw's recent version
@@ -80,19 +78,15 @@ Create folders called repos and builds, and clone each tool into their respectiv
 
 The topology changes:
 
-    ~/repos/gdrcopy
-    ~/repos/UCX
     ~/repos/ompi
     ~/repos/paraview # optional, see Step 10 - 9/27 Update
     ~/repos/NekRS
 
 Once everything is installed:
 
-    ~/builds/gdrcopy
     ~/builds/NekRS
     ~/builds/paraview
     ~/builds/openmpi-5.0.8
-    ~/builds/UCX-1.20.0      
 
 ### 4. Environment Variables
 
@@ -100,70 +94,35 @@ Let's define all the environment variables first in a script.
 
 Source the script to make use of them in our build statements, and before running programs in NekRS. 
       
-1. Review the CUDA_NekRS_vars.sh script in this repo. Verify the CUDA Toolkit path. Find your wifi nic with a call to "ip a". 
-
-        ip a 
-        # open CUDA_NekRS_vars.sh in Text Editor
-        # collect your nic add it to the script 
-
-2. Double-check CUDA Toolkit Version and path preferences. Then, source the script.
+1. Double-check CUDA Toolkit Version and path preferences. Then, source the script.
 
         # double-check Toolkit Version and paths
         # cd to the folder containing CUDA_NekRS_var.sh
         # then, source the changes
         . ./CUDA_NekRS_vars.sh     
 
-4. This printenv command:
+2. This printenv command:
 
         printenv | grep -E "CUDA|UCX|OMPI|PATH"
 
    should return these variables:
 
-        GDRCOPY_HOME=~/builds/grdcopy
         OMPI_HOME=~/builds/openmpi-5.0.8
-        UCX_NET_DEVICES=<your nic>
-        UCX_LIB=~/builds/UCX-1.20.0/lib
-        UCX_HOME=~/builds/UCX-1.20.0
         OMPI_LIB=~/builds/openmpi-5.0.8/lib
         CUDA_LIB=/usr/local/cuda-12.8/lib64
-        LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:~/builds/UCX-1.20.0/lib:~/builds/openmpi-5.0.8/lib:
-        UCX_TLS=cuda
+        LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:~/builds/openmpi-5.0.8/lib:
         CUDA_HOME=/usr/local/cuda-12.8
         NEKRS_HOME=~/builds/NekRS
-        PATH=/usr/local/cuda-12.8/bin:~/builds/UCX-1.20.0/bin:~/builds/openmpi-5.0.8/bin:...
+        PATH=/usr/local/cuda-12.8/bin:~/builds/openmpi-5.0.8/bin:...
         ...
 
-5. Source the script's contents in .bashrc for terminal initialization.
+3. Source the script's contents in .bashrc for terminal initialization.
 
    For example, if your edit is contained in ~/repos/CUDA_NekRS, type this:
 
         echo . ~/repos/CUDA_NekRS/CUDA_NekRS_vars.sh >> ~/.bashrc
 
-
-### 5. (Optional) Install gdrcopy
-
-This tool facilitates shared memory access between the GPU and the CPU. If installed, OMPI and UCX should be made aware of it.
-
-    cd repos/gdrcopy
-    make prefix=$GDRCOPY_HOME all install
-    sudo ./insmod.sh
-
-### 6. Install UCX
-
-UCX tools provide a network protocol layer that facilitates shared memory operations across devices.
-
-    cd repos/UCX
-    sudo apt install -y autoconf automake libtool m4 \
-           libnuma-dev hwloc libhwloc-dev
-    ./autogen.sh
-    ./configure --prefix=$UCX_HOME \
-            --with-cuda=$CUDA_HOME \
-            --with-gdrcopy=$GDRCOPY_HOME \ # remove this line if gdrcopy is not installed
-            --enable-mt              
-    make -j$(nproc)
-    sudo make install
-
-### 7. Install Open MPI
+### 5. Install Open MPI
 
 MPI is the program space NekRS is configured to run within. In step 9, we run NekRS with a call to "mpirun", a tool generated during this step. 
 
@@ -180,13 +139,11 @@ Then install,
     ./autogen.pl
     ./configure --prefix=$OMPI_HOME \
         --with-cuda=$CUDA_HOME \
-        --with-ucx=$UCX_HOME \
-        --with-ucx-libdir=$UCX_LIB \
         --with-cuda-libdir=$CUDA_LIB/stubs 
     make --j$(nproc)
     sudo make install
 
-### 8. Install NekRS
+### 6. Install NekRS
 
 Install,
 
