@@ -99,14 +99,17 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
 
 2) Create a personal access token to use with gh
 
-    On your github.com home page, go to your account's 
-    ```
-    Settings -> Developer Settings -> Personal Acess Tokens -> Classic
-    ```
+    On your github.com home page, go to your account's `Settings -> Developer Settings`
+
     <img src="images/developer_settings.png" />
-    <picture of classic token tab location>
+
+    Then go to `Personal Acess Tokens -> Classic`
+
+    <img src="images/classic_token.png" />
 
    Create a classic token and paste that into a call to `gh auth login`
+
+<img src="images/gh_auth_login.png" />
 
 3) Configure git with your identity
     ```
@@ -125,7 +128,7 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     - Settings
     - Calculator
 
-   <img src="images/dash.png">
+   <img src="images/dash.png" />
 
 
 ### 4. Install Open MPI
