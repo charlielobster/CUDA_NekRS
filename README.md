@@ -1,5 +1,9 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu 24.04.3
 
+While I'm new to NekRS and to Ubuntu in general, I got it working. Here are my best practices, after multiple attempts.
+    
+Apparently, parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8. There are portions of the code that reference some artifacts not found in the current version of the CUDA Toolkit. Parts of the NekRS build also use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future nekRS run.
+
 These steps should work with most gaming and laptop PCs with an Nvidia GPU. 
 
 ### 1. Install Ubuntu 24.04.3
@@ -40,11 +44,9 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
     In the example, Driver Version is 570.172.08 and CUDA Version is 12.8.
 
-    There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers on given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a codebase on your machine can target, which are not necessarily just for your own. 
+    There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a given codebase on your machine can target, which are not necessarily just your own architecture. 
 
-    Apparently, parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8 and there are portions of the code that reference some artifacts not found in later versions of CUDA. There are also parts of the NekRS build that use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are empty, but could be defined to work in new ways during a future nekRS run. However, the lowest the Version 13 Toolkit will build for is CUDA Version 7.5, so we need a CUDA Toolkit Version below 13 to successfully build NekRS, assuming we want to minimize changes to the code. So CUDA Toolkit 12.8 is a critical choice.
-
-2) If you haven't installed a driver yet, in a terminal, type:
+3) If you haven't installed a driver yet, in a terminal, type:
 
     ```
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
@@ -52,7 +54,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
     sudo apt update
     sudo apt install nvidia-driver-580-open
     ```
-3) After the driver is installed,
+4) After the driver is installed,
    
     ```
     reboot
@@ -97,7 +99,10 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     ```
     Settings -> Developer Settings -> Personal Acess Tokens -> Classic
     ```
-    Create a classic token and paste that into a call to `gh auth login`
+    <picture of developer settings>
+    <picture of classic token tab location>
+
+   Create a classic token and paste that into a call to `gh auth login`
 
 3) Configure git with your identity
     ```
@@ -115,6 +120,7 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     - Terminal
     - Settings
     - Calculator
+   <picture of Dash>
 
 ### 4. Install Open MPI
 
