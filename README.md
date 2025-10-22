@@ -2,9 +2,11 @@
     
 These steps should work with most gaming and laptop PCs with an Nvidia GPU. 
 
+
 ### Potential Version Incompatibilies
 
 Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8. There are portions of the code that reference some artifacts not found in the current version of the CUDA Toolkit. Parts of the NekRS build also use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future NekRS run.
+
 
 ### 1. Install Ubuntu 24.04.3
 
@@ -20,7 +22,9 @@ Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture.
 
     For this tutorial, "Install latest Graphics and Wifi hardware drivers" was left blank during the install. 
 
+
 ### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13)
+
 
 #### 1. Check or install CUDA Driver
 
@@ -60,6 +64,7 @@ Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture.
     reboot
     ```        
 
+
 #### 2. Install CUDA Toolkit (Under Version 13)
 
 Just to reiterate, the command to `apt install cuda-toolkit` will automatically install the Version 13 CUDA Toolkit if that matches your CUDA driver's version, but Nvidia ended targeting devices below CUDA Versions 7.5 for this, their newest Toolkit. Some of NekRS's third party tools (Hypre) expect the previous version (v11) of cusparse. 
@@ -84,6 +89,7 @@ Once this completes, make sure to update your path to nvcc:
 echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
 . ~/.bashrc
 ```
+
 
 ### 3. Configure Environment, git, and Visual Studio Code
 
@@ -122,6 +128,7 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     - Calculator
    <picture of Dash>
 
+
 ### 4. Install Open MPI
 
 MPI is the program space NekRS is configured to actually run within. In Step 6, we will run NekRS with a call to `mpirun`, the tool generated in this step. 
@@ -155,10 +162,11 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
     . ~/.bashrc                                                 # source the changes into this terminal window
     ```
 
-
 ### 5. Install NekRS
 
 1) First navigate to https://github.com/nek5000/nekRS and fork the NekRS repository. 
+
+<picture of forking Nek5000/NekRS on github>
 
 2) Clone your copy of NekRS:
 
@@ -167,6 +175,8 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
     ```
 
 3) Note that for the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
+
+<picture of change to polyfill.hpp in vs code>
 
     The mpi commands are wrappers around the standard gnu tools. So rather than require yet another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we can replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
 
@@ -183,7 +193,6 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
     . ~/.bashrc
     ```
 
-
 ### 6. Get NekRS Output
 
 1) Navigate to the build's `examples/turbPipePeriodic` folder:
@@ -196,7 +205,9 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 
     In `turbPipe.par`, change the endTime from 200 to .5 for a shorter test time. 
 
-       endTime = .5 
+    ```
+    endTime = .5
+    ```
 
 3) Then, starting at line 8, add or change these lines in the `turbPipe.par` file:
 
@@ -218,7 +229,6 @@ sudo apt install paraview
 ```
 
 ### NekRS Examples Video Playlist
-
 
 [<img src="images/channel_videos.png" />](https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r)
 
@@ -252,10 +262,11 @@ If your instance of Nvidia Visual Profiler is currently busted,
 
 <img src="images/Profiler_Error.png" />
 
-Type this:
+Type:
 
-    sudo apt install openjdk-8-jdk
-
+```
+sudo apt install openjdk-8-jdk
+```
 Go to the `/usr/local/cuda/bin` folder and edit the `nvvp` file. Add the following before `'$@'` at the end of the file:
 
 ```
