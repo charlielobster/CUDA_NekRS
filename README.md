@@ -155,7 +155,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 
 ### 5. Install NekRS
 
-1) First navigate to https://github.com/nek5000/nekRS and fork repository. 
+1) First navigate to https://github.com/nek5000/nekRS and fork the NekRS repository. 
 
 2) Clone your copy of NekRS:
 
