@@ -48,7 +48,7 @@ Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, o
 
     In the example, Driver Version is 570.172.08 and CUDA Version is 12.8.
 
-    There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a given codebase on your machine can target, which are not necessarily just your own architecture. 
+    There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a given codebase on your machine can target, which are not necessarily just your own architecture. 
 
 2) If you haven't installed a driver yet, in a terminal, type:
 
