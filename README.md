@@ -26,7 +26,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
     nvidia-smi
     ```
 
-    If you have a one, you'll get back something like:
+    If you have a driver already, you'll get back something like:
 
     ```
     +-----------------------------------------------------------------------------------------+
