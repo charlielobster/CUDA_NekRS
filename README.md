@@ -151,7 +151,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 4) Once the installation completes, export the location of its installed libraries to your environment:
 
     ```
-    echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to path for every terminal
+    echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to library path for every terminal
     . ~/.bashrc                                                 # source the changes into this terminal window
     ```
 
