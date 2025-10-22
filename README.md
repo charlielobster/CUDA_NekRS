@@ -75,9 +75,7 @@ So if your driver's CUDA Version is 13, do this:
 sudo apt install cuda-toolkit-12-8
 ```
 
-However, if you have an older GPU and your Driver Version is under 13, you automatically get an older version of the Toolkit that is capable of targeting your device. 
-
-In that case, just type:
+However, if you have an older GPU and your Driver Version is under 13, you automatically get an older version of the Toolkit that is capable of targeting your device. In that case, just type:
 
 ```
 sudo apt install cuda-toolkit 
@@ -105,7 +103,7 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     ```
     Settings -> Developer Settings -> Personal Acess Tokens -> Classic
     ```
-    <img="images/developer_settings.png">
+    <img src="images/developer_settings.png" />
     <picture of classic token tab location>
 
    Create a classic token and paste that into a call to `gh auth login`
@@ -126,7 +124,8 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     - Terminal
     - Settings
     - Calculator
-   <picture of Dash>
+
+   <img src="images/dash.png">
 
 
 ### 4. Install Open MPI
@@ -166,7 +165,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 
 1) First navigate to https://github.com/nek5000/nekRS and fork the NekRS repository. 
 
-<picture of forking Nek5000/NekRS on github>
+<img src="images/fork.png"/>
 
 2) Clone your copy of NekRS:
 
@@ -176,7 +175,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 
 3) Note that for the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
 
-<picture of change to polyfill.hpp in vs code>
+<img src="images/polyfill_hpp.png" />
 
     The mpi commands are wrappers around the standard gnu tools. So rather than require yet another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we can replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
 
