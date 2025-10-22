@@ -162,7 +162,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 
 3) Note that for the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
 
-    Rather than require yet another set of `lib`, `include`, and `bin` folders every time you want to compile an mpi program that uses the standard gnu tools, mpi tools provide wrappers around their underlying compilers. To use then, we replace `CC` with `mpicc`, or use `mpic++` instead of `CXX`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
+    Rather than require yet another set of `lib`, `include`, and `bin` folders every time you want to compile an mpi program that uses the standard gnu tools, mpi tools provide wrappers around their underlying compilers. To use them, we must replace `CC` with `mpicc`, or use `mpic++` instead of `CXX`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
 
     ```
     cd nekRS
