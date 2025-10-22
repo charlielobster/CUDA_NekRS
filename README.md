@@ -181,7 +181,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
     <img src="images/polyfill_hpp.png" />
 
     
-    The mpi commands are wrappers around the standard gnu tools. So rather than require another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we instead replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
+    The mpi commands are wrappers around the standard gnu tools. So rather than specify another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we instead replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc, and get the linking for free. We will use this aliasing technique next.
 
     ```
     cd nekRS
