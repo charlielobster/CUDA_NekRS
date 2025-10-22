@@ -1,8 +1,10 @@
 # Support Documentation for CUDA NekRS Installation on Ubuntu 24.04.3
     
-Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8. There are portions of the code that reference some artifacts not found in the current version of the CUDA Toolkit. Parts of the NekRS build also use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future nekRS run.
-
 These steps should work with most gaming and laptop PCs with an Nvidia GPU. 
+
+# Potential Version Incompatibilies
+
+Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8. There are portions of the code that reference some artifacts not found in the current version of the CUDA Toolkit. Parts of the NekRS build also use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future nekRS run.
 
 ### 1. Install Ubuntu 24.04.3
 
