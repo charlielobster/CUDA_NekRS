@@ -2,8 +2,6 @@
 
 These steps should work with most gaming and laptop PCs with an Nvidia GPU. 
 
-Please note there are probably easier ways to get all these components working together (without compiling and building everything ourselves) and I will update this document as I discover them.
-
 ### 1. Install Ubuntu 24.04.3
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
