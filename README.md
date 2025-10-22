@@ -50,7 +50,7 @@ Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, o
 
     There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a given codebase on your machine can target, which are not necessarily just your own architecture. 
 
-3) If you haven't installed a driver yet, in a terminal, type:
+2) If you haven't installed a driver yet, in a terminal, type:
 
     ```
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
@@ -58,7 +58,7 @@ Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, o
     sudo apt update
     sudo apt install nvidia-driver-580-open
     ```
-4) After the driver is installed,
+3) After the driver is installed,
    
     ```
     reboot
