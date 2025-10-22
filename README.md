@@ -133,9 +133,9 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
 
 ### 4. Install Open MPI
 
-MPI is the program space NekRS is configured to actually run within. In Step 6, we will run NekRS with a call to `mpirun`, the tool generated in this step. 
+MPI is the program space NekRS is configured to actually run within. In Step 6, we will run NekRS with a call to `mpirun`, a tool generated in this step. 
 
-1) Install gnu fortran, Flex, zlib, and some other dependencies
+1) Install gnu fortran, autoconf, cmake, flex, zlib, and some other dependencies
 
     ```       
     sudo apt install autoconf cmake gfortran flex libtool zlib1g-dev liblz4-dev libzstd-dev
