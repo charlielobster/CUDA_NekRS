@@ -67,7 +67,7 @@ Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, o
 
 #### 2. Install CUDA Toolkit (Under Version 13)
 
-Just to reiterate, the command to `apt install cuda-toolkit` will automatically install the Version 13 CUDA Toolkit if that matches your CUDA driver's version, but Nvidia ended targeting devices below CUDA Versions 7.5 for this, their newest Toolkit. Some of NekRS's third party tools (Hypre) expect the previous version (v11) of cusparse. 
+Just to reiterate, the command to `apt install cuda-toolkit` will automatically install the Version 13 CUDA Toolkit if that matches your CUDA driver's version, but Nvidia ended targeting devices below CUDA Versions 7.5 for this, their newest Toolkit. Some of NekRS's third party tools (Hypre, OCCA) expect the previous version (v11) of cusparse. 
 
 So if your driver's CUDA Version is 13, do this:
 
