@@ -145,8 +145,8 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 4) Once the installation completes, export the location of its installed libraries to your environment:
 
     ```
-    echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc
-    . ~/.bashrc
+    echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to path for every terminal
+    . ~/.bashrc                                                 # source the changes into this terminal window
     ```
 
 
@@ -162,13 +162,13 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 
 3) Note that for the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
 
-    The mpi commands are wrappers around the standard gnu tools. So, rather than require yet another set of `lib`, `include`, and `bin` folders every time you want to compile an mpi program, we can replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
+    The mpi commands are wrappers around the standard gnu tools. So rather than require yet another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we can replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc. We will use this aliasing technique next.
 
     ```
     cd nekRS
     CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig
     ```
-
+    
 4) Once it completes, export the home and path variables,
 
     ```
