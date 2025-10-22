@@ -5,7 +5,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
 ### Potential Version Incompatibilies
 
-Parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8. There are portions of the code that reference some artifacts not found in the current version of the CUDA Toolkit. Parts of the NekRS build also use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future NekRS run.
+Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, one of NekRS third party tools, is not considered compatible with Cuda Toolkit above version 11. There are reference to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11, and there are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future NekRS run.
 
 
 ### 1. Install Ubuntu 24.04.3
@@ -232,7 +232,7 @@ sudo apt install paraview
 
 [<img src="images/channel_videos.png" />](https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r)
 
-# REFERENCES
+### REFERENCES
 
 https://github.com/Nek5000
 
@@ -250,13 +250,13 @@ https://docs.open-mpi.org/en/v5.0.x/tuning-apps/networking/cuda.html
 
 https://stackoverflow.com/questions/28932864/which-compute-capability-is-supported-by-which-cuda-versions/28933055#28933055
 
-# TEST SPECS
+### TEST SPECS
 
 RTX 3090 Ti and RTX 5090 GPUs\
 i9-12900KS chipset on an ASUS Z690 motherboard\
 AMD Ryzen 7970X CPU on an ASUS Pro WS TRX50 Sage Wifi motherboard.
 
-# NOTES
+### NOTES
 
 If your instance of Nvidia Visual Profiler is currently busted,
 
