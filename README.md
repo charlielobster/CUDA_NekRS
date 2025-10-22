@@ -42,7 +42,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
     There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numbers on given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a codebase on your machine can target, which are not necessarily just for your own. 
 
-    Apparently, parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8. There are parts of the code that reference some artifacts not found in later versions of CUDA. There are also parts that have set the C++ standard to 11 for some nvcc compilations and other flags, such as the OCCA environment flags, that are empty, but could be defined to work in new ways during a future nekRS build. However, the lowest the Version 13 Toolkit will go down to is CUDA Version 7.5. So, we need a CUDA Toolkit Version below 13 to successfully build NekRS if we are trying to minimize changes to the code. So CUDA Toolkit 12.8 is a critical choice.
+    Apparently, parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8 and there are portions of the code that reference some artifacts not found in later versions of CUDA. There are also parts of the NekRS build that use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are empty, but could be defined to work in new ways during a future nekRS run. However, the main point is that the lowest the Version 13 Toolkit will build for is CUDA Version 7.5, so we need a CUDA Toolkit Version below 13 to successfully build NekRS, assuming we want to minimize changes to the code. So CUDA Toolkit 12.8 is a critical choice.
 
 2) In a terminal, type:
 
@@ -52,7 +52,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
     sudo apt update
     sudo apt install nvidia-driver-580-open
     ```
-    After apt installs the driver then,
+    After the driver is installed,
     ```
     reboot
     ```        
@@ -123,7 +123,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
 1) Install gnu fortran, Flex, zlib, and some other dependencies
 
     ```       
-    sudo apt install gfortran flex libtool zlib1g-dev liblz4-dev libzstd-dev
+    sudo apt install autoconf cmake gfortran flex libtool zlib1g-dev liblz4-dev libzstd-dev
     ```
 
 2) clone the open-mpi repository:
