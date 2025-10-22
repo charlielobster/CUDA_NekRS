@@ -44,7 +44,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
     Apparently, parts of the NekRS codebase target the compute-70 (CUDA Version 7) architecture. Hypre's installation instructions says it can't be used above Cuda Toolkit 11.8 and there are portions of the code that reference some artifacts not found in later versions of CUDA. There are also parts of the NekRS build that use flags which set the C++ standard to 11, and other flags, such as the OCCA environment flags, that are empty, but could be defined to work in new ways during a future nekRS run. However, the lowest the Version 13 Toolkit will build for is CUDA Version 7.5, so we need a CUDA Toolkit Version below 13 to successfully build NekRS, assuming we want to minimize changes to the code. So CUDA Toolkit 12.8 is a critical choice.
 
-2) In a terminal, type:
+2) If you haven't installed a driver yet, in a terminal, type:
 
     ```
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
