@@ -105,7 +105,7 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
     ```
     Settings -> Developer Settings -> Personal Acess Tokens -> Classic
     ```
-    <picture of developer settings>
+    <img="images/developer_settings.png">
     <picture of classic token tab location>
 
    Create a classic token and paste that into a call to `gh auth login`
