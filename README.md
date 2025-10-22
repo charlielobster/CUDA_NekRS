@@ -174,6 +174,7 @@ MPI is the program space NekRS is configured to actually run within. In Step 6, 
     ```
     echo export NEKRS_HOME=~/.local/nekrs >> ~/.bashrc
     echo export PATH=$NEKRS_HOME/bin:$PATH >> ~/.bashrc
+    . ~/.bashrc
     ```
 
 
