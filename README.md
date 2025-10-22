@@ -52,11 +52,11 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
     sudo apt update
     sudo apt install nvidia-driver-580-open
     ```
-    After the driver is installed,
+3) After the driver is installed,
+   
     ```
     reboot
     ```        
-
 
 #### 2. Install CUDA Toolkit (Under Version 13)
 
