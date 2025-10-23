@@ -50,8 +50,6 @@ If you have a driver already, you'll get back something like:
 
 In the example, Driver Version is `570.172.08` and CUDA Version is `12.8`.
 
-The difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine, is that the CUDA Version refers to the driver software running on a particular GPU device, often referred to as the `native` architecture in configuration tools, while the CUDA Toolkit Version determines what hardware architectures a given codebase on a machine can target.
-
 If you haven't installed a driver yet, in a terminal, type:
 
 ```
@@ -68,6 +66,8 @@ reboot
 
 
 #### 2. Install CUDA Toolkit (Under Version 13)
+
+The difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine, is that the CUDA Version refers to the driver software running on a particular GPU device, often referred to as the `native` architecture in configuration tools, while the CUDA Toolkit Version determines what hardware architectures a given codebase on a machine can target.
 
 To reiterate, the command to `apt install cuda-toolkit` will automatically install the latest CUDA Toolkit (v13) if that matches your CUDA driver version, but Nvidia ended targeting devices below CUDA Versions 7.5. This is a problem because some of NekRS's third party tools (Hypre, OCCA) expect the previous version (v11) of cusparse or similar deprecated CUDA tools. 
 
