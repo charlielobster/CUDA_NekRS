@@ -7,8 +7,8 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
 Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to their install guide, Hypre, one of NekRS's third party tools, is not considered compatible with Cuda Toolkit above version 11. There are references to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11 for some nvcc compilations, and there are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future NekRS run.
 
+<br/>
 
-<br /><br />
 ### 1. Install Ubuntu 24.04.3
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
@@ -23,12 +23,12 @@ Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to
 
     For this document, "Install latest Graphics and Wifi hardware drivers" was left blank during the install. 
 
+<br/>
 
-<br /><br />
 ### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13)
 
 
-#### 1. Check or install CUDA Driver
+#### Check or install CUDA Driver
 
 Open a terminal and type:
 
@@ -64,8 +64,7 @@ After the driver is installed,
 reboot
 ```        
 
-
-#### 2. Install CUDA Toolkit (Under Version 13)
+#### Install CUDA Toolkit (Under Version 13)
 
 The difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine, is that the CUDA Version refers to the driver software running on a particular GPU device, often referred to as the `native` architecture in configuration tools, while the CUDA Toolkit Version determines what hardware architectures a given codebase on a machine can target.
 
@@ -89,8 +88,8 @@ Once this completes, make sure to update your path to nvcc:
 echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
 . ~/.bashrc
 ```
+<br/>
 
-<br /><br />
 ### 3. Configure Environment, git, and Visual Studio Code
 
 Install git
@@ -133,7 +132,8 @@ Some suggested tools to pin to the Dash
 - VS Code
 <img src="images/dash.png"/>
 
-<br /><br />
+<br/>
+
 ### 4. Install Open MPI
 
 MPI is the program space NekRS is configured to run inside. For each Case in NekRS, a large set of objects and executables are essentially JIT compiled, using the tools MPI is configured to use for this. To use our CUDA hardware, we need to configure MPI to compile them using nvcc, along with the standard gnu tools. In Step 6, we will run NekRS with a call to `mpirun`, a tool generated in this step. 
@@ -167,7 +167,8 @@ echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to
 . ~/.bashrc                                                 # source the changes into this terminal window
 ```
 
-<br /><br />
+<br/>
+
 ### 5. Install NekRS
 
 Navigate to https://github.com/nek5000/nekRS and fork the NekRS repository. 
@@ -200,8 +201,9 @@ echo export PATH=$NEKRS_HOME/bin:$PATH >> ~/.bashrc
 . ~/.bashrc
 ```
 
-<br /><br />
-### 6. Get NekRS Output
+<br/>
+
+### 6. Create NekRS Output
 
 Navigate to the build's `examples/turbPipePeriodic` folder:
 
@@ -215,15 +217,16 @@ Then
 mpirun -np 2 nekrs --setup turbPipe.par
 ```
 
-<br /><br />
+<br/>
+
 ### 7. Install Paraview
 
 ```
 sudo apt install paraview
 ```
 
-<br /><br />
-<br /><br />
+<br/><br/>
+
 ### NekRS Examples Video Playlist
 
 [<img src="images/channel_videos.png" />](https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r)
