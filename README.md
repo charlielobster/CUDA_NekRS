@@ -126,18 +126,12 @@ Install Visual Studio Code
 sudo snap install code --classic
 ```
 
-
 Some suggested tools to pin to the Dash 
-
-<img src="images/dash.png" style="float: left"/>
-
 - Terminal
 - Calculator
 - Settings
-- VS Code
-<br /><br />
-<br /><br />
-<br /><br />
+- VS Code\
+<img src="images/dash.png"/>
 
 <br /><br />
 ### 4. Install Open MPI
