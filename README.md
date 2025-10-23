@@ -8,6 +8,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, one of NekRS's third party tools, is not considered compatible with Cuda Toolkit above version 11. There are references to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11 for some nvcc compilations, and there are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during a future NekRS run.
 
 
+<br /><br />
 ### 1. Install Ubuntu 24.04.3
 
 1) Inside your Windows instance, download the Ubuntu 24.04.3 iso file
@@ -20,54 +21,55 @@ Parts of the NekRS target the compute-70 (CUDA Version 7) architecture. Hypre, o
 
 3) From your BIOS, boot from the USB drive and install to the target drive
 
-    For this tutorial, "Install latest Graphics and Wifi hardware drivers" was left blank during the install. 
+    For this document, "Install latest Graphics and Wifi hardware drivers" was left blank during the install. 
 
 
+<br /><br />
 ### 2. Install CUDA Drivers (if not pesent) and CUDA Toolkit (under version 13)
 
 
 #### 1. Check or install CUDA Driver
 
-1) Open a terminal and type:
+Open a terminal and type:
 
-    ```
-    nvidia-smi
-    ```
+```
+nvidia-smi
+```
 
-    If you have a driver already, you'll get back something like:
+If you have a driver already, you'll get back something like:
 
-    ```
-    +-----------------------------------------------------------------------------------------+
-    | NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
-    |-----------------------------------------+------------------------+----------------------+
-    | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-    | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-    |                                         |                        |               MIG M. |
-    ...
-    ```
+```
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+...
+```
 
-    In the example, Driver Version is `570.172.08` and CUDA Version is `12.8`.
+In the example, Driver Version is `570.172.08` and CUDA Version is `12.8`.
 
-    There is a difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine. The CUDA Version refers to the driver software you have running on a particular GPU device. Your CUDA Toolkit Version determines what hardware architectures a given codebase on your machine can target, which are not necessarily just your own architecture. 
+The difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine, is that the CUDA Version refers to the driver software running on a particular GPU device, often referred to as the `native` architecture in configuration tools, while the CUDA Toolkit Version determines what hardware architectures a given codebase on a machine can target.
 
-2) If you haven't installed a driver yet, in a terminal, type:
+If you haven't installed a driver yet, in a terminal, type:
 
-    ```
-    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
-    sudo dpkg -i cuda-keyring_1.1-1_all.deb
-    sudo apt update
-    sudo apt install nvidia-driver-580-open
-    ```
-3) After the driver is installed,
-   
-    ```
-    reboot
-    ```        
+```
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt update
+sudo apt install nvidia-driver-580-open
+```
+After the driver is installed,
+
+```
+reboot
+```        
 
 
 #### 2. Install CUDA Toolkit (Under Version 13)
 
-Just to reiterate, the command to `apt install cuda-toolkit` will automatically install the Version 13 CUDA Toolkit, if that matches your CUDA driver's version, but Nvidia ended targeting devices below CUDA Versions 7.5 for this, their newest Toolkit. Some of NekRS's third party tools (Hypre, OCCA) expect the previous version (v11) of cusparse. 
+To reiterate, the command to `apt install cuda-toolkit` will automatically install the latest CUDA Toolkit (v13) if that matches your CUDA driver version, but Nvidia ended targeting devices below CUDA Versions 7.5. This is a problem because some of NekRS's third party tools (Hypre, OCCA) expect the previous version (v11) of cusparse or similar deprecated CUDA tools. 
 
 So if your driver's CUDA Version is 13, do this:
 
@@ -88,149 +90,146 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
 . ~/.bashrc
 ```
 
-
+<br /><br />
 ### 3. Configure Environment, git, and Visual Studio Code
 
-1) Install git
+Install git
 
-    ```
-    sudo apt install git gh
-    ```
+```
+sudo apt install git gh
+```
 
-2) Create a personal access token to use with gh
+Create a personal access token to use with gh
 
-    On your github.com home page, go to your account's `Settings -> Developer Settings`
+On your github.com home page, go to your account's `Settings -> Developer Settings`
 
-    <img src="images/developer_settings.png" />
+<img src="images/developer_settings.png" />
 
-    Then go to `Personal Acess Tokens -> Classic`
+Then go to `Personal Acess Tokens -> Classic`
 
-    <img src="images/classic_token.png" />
+<img src="images/classic_token.png" />
 
-   Create a classic token and paste that into a call to `gh auth login`
+Create a classic token and paste that into a call to `gh auth login`
 
 <img src="images/gh_auth_login.png" />
 
-3) Configure git with your identity
-    ```
-    git config --global user.name <your git name>
-    git config --global user.email <your git email>
-    ```
-3) Install Visual Studio Code
+Configure git with your identity
 
-    ```
-    sudo snap install code --classic
-    ```
-4) Pin the following tools to the Dash: 
+```
+git config --global user.name <your git name>
+git config --global user.email <your git email>
+```
 
-    - VS Code
-    - Terminal
-    - Settings
-    - Calculator
+Install Visual Studio Code
 
-   <img src="images/dash.png" />
+```
+sudo snap install code --classic
+```
 
 
+Some suggested tools to pin to the Dash 
+
+<img src="images/dash.png" style="float: left"/>
+
+- Terminal
+- Calculator
+- Settings
+- VS Code
+<br /><br />
+<br /><br />
+<br /><br />
+
+<br /><br />
 ### 4. Install Open MPI
 
-MPI is the program space NekRS is configured to actually run within. In Step 6, we will run NekRS with a call to `mpirun`, a tool generated in this step. 
+MPI is the program space NekRS is configured to run inside. For each Case in NekRS, a large set of objects and executables are essentially JIT compiled, using the tools MPI is configured to use for this. To use our CUDA hardware, we need to configure MPI to compile them using nvcc, along with the standard gnu tools. In Step 6, we will run NekRS with a call to `mpirun`, a tool generated in this step. 
 
-1) Install gnu fortran, autoconf, cmake, flex, zlib, and some other dependencies
+Install gnu fortran, autoconf, cmake, flex, zlib, and some other dependencies
 
-    ```       
-    sudo apt install autoconf cmake gfortran flex libtool zlib1g-dev liblz4-dev libzstd-dev
-    ```
+```       
+sudo apt install autoconf cmake gfortran flex libtool zlib1g-dev liblz4-dev libzstd-dev
+```
 
-2) clone the open-mpi repository:
+Clone the `open-mpi/ompi` repository
 
-    ``` 
-    git clone --recursive https://github.com/open-mpi/ompi.git
-    ```
+``` 
+git clone --recursive https://github.com/open-mpi/ompi.git
+```
 
-3) Install open-mpi,
+Install Open-MPI
 
-    ```
-    cd ompi
-    ./autogen.pl
-    ./configure --with-cuda=/usr/local/cuda --with-cuda-libdir=/usr/local/cuda/stubs 
-    make --j$(nproc)
-    sudo make install
-    ```
+```
+cd ompi
+./autogen.pl
+./configure --with-cuda=/usr/local/cuda --with-cuda-libdir=/usr/local/cuda/stubs 
+make --j$(nproc)
+sudo make install
+```
 
-4) Once the installation completes, export the location of its installed libraries to your environment:
+Once the installation completes, export the location of its installed libraries to your environment
 
-    ```
-    echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to library path for every terminal
-    . ~/.bashrc                                                 # source the changes into this terminal window
-    ```
+```
+echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to library path for every terminal
+. ~/.bashrc                                                 # source the changes into this terminal window
+```
 
+<br /><br />
 ### 5. Install NekRS
 
-1) First navigate to https://github.com/nek5000/nekRS and fork the NekRS repository. 
+Navigate to https://github.com/nek5000/nekRS and fork the NekRS repository. 
 
-    <img src="images/fork.png"/>
+<img src="images/fork.png"/>
 
-2) Clone your copy of NekRS:
+Clone your copy of NekRS:
 
-    ```
-    git clone --recursive https://github.com/<your fork>/nekRS.git
-    ```
+```
+git clone --recursive https://github.com/<your fork>/nekRS.git
+```
 
-3) Note that for the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
+For the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
 
-    <img src="images/polyfill_hpp.png" />
+<img src="images/polyfill_hpp.png" />
 
     
-    The mpi commands are wrappers around the standard gnu tools. So rather than specify another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we instead replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc, and get the linking for free. We will use this aliasing technique next.
+The mpi commands are wrappers around the standard gnu tools. So rather than specify another set of `lib`, `include`, and `bin` folders every time an mpi program is compiled, we instead replace `CC` with `mpicc`, or `CXX` with `mpic++`, or `mpif77` for `f77`, etc, and the wrappers do the rest. We use this aliasing technique next.
 
-    ```
-    cd nekRS
-    CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig
-    ```
+```
+cd nekRS
+CC=mpicc CXX=mpic++ FC=mpif77 ./nrsconfig
+```
     
-4) Once it completes, export the home and path variables,
+Once it completes, export the home and path variables,
 
-    ```
-    echo export NEKRS_HOME=~/.local/nekrs >> ~/.bashrc
-    echo export PATH=$NEKRS_HOME/bin:$PATH >> ~/.bashrc
-    . ~/.bashrc
-    ```
+```
+echo export NEKRS_HOME=~/.local/nekrs >> ~/.bashrc
+echo export PATH=$NEKRS_HOME/bin:$PATH >> ~/.bashrc
+. ~/.bashrc
+```
 
+<br /><br />
 ### 6. Get NekRS Output
 
-1) Navigate to the build's `examples/turbPipePeriodic` folder:
+Navigate to the build's `examples/turbPipePeriodic` folder:
 
-    ```
-    cd $NEKRS_HOME/examples/turbPipePeriodic
-    ```
+```
+cd $NEKRS_HOME/examples/turbPipePeriodic
+```
 
-2) If the nekRS example .par files are not set up to save any output. 
+Then
 
-    In `turbPipe.par`, change the endTime from 200 to .5 for a shorter test time. 
+```    
+mpirun -np 2 nekrs --setup turbPipe.par
+```
 
-    ```
-    endTime = .5
-    ```
-
-3) Then, starting at line 8, add or change these lines in the `turbPipe.par` file:
-
-    ```
-    writeControl = steps
-    writeInterval = 6 
-    ```
-
-4) Then type,
-
-    ```    
-    mpirun -np 2 nekrs --setup turbPipe.par
-    ```
-
+<br /><br />
 ### 7. Install Paraview
 
 ```
 sudo apt install paraview
 ```
 
+<br /><br />
+<br /><br />
 ### NekRS Examples Video Playlist
 
 [<img src="images/channel_videos.png" />](https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r)
