@@ -223,7 +223,7 @@ mpirun -np 2 nekrs --setup turbPipe.par
 
 I had to go to the ParaView website to find a version of ParaView that could load nek5000 files without issue. 
 
-`https://www.paraview.org/download/`
+[https://www.paraview.org/download/](https://www.paraview.org/download/)
 
 I used the [ParaView-6.0.1-MPI-Linux-Python3.12-x86_64.tar.gz](https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v6.0&type=binary&os=Linux&downloadFile=ParaView-6.0.1-MPI-Linux-Python3.12-x86_64.tar.gz) link:
 
