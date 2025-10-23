@@ -99,9 +99,9 @@ Install git
 sudo apt install git gh
 ```
 
-Create a personal access token to use with gh
+Create a personal access token to use with gh.
 
-On your github.com home page, go to your account's `Settings -> Developer Settings`
+On github, go to your account's `Settings -> Developer Settings`
 
 <img src="images/developer_settings.png" />
 
