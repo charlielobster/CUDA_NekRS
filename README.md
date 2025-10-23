@@ -130,7 +130,7 @@ Some suggested tools to pin to the Dash
 - Terminal
 - Calculator
 - Settings
-- VS Code\
+- VS Code
 <img src="images/dash.png"/>
 
 <br /><br />
