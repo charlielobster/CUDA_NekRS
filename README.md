@@ -230,7 +230,7 @@ I used the this link: [ParaView-6.0.1-MPI-Linux-Python3.12-x86_64.tar.gz](https:
 I moved the extracted files into `/usr/local/Paraview`
 
 ```
-mv ~/Downloads/ParaView-6.0.1-MPI-Linux-Python3.12-x86_64 usr/local/ParaView
+mv ~/Downloads/ParaView-6.0.1-MPI-Linux-Python3.12-x86_64 /usr/local/ParaView
 ```
 
 and added ParaView's `bin` folder to `PATH`:
