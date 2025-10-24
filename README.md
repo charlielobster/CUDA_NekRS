@@ -155,7 +155,7 @@ Install Open-MPI
 ```
 cd ompi
 ./autogen.pl
-./configure --with-cuda=/usr/local/cuda --with-cuda-libdir=/usr/local/cuda/stubs 
+./configure --with-cuda=/usr/local/cuda --with-cuda-libdir=/usr/local/cuda/lib64/stubs 
 make --j$(nproc)
 sudo make install
 ```
