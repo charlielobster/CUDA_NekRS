@@ -181,7 +181,7 @@ Clone your copy of NekRS:
 git clone --recursive https://github.com/<your fork>/nekRS.git
 ```
 
-For the next part, I had a small issue with one file, an OCCA file called `nekRS/src/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
+For the next part, I had a small issue with one file, an OCCA file called `nekRS/3rd_party/occa/src/occa/internal/modes/dpcpp/polyfill.hpp`, so I added `#include <cstdint>` in its own line, just above line #9 in that file. 
 
 <img src="images/polyfill_hpp.png" />
 
