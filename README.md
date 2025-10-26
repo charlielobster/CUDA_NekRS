@@ -90,7 +90,7 @@ echo export PATH=/usr/local/cuda/bin:$PATH >> ~/.bashrc
 ```
 <br/>
 
-### 3. Configure Environment, git, and Visual Studio Code
+### 3. (Optional) Configure Environment, git, and Visual Studio Code
 
 Install git
 
@@ -134,7 +134,7 @@ Some suggested tools to pin to the Dash
 
 <br/>
 
-### 4. Install Open MPI
+### 4. Configure for CUDA and Install Open MPI
 
 MPI is the program space NekRS is configured to run inside. For each Case in NekRS, a large set of objects and executables are essentially JIT compiled, using the tools MPI is configured to use for this. To use our CUDA hardware, we need to configure MPI to compile them using nvcc, along with the standard gnu tools. In Step 6, we will run NekRS with a call to `mpirun`, a tool generated in this step. 
 
@@ -163,8 +163,8 @@ sudo make install
 Once the installation completes, export the location of its installed libraries to your environment
 
 ```
-echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # add the changes to library path for every terminal
-. ~/.bashrc                                                 # source the changes into this terminal window
+echo export LD_LIBRARY_PATH=/usr/local/lib >> ~/.bashrc     # change library path for every terminal
+. ~/.bashrc                                                 # source changes into this terminal window
 ```
 
 <br/>
