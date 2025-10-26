@@ -1,1 +1,4 @@
-ffmpeg -framerate 50 -i turbPipe.%04d.png -c:v libx264 -pix_fmt yuv420p output_4k_lossless.mp4
+# !/bin/bash
+# ./create_mp4.sh <png regex path> <path to mp4>
+
+ffmpeg -framerate 50 -i $1 -c:v libx264 -pix_fmt yuv420p $2
