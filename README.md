@@ -5,7 +5,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
 ### Potential Version Incompatibilies
 
-Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to their install guide, Hypre, one of NekRS's third party tools, is not considered compatible with CUDA Toolkit above version 11. There are references to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11 (typically 17) for some nvcc compilations. There are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work for future NekRS runs.
+Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to their install guide, Hypre, one of NekRS's third party tools, is not considered compatible with CUDA Toolkit above version 11. There are references to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11 (typically 17) for some `nvcc` compilations. There are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work for future NekRS runs.
 
 <br/>
 
