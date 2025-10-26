@@ -134,7 +134,7 @@ Some suggested tools to pin to the Dash
 
 <br/>
 
-### 4. Configure for CUDA and Install Open MPI
+### 4. Configure OpenMPI for CUDA and Install
 
 MPI is the program space NekRS is configured to run inside. For each Case in NekRS, a large set of objects and executables are essentially JIT compiled, using the tools MPI is configured to use for this. To use our CUDA hardware, we need to configure MPI to compile them using nvcc, along with the standard gnu tools. In Step 6, we will run NekRS with a call to `mpirun`, a tool generated in this step. 
 
