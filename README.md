@@ -5,7 +5,7 @@ These steps should work with most gaming and laptop PCs with an Nvidia GPU.
 
 ### Potential Version Incompatibilies
 
-Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to their install guide, Hypre, one of NekRS's third party tools, is not considered compatible with CUDA Toolkit above version 11. There are references to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11 for some nvcc compilations, and there are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work in new ways during future NekRS runs.
+Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to their install guide, Hypre, one of NekRS's third party tools, is not considered compatible with CUDA Toolkit above version 11. There are references to some artifacts not found in the current version of the CUDA Toolkit. The NekRS build also uses flags which set the C++ standard to 11 (typically 17) for some nvcc compilations. There are other flags, such as the OCCA environment flags, that are left empty, but could be configured to work for future NekRS runs.
 
 <br/>
 
@@ -68,7 +68,7 @@ reboot
 
 The difference between CUDA Version and Toolkit Version, even though they are usually the same numeric values on a given machine, is that the CUDA Version refers to the driver software running on a particular GPU device, often referred to as the `native` architecture in configuration tools, while the CUDA Toolkit Version determines what hardware architectures a given codebase on a machine can target.
 
-To reiterate, the command to `apt install cuda-toolkit` will automatically install the latest CUDA Toolkit (v13) if that matches your CUDA driver version, but Nvidia ended targeting devices below CUDA Versions 7.5. This is a problem because some of NekRS's third party tools (Hypre, OCCA) expect the previous version (v11) of cusparse or similar deprecated CUDA tools. 
+To reiterate, the command to `apt install cuda-toolkit` will automatically install the latest CUDA Toolkit (v13) if that matches your CUDA (driver) Version, but Nvidia ended targeting devices below CUDA Versions 7.5 with this release. This is a problem because some of NekRS's third party tools (Hypre, OCCA) expect the previous version (v11) of cusparse or similar deprecated CUDA tools. 
 
 So if your driver's CUDA Version is 13, do this:
 
