@@ -1,0 +1,1 @@
+ffmpeg -framerate 50 -i turbPipe.%04d.png -c:v libx264 -pix_fmt yuv420p output_4k_lossless.mp4
