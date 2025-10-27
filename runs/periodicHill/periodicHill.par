@@ -3,16 +3,13 @@ polynomialOrder = 7
 #startFrom = r.fld
 
 stopAt = endTime
-endTime = 30
-
-writeControl = steps
-writeInterval = 1
+endTime = 200
 
 dt = targetCFL=2 + max=1e-2 + initial=1e-3
 timeStepper = tombo2
 
-checkpointControl = simulationTime
-checkpointInterval = 20 
+writeControl = steps
+writeInterval = 20 
 
 regularization = hpfrt + nModes=1 + scalingCoeff=10
 
@@ -22,7 +19,10 @@ constFlowRate = meanVelocity=1.0 + direction=X
 residualTol = 1.0e-04
 
 [VELOCITY]
-boundaryTypeMap = zeroValue 
+boundaryTypeMap = wall
 viscosity = 1/6000.0
-rho = 1.0
+density = 1.0
 residualTol = 1.0e-06
+
+[TEMPERATURE]
+solver = none

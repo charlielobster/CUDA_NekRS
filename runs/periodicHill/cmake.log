@@ -1,18 +1,9 @@
--- The C compiler identification is GNU 13.3.0
 -- The CXX compiler identification is GNU 13.3.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /home/skooby/builds/openmpi-5.0.8/bin/mpicc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /home/skooby/builds/openmpi-5.0.8/bin/mpic++ - skipped
+-- Check for working CXX compiler: /usr/local/bin/mpic++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found MPI_C: /home/skooby/builds/openmpi-5.0.8/bin/mpicc (found version "3.1") 
--- Found MPI_CXX: /home/skooby/builds/openmpi-5.0.8/bin/mpic++ (found version "3.1") 
--- Found MPI: TRUE (found version "3.1")  
--- Configuring done (0.3s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/skooby/builds/NekRS/examples/periodicHill/.cache/udf
+-- Build files have been written to: /home/skooby/repos/nekRS/examples/periodicHill/.cache/udf

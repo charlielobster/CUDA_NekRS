@@ -1,3 +1,25 @@
+C-----------------------------------------------------------------------
+      subroutine useric(ix,iy,iz,ieg) ! set up initial conditions
+      include 'SIZE'
+      include 'TOTAL'
+      include 'NEKUSE'
+
+      ux   = 1.0
+      uy   = 0.0
+      uz   = 0.0
+      temp = 0.0
+
+      return
+      end
+c-----------------------------------------------------------------------
+      subroutine userchk()
+      include 'SIZE'
+      include 'TOTAL'
+
+      call lambda2(t)
+
+      return
+      end
 c-----------------------------------------------------------------------
       subroutine usrdat()   ! This routine to modify element vertices
       include 'SIZE'
@@ -51,6 +73,13 @@ c-----------------------------------------------------------------------
         if (cbc(f,e,1) .eq. 'W  ') boundaryID(f,e) = 1
       enddo
       enddo
+
+      return
+      end
+c-----------------------------------------------------------------------
+      subroutine usrdat3()
+      include 'SIZE'
+      include 'TOTAL'
 
       return
       end

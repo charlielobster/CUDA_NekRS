@@ -1,24 +1,29 @@
+//
+// nekRS User Defined File
+//
+#include "udf.hpp"
+#include "plugins/tavg.hpp"
+
 #ifdef __okl__
 
 #endif
 
-void UDF_Setup0(MPI_Comm comm, setupAide &options) 
+void UDF_Setup0(MPI_Comm comm, setupAide &options) {}
+
+void UDF_Setup(nrs_t *nrs)
 {
+  tavg::setup(nrs);
 }
 
-void UDF_Setup()
+void UDF_ExecuteStep(nrs_t *nrs, dfloat time, int tstep)
 {
-  auto mesh = nrs->mesh;
+  tavg::run(time);
 
-  if (platform->options.getArgs("RESTART FILE NAME").empty()) {
-    std::vector<dfloat> U(mesh->dim * nrs->fieldOffset, 0.0);
-    for(int n = 0; n < mesh->Nlocal; n++) {
-      U[n + 0 * nrs->fieldOffset] = 1;
-    }
-    nrs->o_U.copyFrom(U.data(), U.size());
+  if (nrs->isOutputStep) {
+    nek::ocopyToNek(time, tstep);
+    nek::userchk(); // compute lambda2
+    nek::ocopyFromNek(time);
+
+    tavg::outfld();
   }
-}
-
-void UDF_ExecuteStep(double time, int tstep)
-{
 }
