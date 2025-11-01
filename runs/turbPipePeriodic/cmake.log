@@ -4,6 +4,6 @@
 -- Check for working CXX compiler: /usr/local/bin/mpic++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (0.2s)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/skooby/.local/nekrs/examples/turbPipePeriodic/.cache/udf
+-- Build files have been written to: /media/skooby/data/CUDA_NekRS/runs/turbPipePeriodic/.cache/udf
