@@ -245,7 +245,7 @@ echo export PATH=/usr/local/ParaView/bin:$PATH >> ~/.bashrc
 
 ### NekRS Examples Video Playlist
 
-[<img src="images/charl3_lawbstr_channel.png" />](https://www.youtube.com/playlist?list=PLkcISurbTBJsnNKwDAb1c73r7JVim71-H)
+[<img src="images/nekrs_playlist.png" />](https://www.youtube.com/playlist?list=PLkcISurbTBJsnNKwDAb1c73r7JVim71-H)
 
 [<img src="images/channel_videos.png" />](https://www.youtube.com/playlist?list=PLya1SvGKk6YahaFk3HIyiFsJiURsulj2r)
 
