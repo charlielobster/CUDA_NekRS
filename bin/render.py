@@ -10,11 +10,6 @@ output_pattern = sys.argv[2]
 start_frame = int(sys.argv[3])
 end_frame = int(sys.argv[4])
 
-print("state_file_path: {}".format(state_file_path))
-print("output_pattern: {}".format(output_pattern))
-print("start_frame: {}".format(start_frame))
-print("end_frame: {}".format(end_frame))
-
 frame_window = [start_frame, end_frame]
 
 LoadState(state_file_path)
