@@ -64,7 +64,7 @@ c-----------------------------------------------------------------------
         x  = xm1(i,1,1,1)
         y  = ym1(i,1,1,1)
 
-        yw = 0 ! bottomph(hmax*x,hmax*xmin,hmax*xmax)/hmax
+        yw = bottomph(hmax*x,hmax*xmin,hmax*xmax)/hmax
         ym1(i,1,1,1) = (1. - yw/ymax)*y + yw 
       enddo
 
@@ -108,7 +108,7 @@ c-----------------------------------------------------------------------
       else if( ( x > 40.0 ).and.( x <= 54.0 ) ) then
         y = max( 0.0,  5.639011190988e+01 - 2.010520359035e+00*x
      &     + 1.644919857549e-02*x*x + 2.674976141766e-05*x*x*x )
-      else if( ( x > 54.0 ).AND.( x <= xmax ) ) then
+      ELSE IF( ( x > 54.0 ).AND.( x <= xmax ) ) THEN
         y = 0.0
       endif
  
