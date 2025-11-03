@@ -1,3 +1,5 @@
+# render.py - use the paraview cli to open a file and render a range of pngs from its animation sequence
+# type: ignore
 import sys
 import os
 from paraview.simple import *

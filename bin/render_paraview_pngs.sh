@@ -1,4 +1,9 @@
-# !/bin/bash
+#!/bin/bash
+# render_paraview_pngs - invoke multiple render.py processes distributed to two GPUs
+
+if [ $# -ne 6 ]; then
+    echo "render_paraview_pngs <num processes> <working path> <state file path> <output pattern> <start frame> <end frame>"
+fi
 
 NUM_PROCESSES=$1
 PREVIOUS_PATH=$(pwd)
