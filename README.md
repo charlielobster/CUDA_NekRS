@@ -21,7 +21,7 @@ Parts of NekRS target the compute-70 (CUDA Version 7) architecture. According to
 
 3) From your BIOS, boot from the USB drive and install to the target drive
 
-    For this document, "Install latest Graphics and Wifi hardware drivers" was left blank during the install. 
+    For this document, "Install latest Graphics and Wifi hardware drivers" was left unchecked during the install. 
 
 <br/>
 
