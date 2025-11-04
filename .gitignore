@@ -1,2 +1,11 @@
 artifacts
 **/.cache
+**/*.nek5000
+**/*.f0*
+**/*.
+**/obj
+**/*log*
+**/.state
+**/nek5000
+**/SESSION.NAME 
+**/makefile
