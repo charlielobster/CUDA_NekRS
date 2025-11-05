@@ -1,12 +1,12 @@
 #!/bin/bash
-# render_paraview_pngs - invoke multiple render.py processes distributed to two GPUs
-
+# render_paraview_pngs - invoke multiple render.py processes distributed between two GPUs
 if [ $# -ne 6 ]; then
     echo "render_paraview_pngs <num processes> <working path> <state file path> <output pattern> <start frame> <end frame>"
+    # for example, 
+    # ./render_paraview_pngs.sh 16 .../CUDA_NekRS/runs/artifacts/pngs .../CUDA_NekRS/runs/tcf/tcf.pvsm tcf.png 0 5044
 fi
 
 NUM_PROCESSES=$1
-PREVIOUS_PATH=$(pwd)
 WORKING_PATH=$2
 STATE_FILE_PATH=$3
 OUTPUT_PATTERN=$4
@@ -20,7 +20,7 @@ echo Output_Pattern: $OUTPUT_PATTERN
 echo Start Frame: $START_FRAME
 echo End Frame: $END_FRAME
 
-RENDER_PY_PATH=$PREVIOUS_PATH/render.py
+RENDER_PY_PATH=$(pwd)/render.py
 TOTAL_FRAMES=$((END_FRAME-START_FRAME+1))
 FRAMES_PER_PROCESS=$((TOTAL_FRAMES/NUM_PROCESSES))
 CURRENT_END_FRAME=$((START_FRAME-1))
@@ -52,5 +52,4 @@ do
 done
 
 wait
-
-cd $PREVIOUS_PATH
+# goes well with a call to watch -n 1 nvidia-smi
