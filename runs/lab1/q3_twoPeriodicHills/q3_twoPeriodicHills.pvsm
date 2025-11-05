@@ -10000,7 +10000,7 @@
         <Domain name="bool" id="13849.AddSpectralElementIds.bool"/>
       </Property>
       <Property name="FileName" id="13849.FileName" number_of_elements="1">
-        <Element index="0" value="/media/skooby/data/CUDA_NekRS/runs/lab1/q3_twoPeriodicHills/periodicHill.nek5000"/>
+        <Element index="0" value="/media/skooby/data/CUDA_NekRS/aftifacts/nek5000_files/periodicHill.nek5000"/>
         <Domain name="files" id="13849.FileName.files"/>
       </Property>
       <Property name="MergePointsToCleanGrid" id="13849.MergePointsToCleanGrid" number_of_elements="1">
