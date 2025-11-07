@@ -3,7 +3,7 @@
 if [ $# -ne 6 ]; then
     echo "render_paraview_pngs <num processes> <working path> <state file path> <output pattern> <start frame> <end frame>"
     # for example, 
-    # ./render_paraview_pngs.sh 16 .../CUDA_NekRS/runs/artifacts/pngs .../CUDA_NekRS/runs/tcf/tcf.pvsm tcf.png 0 5044
+    # ./render_paraview_pngs.sh 16 .../CUDA_NekRS/artifacts/pngs .../CUDA_NekRS/runs/tcf/tcf.pvsm tcf.png 0 5044
 fi
 
 NUM_PROCESSES=$1
